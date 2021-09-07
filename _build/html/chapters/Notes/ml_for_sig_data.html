@@ -1,0 +1,509 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Machine Learning For Signals, Data &#8212; My sample book</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Deep Learning Course" href="deep_learning.html" />
+    <link rel="prev" title="Neural Networks" href="feedforward_neural_network.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Master Notes
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Notes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="feedforward_neural_network.html">
+   Neural Networks
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course Specific Notes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Machine Learning For Signals, Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="deep_learning.html">
+   Deep Learning Course
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reinforcement_learning_course.html">
+   Reinforcement Learning Course
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Key Terminology
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../key_terminology/notes.html">
+   Key Terminology
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Examples
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../examples/tensorflow/basic_tensorflow.html">
+   This is a tensorflow notebook
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/Notes/ml_for_sig_data.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapters/Notes/ml_for_sig_data.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-maximum-likelihood-estimation">
+   1 Introduction, maximum likelihood estimation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-regression-least-squares-geometric-view">
+   2 linear regression, least squares, geometric view
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ridge-regression-probabilistic-views-of-linear-regression">
+   3 ridge regression, probabilistic views of linear regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bias-variance-bayes-rule-maximum-a-posteriori">
+   4 bias-variance, Bayes rule, maximum a posteriori
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bayesian-linear-regression">
+   5 Bayesian linear regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sparsity-subset-selection-for-linear-regression">
+   6 sparsity, subset selection for linear regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nearest-neighbor-classification-bayes-classifiers">
+   7 nearest neighbor classification, Bayes classifiers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-classifiers-perceptron">
+   8 linear classifiers, perceptron
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logistic-regression-laplace-approximation">
+   9 logistic regression, Laplace approximation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kernel-methods-gaussian-processes">
+   10 kernel methods, Gaussian processes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maximum-margin-support-vector-machines">
+   11 maximum margin, support vector machines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trees-random-forests">
+   12 trees, random forests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boosting">
+   13 boosting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clustering-k-means">
+   14 clustering, k-means
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#em-algorithm-missing-data">
+   15 EM algorithm, missing data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mixtures-of-gaussians">
+   16 mixtures of Gaussians
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-factorization">
+   17 matrix factorization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#non-negative-matrix-factorization">
+   18 non-negative matrix factorization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#latent-factor-models-pca-and-variations">
+   19 latent factor models, PCA and variations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markov-models">
+   20 Markov models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hidden-markov-models">
+   21 hidden Markov models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuous-state-space-models">
+   22 continuous state-space models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#association-analysis">
+   23 association analysis
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="machine-learning-for-signals-data">
+<h1>Machine Learning For Signals, Data<a class="headerlink" href="#machine-learning-for-signals-data" title="Permalink to this headline">¶</a></h1>
+<p>This is a course</p>
+<div class="section" id="introduction-maximum-likelihood-estimation">
+<h2>1 Introduction, maximum likelihood estimation<a class="headerlink" href="#introduction-maximum-likelihood-estimation" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 1 Info</p>
+</div>
+<div class="section" id="linear-regression-least-squares-geometric-view">
+<h2>2 linear regression, least squares, geometric view<a class="headerlink" href="#linear-regression-least-squares-geometric-view" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 2 Info</p>
+</div>
+<div class="section" id="ridge-regression-probabilistic-views-of-linear-regression">
+<h2>3 ridge regression, probabilistic views of linear regression<a class="headerlink" href="#ridge-regression-probabilistic-views-of-linear-regression" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 3 Info</p>
+</div>
+<div class="section" id="bias-variance-bayes-rule-maximum-a-posteriori">
+<h2>4 bias-variance, Bayes rule, maximum a posteriori<a class="headerlink" href="#bias-variance-bayes-rule-maximum-a-posteriori" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 4 Info</p>
+</div>
+<div class="section" id="bayesian-linear-regression">
+<h2>5 Bayesian linear regression<a class="headerlink" href="#bayesian-linear-regression" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 5 Info</p>
+</div>
+<div class="section" id="sparsity-subset-selection-for-linear-regression">
+<h2>6 sparsity, subset selection for linear regression<a class="headerlink" href="#sparsity-subset-selection-for-linear-regression" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 6 Info</p>
+</div>
+<div class="section" id="nearest-neighbor-classification-bayes-classifiers">
+<h2>7 nearest neighbor classification, Bayes classifiers<a class="headerlink" href="#nearest-neighbor-classification-bayes-classifiers" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 7 Info</p>
+</div>
+<div class="section" id="linear-classifiers-perceptron">
+<h2>8 linear classifiers, perceptron<a class="headerlink" href="#linear-classifiers-perceptron" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 8 Info</p>
+</div>
+<div class="section" id="logistic-regression-laplace-approximation">
+<h2>9 logistic regression, Laplace approximation<a class="headerlink" href="#logistic-regression-laplace-approximation" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 9 Info</p>
+</div>
+<div class="section" id="kernel-methods-gaussian-processes">
+<h2>10 kernel methods, Gaussian processes<a class="headerlink" href="#kernel-methods-gaussian-processes" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 10 Info</p>
+</div>
+<div class="section" id="maximum-margin-support-vector-machines">
+<h2>11 maximum margin, support vector machines<a class="headerlink" href="#maximum-margin-support-vector-machines" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 11 Info</p>
+</div>
+<div class="section" id="trees-random-forests">
+<h2>12 trees, random forests<a class="headerlink" href="#trees-random-forests" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 12 Info</p>
+</div>
+<div class="section" id="boosting">
+<h2>13 boosting<a class="headerlink" href="#boosting" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 13 Info</p>
+</div>
+<div class="section" id="clustering-k-means">
+<h2>14 clustering, k-means<a class="headerlink" href="#clustering-k-means" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 14 Info</p>
+</div>
+<div class="section" id="em-algorithm-missing-data">
+<h2>15 EM algorithm, missing data<a class="headerlink" href="#em-algorithm-missing-data" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 15 Info</p>
+</div>
+<div class="section" id="mixtures-of-gaussians">
+<h2>16 mixtures of Gaussians<a class="headerlink" href="#mixtures-of-gaussians" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 16 Info</p>
+</div>
+<div class="section" id="matrix-factorization">
+<h2>17 matrix factorization<a class="headerlink" href="#matrix-factorization" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 17 Info</p>
+</div>
+<div class="section" id="non-negative-matrix-factorization">
+<h2>18 non-negative matrix factorization<a class="headerlink" href="#non-negative-matrix-factorization" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 18 Info</p>
+</div>
+<div class="section" id="latent-factor-models-pca-and-variations">
+<h2>19 latent factor models, PCA and variations<a class="headerlink" href="#latent-factor-models-pca-and-variations" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 19 Info</p>
+</div>
+<div class="section" id="markov-models">
+<h2>20 Markov models<a class="headerlink" href="#markov-models" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 20 Info</p>
+</div>
+<div class="section" id="hidden-markov-models">
+<h2>21 hidden Markov models<a class="headerlink" href="#hidden-markov-models" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 21 Info</p>
+</div>
+<div class="section" id="continuous-state-space-models">
+<h2>22 continuous state-space models<a class="headerlink" href="#continuous-state-space-models" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 22 Info</p>
+</div>
+<div class="section" id="association-analysis">
+<h2>23 association analysis<a class="headerlink" href="#association-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Chapter 23 Info</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/Notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="feedforward_neural_network.html" title="previous page">Neural Networks</a>
+    <a class='right-next' id="next-link" href="deep_learning.html" title="next page">Deep Learning Course</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Trevor Gordon<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neural Networks &#8212; My sample book</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Machine Learning For Signals, Data" href="ml_for_sig_data.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="reinforcement_learning.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Master Notes
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Notes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Neural Networks
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course Specific Notes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ml_for_sig_data.html">
+   Machine Learning For Signals, Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="deep_learning.html">
+   Deep Learning Course
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reinforcement_learning_course.html">
+   Reinforcement Learning Course
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Key Terminology
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../key_terminology/notes.html">
+   Key Terminology
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Examples
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../examples/tensorflow/basic_tensorflow.html">
+   This is a tensorflow notebook
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/Notes/feedforward_neural_network.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapters/Notes/feedforward_neural_network.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapters/Notes/feedforward_neural_network.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Neural Networks
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#important-papers">
+   Important Papers
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#derive-dl-dw2-and-dl-dc2">
+     Derive dL/dW2 and dL/dc2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-neural-network-from-scratch">
+   Example Neural Network From Scratch
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="neural-networks">
+<h1>Neural Networks<a class="headerlink" href="#neural-networks" title="Permalink to this headline">¶</a></h1>
+<p><img alt="Example" src="chapters/Notes/images/feed_forward_example.png" /></p>
+</div>
+<div class="section" id="important-papers">
+<h1>Important Papers<a class="headerlink" href="#important-papers" title="Permalink to this headline">¶</a></h1>
+<div class="amsmath math notranslate nohighlight" id="equation-d1492cab-988e-4a1b-8371-717975278152">
+<span class="eqno">(1)<a class="headerlink" href="#equation-d1492cab-988e-4a1b-8371-717975278152" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\dfrac{2L}{\partial \widehat{y}}RSS=2\times \left( y-\widehat{y}\right) 
+\begin{aligned}\dfrac{2L}{\partial \widehat{y}}RSS=2\times \left( y-\widehat{y}\right) \\
+\dfrac{2\widehat{y}}{2h^{2}}signoid=\sigma \left( \widehat{y}\right) \left( 1-\sigma \left( \widehat{y}\right) \right) \\
+\dfrac{\partial h2}{\partial W2}=21\\
+\dfrac{2h^{2}}{\partial z^{1}}=W2\\
+\dfrac{221}{2h1}=f|^{1}=f|_{s:gmoid}^{1}=\sigma \left( z\right) )\left( 1-\sigma \left( zI\right) \right) \end{aligned}
+\end{align}\]</div>
+<div class="section" id="derive-dl-dw2-and-dl-dc2">
+<h2>Derive dL/dW2 and dL/dc2<a class="headerlink" href="#derive-dl-dw2-and-dl-dc2" title="Permalink to this headline">¶</a></h2>
+<p>We want to update W1, W2, c1, c2.
+To do this we need to update using dL/dW1, dL/dW2, dL/dc1, dL/dc1
+These are calculated using the chain rule</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a0c1be2d-3c3b-434f-a1b1-e8eb3d632576">
+<span class="eqno">(2)<a class="headerlink" href="#equation-a0c1be2d-3c3b-434f-a1b1-e8eb3d632576" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \\{\frac{\partial L}{\partial yhat}} RSS 
+    &amp;= 2*(y-yhat)
+  \\{\frac{\partial yhat}{\partial h2}} sigmoid 
+    &amp;= \sigma (yhat) (1 - \sigma (yhat))
+  \\{\frac{\partial h2}{\partial W2}} 
+    &amp;= z1
+  \\{\frac{\partial h2}{\partial C2}} 
+    &amp;= 1
+  \\{\frac{\partial h2}{\partial z1}} 
+    &amp;= W2
+  \\{\frac{\partial z1}{\partial h1}} 
+    &amp;= f1' =f1'sigmoid = \sigma (z1) (1 - \sigma (z1))
+  \\{\frac{\partial h1}{\partial W1}} 
+    &amp;= x1
+  \\{\frac{\partial h1}{\partial C1}} 
+    &amp;= 1
+\end{align}\]</div>
+</div>
+</div>
+<div class="section" id="example-neural-network-from-scratch">
+<h1>Example Neural Network From Scratch<a class="headerlink" href="#example-neural-network-from-scratch" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Trevor Gordon. 2021</span>
+<span class="sd">    Implementation of a feed forward neural network from scratch.</span>
+<span class="sd">    Drawing largely from https://dafriedman97.github.io/mlbook/content/c7/concept.html</span>
+<span class="sd">    and https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">tqdm</span>
+
+
+<span class="k">class</span> <span class="nc">FeedForwardNeuralNetwork</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Feed Forward Neural Network</span>
+<span class="sd">    This FFNN is fixed to have one hidden layer. It is defined by weights self.W1 and self.W2 and</span>
+<span class="sd">    biases self.c1 and self.c2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Init function</span>
+<span class="sd">        Class variables:</span>
+<span class="sd">            self.n_hidden (int): Number of neurons in single hidden layer</span>
+<span class="sd">            self.f1 (func): Activation function to apply to hidden layer output before next layer</span>
+<span class="sd">                Only supporting sigmoid right now</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_hidden</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">f1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">f1_prime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid_prime</span>
+
+    <span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sigmoid function to bound output between 0 and 1&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">sigmoid_prime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Derivative of the sigmoid function simplifies to this.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">initialize_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">len_input</span><span class="p">,</span> <span class="n">len_hidden</span><span class="p">,</span> <span class="n">len_output</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Initialize weights and biases randomly.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            len_input (int): Number of neurons in X input layer</span>
+<span class="sd">            len_hidden (int): Number of neurons in hidden layer</span>
+<span class="sd">            len_output (int): Number of neurons in y output layer</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            weights_1 (np.array): Rows for neurons in hidden layer and columns for </span>
+<span class="sd">                neurons in X input layer.</span>
+<span class="sd">            weights_2 (np.array): Rows for neurons in y output layer and columns for neurons in</span>
+<span class="sd">                hidden layer</span>
+<span class="sd">            biases_1 (np.array): Rows for neurons in hidden layer and 1 column</span>
+<span class="sd">            biases_2 (np.array): Rows for neurons in output layer and 1 column</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">weights_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">len_hidden</span><span class="p">,</span> <span class="n">len_input</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span>
+        <span class="n">biases_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">len_hidden</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span>
+        <span class="n">weights_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">len_output</span><span class="p">,</span> <span class="n">len_hidden</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span>
+        <span class="n">biases_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">len_output</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span>
+        <span class="k">return</span> <span class="n">weights_1</span><span class="p">,</span> <span class="n">biases_1</span><span class="p">,</span> <span class="n">weights_2</span><span class="p">,</span> <span class="n">biases_2</span>
+
+    <span class="k">def</span> <span class="nf">update_network_states</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Using weights, biases and activation function, calculate hidden layer and output</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            h1 (np.array): Hidden layer with shape = (len_hidden, num_observations)</span>
+<span class="sd">            z1 (np.array): Activated hidden layer with shape = (len_hidden, num_observations)</span>
+<span class="sd">            h2 (np.array): Hidden layer 2 with shape = (len_output, num_observations)</span>
+<span class="sd">            yhat (np.array): Output layer with shape = (len_output, num_observations)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">h1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">W1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">c1</span>
+        <span class="n">z1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">f1</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span>
+        <span class="n">h2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">W2</span><span class="p">,</span> <span class="n">z1</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">c2</span>
+        <span class="n">yhat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">f1</span><span class="p">(</span><span class="n">h2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">h1</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">h2</span><span class="p">,</span> <span class="n">yhat</span>
+
+    <span class="k">def</span> <span class="nf">get_loss_gradient_one_observations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                                           <span class="n">y_one_obsv</span><span class="p">,</span>
+                                           <span class="n">yhat_one_obsv</span><span class="p">,</span>
+                                           <span class="n">h2_one_obsv</span><span class="p">,</span>
+                                           <span class="n">h1_one_obsv</span><span class="p">,</span>
+                                           <span class="n">z1_one_obsv</span><span class="p">,</span>
+                                           <span class="n">x_input_one_obsv</span><span class="p">,</span>
+                                           <span class="n">len_hidden</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Given a single observation find the loss gradient.</span>
+<span class="sd">        Derivations for all of these are shown in the images folder.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            y_one_obsv (np.array): Single output. Shape = (len_output, 1)</span>
+<span class="sd">            yhat_one_obsv (np.array): Single predicted output given current weights/biases</span>
+<span class="sd">            h2_one_obsv (np.array): Current h2 hidden layer for single input x and weights/biases</span>
+<span class="sd">            h1_one_obsv (np.array): Current h1 hidden layer for single input x and weights/biases</span>
+<span class="sd">            z1_one_obsv (np.array): Current z1 value for single input x and weights/biases</span>
+<span class="sd">            x_input_one_obsv (np.array): Single x input</span>
+<span class="sd">            len_hidden (int): Number of neurons in hidden layer</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            dL_dW1_one_obvs (np.array): Partial grad showing direction to move. Same shape as W1 </span>
+<span class="sd">            dL_dc1_one_obvs (np.array): Partial grad showing direction to move. Same shape as c1 </span>
+<span class="sd">            dL_dW2_one_obvs (np.array): Partial grad showing direction to move. Same shape as W2 </span>
+<span class="sd">            dL_dc2_one_obvs (np.array): Partial grad showing direction to move. Same shape as c2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">len_input</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_input_one_obsv</span><span class="p">)</span>
+        <span class="n">len_output</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_one_obsv</span><span class="p">)</span>
+
+        <span class="c1"># Start at output by calculation error</span>
+        <span class="n">dL_dyhat</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">y_one_obsv</span> <span class="o">-</span> <span class="n">yhat_one_obsv</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># (1, len_output)</span>
+
+        <span class="c1">## LAYER 2 ##</span>
+        <span class="c1"># dyhat_dh2.shape = (len_output, len_output)</span>
+        <span class="n">dyhat_dh2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f1_prime</span><span class="p">(</span><span class="n">h2_one_obsv</span><span class="p">))</span>
+
+        <span class="c1"># dh2_dc2.shape =  (len_output, len_output)</span>
+        <span class="c1"># dh2_dc2 = 1 because bias is simply added</span>
+        <span class="n">dh2_dc2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">len_output</span><span class="p">)</span>
+
+        <span class="c1"># dh2_dW2.shape = (len_output, (len_output, len_hidden))</span>
+        <span class="n">dh2_dW2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">len_output</span><span class="p">,</span> <span class="n">len_output</span><span class="p">,</span> <span class="n">len_hidden</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">len_output</span><span class="p">):</span>
+            <span class="n">dh2_dW2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">z1_one_obsv</span>
+
+        <span class="c1"># dh2_dz1.shape = (len_output, len_hidden)</span>
+        <span class="n">dh2_dz1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">W2</span>
+
+        <span class="c1">## LAYER 1 ##</span>
+        <span class="c1"># dz1_dh1.shape = (len_hidden, len_hidden)</span>
+        <span class="n">dz1_dh1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f1</span><span class="p">(</span><span class="n">h1_one_obsv</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">f1</span><span class="p">(</span><span class="n">h1_one_obsv</span><span class="p">)))</span>
+
+        <span class="c1"># dh1_dc1.shape = (len_hidden, len_hidden)</span>
+        <span class="n">dh1_dc1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">len_hidden</span><span class="p">)</span>
+
+        <span class="c1"># dh1_dW1</span>
+        <span class="c1"># (len_hidden, (len_hidden, D_X))</span>
+        <span class="n">dh1_dW1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">len_hidden</span><span class="p">,</span> <span class="n">len_hidden</span><span class="p">,</span> <span class="n">len_input</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">len_hidden</span><span class="p">):</span>
+            <span class="n">dh1_dW1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x_input_one_obsv</span>
+
+        <span class="c1">## DERIVATIVES W.R.T. LOSS ##</span>
+        <span class="n">dL_dh2</span> <span class="o">=</span> <span class="n">dL_dyhat</span> <span class="o">@</span> <span class="n">dyhat_dh2</span>
+        <span class="n">dL_dW2_one_obvs</span> <span class="o">=</span> <span class="n">dL_dh2</span> <span class="o">@</span> <span class="n">dh2_dW2</span>
+        <span class="n">dL_dc2_one_obvs</span> <span class="o">=</span> <span class="n">dL_dh2</span> <span class="o">@</span> <span class="n">dh2_dc2</span>
+
+        <span class="n">dL_dh1</span> <span class="o">=</span> <span class="n">dL_dh2</span> <span class="o">@</span> <span class="n">dh2_dz1</span> <span class="o">@</span> <span class="n">dz1_dh1</span>
+
+        <span class="n">dL_dW1_one_obvs</span> <span class="o">=</span> <span class="n">dL_dh1</span> <span class="o">@</span> <span class="n">dh1_dW1</span>
+        <span class="n">dL_dc1_one_obvs</span> <span class="o">=</span> <span class="n">dL_dh1</span> <span class="o">@</span> <span class="n">dh1_dc1</span>
+        <span class="c1"># dL_dc1_one_obvs = dL_dc1_one_obvs.reshape(len(dL_dc1_one_obvs), -1)</span>
+        <span class="c1"># dL_dc2_one_obvs = dL_dc2_one_obvs.reshape(len(dL_dc2_one_obvs), -1)</span>
+        <span class="k">return</span> <span class="n">dL_dW1_one_obvs</span><span class="p">,</span> <span class="n">dL_dc1_one_obvs</span><span class="p">,</span> <span class="n">dL_dW2_one_obvs</span><span class="p">,</span> <span class="n">dL_dc2_one_obvs</span>
+
+    <span class="k">def</span> <span class="nf">get_loss_gradient_iter_over_observations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">len_hidden</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the cumulative gradient while iterating over each observation at a time</span>
+<span class="sd">        Args:</span>
+<span class="sd">            len_hidden (int): Number of neurons in hidden layer</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            dL_dW1 (np.array): Partial grad showing direction to move. Same shape as W1 </span>
+<span class="sd">            dL_dc1 (np.array): Partial grad showing direction to move. Same shape as c1 </span>
+<span class="sd">            dL_dW2 (np.array): Partial grad showing direction to move. Same shape as W2 </span>
+<span class="sd">            dL_dc2 (np.array): Partial grad showing direction to move. Same shape as c2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">dL_dW2</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">dL_dc2</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">dL_dW1</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">dL_dc1</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">num_observations</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_observations</span><span class="p">):</span>
+            <span class="c1"># Slice y and yhat by observation number</span>
+            <span class="c1"># dL_dyhat</span>
+            <span class="n">y_one_obsv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>  <span class="c1"># (1, len_output)</span>
+            <span class="n">yhat_one_obsv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">yhat</span><span class="p">[:,</span> <span class="n">n</span><span class="p">]</span>  <span class="c1"># (1, len_output)</span>
+            <span class="n">h2_one_obsv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h2</span><span class="p">[:,</span> <span class="n">n</span><span class="p">]</span>
+            <span class="n">h1_one_obsv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h1</span><span class="p">[:,</span> <span class="n">n</span><span class="p">]</span>
+            <span class="n">z1_one_obsv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">z1</span><span class="p">[:,</span> <span class="n">n</span><span class="p">]</span>
+            <span class="n">x_input_one_obsv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+            <span class="p">(</span><span class="n">dL_dW1_one_obvs</span><span class="p">,</span> <span class="n">dL_dc1_one_obvs</span><span class="p">,</span> <span class="n">dL_dW2_one_obvs</span><span class="p">,</span>
+             <span class="n">dL_dc2_one_obvs</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_loss_gradient_one_observations</span><span class="p">(</span>
+                <span class="n">y_one_obsv</span><span class="p">,</span> <span class="n">yhat_one_obsv</span><span class="p">,</span> <span class="n">h2_one_obsv</span><span class="p">,</span> <span class="n">h1_one_obsv</span><span class="p">,</span>
+                <span class="n">z1_one_obsv</span><span class="p">,</span> <span class="n">x_input_one_obsv</span><span class="p">,</span> <span class="n">len_hidden</span><span class="p">)</span>
+            <span class="n">dL_dW2</span> <span class="o">+=</span> <span class="n">dL_dW2_one_obvs</span>
+            <span class="n">dL_dc2</span> <span class="o">+=</span> <span class="n">dL_dc2_one_obvs</span>
+            <span class="n">dL_dW1</span> <span class="o">+=</span> <span class="n">dL_dW1_one_obvs</span>
+            <span class="n">dL_dc1</span> <span class="o">+=</span> <span class="n">dL_dc1_one_obvs</span>
+        <span class="k">return</span> <span class="n">dL_dW1</span><span class="p">,</span> <span class="n">dL_dc1</span><span class="p">,</span> <span class="n">dL_dW2</span><span class="p">,</span> <span class="n">dL_dc2</span>
+
+    <span class="k">def</span> <span class="nf">get_loss_gradient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">len_hidden</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the loss gradient.</span>
+<span class="sd">        This defaults to get_loss_gradient_iter_over_observations right now. In a future version</span>
+<span class="sd">        this should be implemented while iterating on mini batches to improve speed.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            len_hidden (int): Number of neurons in hidden layer</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            dL_dW1 (np.array): Partial grad showing direction to move. Same shape as W1 </span>
+<span class="sd">            dL_dc1 (np.array): Partial grad showing direction to move. Same shape as c1 </span>
+<span class="sd">            dL_dW2 (np.array): Partial grad showing direction to move. Same shape as W2 </span>
+<span class="sd">            dL_dc2 (np.array): Partial grad showing direction to move. Same shape as c2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="p">(</span><span class="n">dL_dW1</span><span class="p">,</span>
+        <span class="n">dL_dc1</span><span class="p">,</span>
+        <span class="n">dL_dW2</span><span class="p">,</span>
+        <span class="n">dL_dc2</span><span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_loss_gradient_iter_over_observations</span><span class="p">(</span><span class="n">len_hidden</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dL_dW1</span><span class="p">,</span> <span class="n">dL_dc1</span><span class="p">,</span> <span class="n">dL_dW2</span><span class="p">,</span> <span class="n">dL_dc2</span>
+
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">len_hidden</span><span class="p">,</span> <span class="n">grad_step</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Fit a feedforward neural network to the test set given.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            X (np.array): Input data with columns for elements of a single input</span>
+<span class="sd">            and rows for number of observations. X.shape = (num_observations, data_per_observation)</span>
+<span class="sd">            y (np.array): Correct prediction for the input samples. y.shape = (num_observations, len_output)</span>
+<span class="sd">            len_hidden (int): Number of neurons in input layer.</span>
+<span class="sd">            grad_step (float, optional): Step for updating weights with gradient vectors. Defaults to 1e-5.</span>
+<span class="sd">            n_iter (int, optional): Number of iterations. Defaults to 1e3.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span>
+        <span class="c1"># Reshaping with -1 make sure theres a second dim of at least 1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">len_input</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">len_output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">W1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">c1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">W2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">c2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">initialize_params</span><span class="p">(</span>
+            <span class="n">len_input</span><span class="p">,</span> <span class="n">len_hidden</span><span class="p">,</span> <span class="n">len_output</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">h1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">z1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">h2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">yhat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_network_states</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting to fit for </span><span class="si">{</span><span class="n">n_iter</span><span class="si">}</span><span class="s2"> iterations&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_iter</span><span class="p">)):</span>
+            <span class="c1"># Adjust weights and biases in the direction of the negative gradient of the loss function</span>
+
+            <span class="n">dL_dW1</span><span class="p">,</span> <span class="n">dL_dc1</span><span class="p">,</span> <span class="n">dL_dW2</span><span class="p">,</span> <span class="n">dL_dc2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_loss_gradient</span><span class="p">(</span><span class="n">len_hidden</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">W1</span> <span class="o">-=</span> <span class="n">grad_step</span> <span class="o">*</span> <span class="n">dL_dW1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">W2</span> <span class="o">-=</span> <span class="n">grad_step</span> <span class="o">*</span> <span class="n">dL_dW2</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">c1</span> <span class="o">-=</span> <span class="n">grad_step</span> <span class="o">*</span> <span class="n">dL_dc1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">c2</span> <span class="o">-=</span> <span class="n">grad_step</span> <span class="o">*</span> <span class="n">dL_dc2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">h1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">z1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">h2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">yhat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_network_states</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X_predict</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Predict output for given input after model has been fit.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            X_predict (np.array): Input data with columns for elements of a single input. </span>
+<span class="sd">            and  rows for each prediction. X.shape = (num_to_predict, data_per_observation)</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            np.array: Predictions. y.shape = (data_per_output, num_to_predict)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">X</span> <span class="o">=</span> <span class="n">X_predict</span>
+        <span class="n">h1</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">h2</span><span class="p">,</span> <span class="n">yhat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_network_states</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">yhat</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/Notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="reinforcement_learning.html" title="previous page">&lt;no title&gt;</a>
+    <a class='right-next' id="next-link" href="ml_for_sig_data.html" title="next page">Machine Learning For Signals, Data</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Trevor Gordon<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
