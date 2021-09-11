@@ -1,3 +1,5 @@
+```{tableofcontents}
+```
 # Machine Learning For Signals, Data
 This is a course
 ## 1 Introduction, maximum likelihood estimation
