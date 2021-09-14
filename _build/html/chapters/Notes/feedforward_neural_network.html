@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Neural Networks &#8212; Columbia MS EE Notes</title>
+    <title>1. Neural Networks &#8212; Columbia MS EE Notes</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Machine Learning For Signals, Data2" href="ml_for_sig_data.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="reinforcement_learning.html" />
+    <link rel="next" title="4. Machine Learning For Signals, Data2" href="ml_for_sig_data.html" />
+    <link rel="prev" title="Master Notes" href="../../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -97,7 +97,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Neural Networks
+   1. Neural Networks
   </a>
  </li>
 </ul>
@@ -109,17 +109,24 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="ml_for_sig_data.html">
-   Machine Learning For Signals, Data2
+   4. Machine Learning For Signals, Data2
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="deep_learning.html">
-   Deep Learning Course
+   5. Deep Learning Course
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reinforcement Learning
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="reinforcement_learning_course.html">
-   Reinforcement Learning Course
+   6. Reinforcement Learning Course
   </a>
  </li>
 </ul>
@@ -235,24 +242,24 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Neural Networks
+   1. Neural Networks
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#important-papers">
-   Important Papers
+   2. Important Papers
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#derive-dl-dw2-and-dl-dc2">
-     Derive dL/dW2 and dL/dc2
+     2.1. Derive dL/dW2 and dL/dc2
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-neural-network-from-scratch">
-   Example Neural Network From Scratch
+   3. Example Neural Network From Scratch
   </a>
  </li>
 </ul>
@@ -267,13 +274,13 @@
               <div>
                 
   <div class="section" id="neural-networks">
-<h1>Neural Networks<a class="headerlink" href="#neural-networks" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>Neural Networks<a class="headerlink" href="#neural-networks" title="Permalink to this headline">¶</a></h1>
 <p><img alt="Example" src="chapters/Notes/images/feed_forward_example.png" /></p>
 </div>
 <div class="section" id="important-papers">
-<h1>Important Papers<a class="headerlink" href="#important-papers" title="Permalink to this headline">¶</a></h1>
-<div class="amsmath math notranslate nohighlight" id="equation-55b205df-c517-493b-ab58-0de8d6f40f51">
-<span class="eqno">(1)<a class="headerlink" href="#equation-55b205df-c517-493b-ab58-0de8d6f40f51" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<h1><span class="section-number">2. </span>Important Papers<a class="headerlink" href="#important-papers" title="Permalink to this headline">¶</a></h1>
+<div class="amsmath math notranslate nohighlight" id="equation-b8a106e0-8caf-4c5f-8702-d3a1f8529d5b">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-b8a106e0-8caf-4c5f-8702-d3a1f8529d5b" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \dfrac{2L}{\partial \widehat{y}}RSS=2\times \left( y-\widehat{y}\right) 
 \begin{aligned}\dfrac{2L}{\partial \widehat{y}}RSS=2\times \left( y-\widehat{y}\right) \\
 \dfrac{2\widehat{y}}{2h^{2}}signoid=\sigma \left( \widehat{y}\right) \left( 1-\sigma \left( \widehat{y}\right) \right) \\
@@ -282,12 +289,12 @@
 \dfrac{221}{2h1}=f|^{1}=f|_{s:gmoid}^{1}=\sigma \left( z\right) )\left( 1-\sigma \left( zI\right) \right) \end{aligned}
 \end{align}\]</div>
 <div class="section" id="derive-dl-dw2-and-dl-dc2">
-<h2>Derive dL/dW2 and dL/dc2<a class="headerlink" href="#derive-dl-dw2-and-dl-dc2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>Derive dL/dW2 and dL/dc2<a class="headerlink" href="#derive-dl-dw2-and-dl-dc2" title="Permalink to this headline">¶</a></h2>
 <p>We want to update W1, W2, c1, c2.
 To do this we need to update using dL/dW1, dL/dW2, dL/dc1, dL/dc1
 These are calculated using the chain rule</p>
-<div class="amsmath math notranslate nohighlight" id="equation-884e53c4-d8e4-4cbe-a6ae-ec32d37ed950">
-<span class="eqno">(2)<a class="headerlink" href="#equation-884e53c4-d8e4-4cbe-a6ae-ec32d37ed950" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e4a0d6e6-33bf-4462-8417-6b153a0b2dcc">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-e4a0d6e6-33bf-4462-8417-6b153a0b2dcc" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \\{\frac{\partial L}{\partial yhat}} RSS 
     &amp;= 2*(y-yhat)
   \\{\frac{\partial yhat}{\partial h2}} sigmoid 
@@ -308,7 +315,7 @@ These are calculated using the chain rule</p>
 </div>
 </div>
 <div class="section" id="example-neural-network-from-scratch">
-<h1>Example Neural Network From Scratch<a class="headerlink" href="#example-neural-network-from-scratch" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>Example Neural Network From Scratch<a class="headerlink" href="#example-neural-network-from-scratch" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Trevor Gordon. 2021</span>
@@ -579,8 +586,8 @@ These are calculated using the chain rule</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="reinforcement_learning.html" title="previous page">&lt;no title&gt;</a>
-    <a class='right-next' id="next-link" href="ml_for_sig_data.html" title="next page">Machine Learning For Signals, Data2</a>
+    <a class='left-prev' id="prev-link" href="../../intro.html" title="previous page">Master Notes</a>
+    <a class='right-next' id="next-link" href="ml_for_sig_data.html" title="next page"><span class="section-number">4. </span>Machine Learning For Signals, Data2</a>
 
         </div>
         

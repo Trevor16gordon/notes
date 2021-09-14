@@ -1,7 +1,9 @@
-```{tableofcontents}
-```
 # Machine Learning For Signals, Data2
 This is a course
+
+```{tableofcontents}
+```
+
 ## 1 Introduction, maximum likelihood estimation
 Chapter 1 Info
 ## 2 linear regression, least squares, geometric view
