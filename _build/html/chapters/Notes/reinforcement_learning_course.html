@@ -109,7 +109,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="ml_for_sig_data.html">
-   Machine Learning For Signals, Data
+   Machine Learning For Signals, Data2
   </a>
  </li>
  <li class="toctree-l1">
@@ -271,27 +271,27 @@
 <div class="section" id="elements-of-rl">
 <h3>Elements of RL<a class="headerlink" href="#elements-of-rl" title="Permalink to this headline">¶</a></h3>
 <p>Policy is a mapping from percieved states of the environment to the probability action space $S$.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-58a975bd-d653-410f-a28e-1a04d34afe28">
-<span class="eqno">(3)<a class="headerlink" href="#equation-58a975bd-d653-410f-a28e-1a04d34afe28" title="Permalink to this equation">¶</a></span>\[\begin{align} s\in S\rightarrow \pi \left( a|s\right)\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-45546eac-4deb-4dba-aa5c-031e6c3feeda">
+<span class="eqno">(3)<a class="headerlink" href="#equation-45546eac-4deb-4dba-aa5c-031e6c3feeda" title="Permalink to this equation">¶</a></span>\[\begin{align} s\in S\rightarrow \pi \left( a|s\right)\end{align}\]</div>
 <p>Reward is a mapping from each percieved state of the environment to a single number indicating the intrinsic desirability of the space.</p>
 <p>Return is a cumulative sequence of recieved rewards after a given timestep.</p>
 <p>Finite state return:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4a57ef91-51b2-49f2-ae86-b64d1e364e02">
-<span class="eqno">(4)<a class="headerlink" href="#equation-4a57ef91-51b2-49f2-ae86-b64d1e364e02" title="Permalink to this equation">¶</a></span>\[\begin{align}(G_{t}=R_{t+1}+R_{t+2}+R_{t+3}+\ldots +R_{T})\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-9408f538-13e6-475e-842b-2f823167ca43">
+<span class="eqno">(4)<a class="headerlink" href="#equation-9408f538-13e6-475e-842b-2f823167ca43" title="Permalink to this equation">¶</a></span>\[\begin{align}(G_{t}=R_{t+1}+R_{t+2}+R_{t+3}+\ldots +R_{T})\end{align}\]</div>
 <p>Discounted Return:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-20a0763f-1d89-4d4c-8363-3bf38486c41e">
-<span class="eqno">(5)<a class="headerlink" href="#equation-20a0763f-1d89-4d4c-8363-3bf38486c41e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-165b7cd8-40e7-40e9-82e4-78710918e7cf">
+<span class="eqno">(5)<a class="headerlink" href="#equation-165b7cd8-40e7-40e9-82e4-78710918e7cf" title="Permalink to this equation">¶</a></span>\[\begin{align}
 0\leq \Upsilon \leq 1
 G_{T}=\sum ^{\infty }_{k=0}\gamma ^{k}R_{t+k+1}\end{align}\]</div>
 <p>Value Function is an estimate of how good it is to be in a specific state. For a Markov Decision Process (MDP) the value of a state is defined formally as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c898fa77-f42e-4432-abfb-3f7a78b6ce16">
-<span class="eqno">(6)<a class="headerlink" href="#equation-c898fa77-f42e-4432-abfb-3f7a78b6ce16" title="Permalink to this equation">¶</a></span>\[\begin{align}v_{\pi }\left( s\right) =E_{\pi }\left[ G_{t}|S_{T}=S\right] =E_{\pi }\left[ \sum ^{\infty }_{k:0}\Upsilon ^{k}R_{t+k+1}|S_{t}=S\right]\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-49cd0dfc-4037-45c8-a540-5eccb784d153">
+<span class="eqno">(6)<a class="headerlink" href="#equation-49cd0dfc-4037-45c8-a540-5eccb784d153" title="Permalink to this equation">¶</a></span>\[\begin{align}v_{\pi }\left( s\right) =E_{\pi }\left[ G_{t}|S_{T}=S\right] =E_{\pi }\left[ \sum ^{\infty }_{k:0}\Upsilon ^{k}R_{t+k+1}|S_{t}=S\right]\end{align}\]</div>
 <p>For an MDP the value of an action state pair is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7800d7e3-9f97-4dc4-8dbd-4a223ab6feb2">
-<span class="eqno">(7)<a class="headerlink" href="#equation-7800d7e3-9f97-4dc4-8dbd-4a223ab6feb2" title="Permalink to this equation">¶</a></span>\[\begin{align}q_{\pi }\left( s, a\right) =E_{\pi }\left[ G_{t}|S_{T}=S, A_{T}=a\right] =E_{\pi }\left[ \sum ^{\infty }_{k:0}\Upsilon ^{k}R_{t+k+1}|S_{t}=S, A_{T}=a\right]\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e8bc50a5-f715-42d9-875f-62b8cd9e94fe">
+<span class="eqno">(7)<a class="headerlink" href="#equation-e8bc50a5-f715-42d9-875f-62b8cd9e94fe" title="Permalink to this equation">¶</a></span>\[\begin{align}q_{\pi }\left( s, a\right) =E_{\pi }\left[ G_{t}|S_{T}=S, A_{T}=a\right] =E_{\pi }\left[ \sum ^{\infty }_{k:0}\Upsilon ^{k}R_{t+k+1}|S_{t}=S, A_{T}=a\right]\end{align}\]</div>
 <p>The Model is used to mimic the environment and is a translation from the current state and desired action to resulting state.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-72b201d2-1c30-42d8-b99a-0a78ae98740b">
-<span class="eqno">(8)<a class="headerlink" href="#equation-72b201d2-1c30-42d8-b99a-0a78ae98740b" title="Permalink to this equation">¶</a></span>\[\begin{align}P_{ss'}^{a}=P\left[ S_{t+'}=S^{'}|S_{t}=s,A_{t}=a\right]\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6ec3e941-e50d-48c3-a4e6-01c07cabe32c">
+<span class="eqno">(8)<a class="headerlink" href="#equation-6ec3e941-e50d-48c3-a4e6-01c07cabe32c" title="Permalink to this equation">¶</a></span>\[\begin{align}P_{ss'}^{a}=P\left[ S_{t+'}=S^{'}|S_{t}=s,A_{t}=a\right]\end{align}\]</div>
 </div>
 </div>
 </div>
