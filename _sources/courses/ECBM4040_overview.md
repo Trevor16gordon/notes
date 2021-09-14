@@ -1,0 +1,2 @@
+# Neural Networks and Deep Learning
+The course covers theoretical underpinnings, architecture and performance, datasets, and applications of neural networks and deep learning (DL). The course uses Python coding language, TensorFlow deep learning framework, and Google Cloud computational platform with graphics processing units (GPUs). The main resource for the course is the book entitled "Deep Learning" by Ian Goodfellow, Yoshua Bengio, and Aaron Courville, MIT Press

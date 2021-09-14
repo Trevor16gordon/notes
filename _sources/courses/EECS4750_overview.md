@@ -1,0 +1,2 @@
+# Heterogeneous Computing for Signal and Data Processing
+Methods for deploying signal and data processing algorithms on contemporary general purpose graphics processing units (GPGPUs) and heterogeneous computing infrastructures. Using programming languages such as OpenCL and CUDA for computational speedup in audio, image and video processing and computational data analysis. Significant design project.

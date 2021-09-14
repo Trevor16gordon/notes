@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Master Notes &#8212; Columbia MS EE Notes</title>
+    <title>Intro &#8212; Columbia MS EE Notes</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,7 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Neural Networks" href="chapters/Notes/feedforward_neural_network.html" />
+    <link rel="next" title="Machine Learning for signals, information, data" href="courses/ELEN4720_overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -82,48 +82,99 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1 current">
   <a class="reference internal" href="#">
-   Master Notes
+   Intro
   </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Notes
+  Course Notes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="courses/ELEN4720_overview.html">
+   Machine Learning for signals, information, data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="courses/ELEN4720/1_intro.html">
+     Intro
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="courses/ECBM4040_overview.html">
+   Neural Networks and Deep Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="courses/ECBM4040/1_intro.html">
+     Intro
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="courses/ELEN6885_overview.html">
+   Reinforcement Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="courses/ELEN6885/1_overview.html">
+     Overview
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="courses/EECS4750_overview.html">
+   Heterogeneous Computing for Signal and Data Processing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="courses/EECS4750/1_intro.html">
+     Intro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="courses/EECS4750/2_overview.html">
+     Overview
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Other Notes
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="chapters/Notes/feedforward_neural_network.html">
    1. Neural Networks
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Course Specific Notes
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapters/Notes/ml_for_sig_data.html">
-   4. Machine Learning For Signals, Data2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="chapters/Notes/deep_learning.html">
-   5. Deep Learning Course
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Reinforcement Learning
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapters/Notes/reinforcement_learning_course.html">
-   6. Reinforcement Learning Course
   </a>
  </li>
 </ul>
@@ -136,18 +187,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="chapters/key_terminology/notes.html">
    Key Terminology
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Examples
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="examples/tensorflow/basic_tensorflow.html">
-   This is a tensorflow notebook
   </a>
  </li>
 </ul>
@@ -232,6 +271,26 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Intro
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fall-2021-courses">
+   Fall 2021 Courses
+  </a>
+  <ul class="visible nav section-nav flex-column">
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -240,13 +299,84 @@
         
               <div>
                 
-  <div class="section" id="master-notes">
-<h1>Master Notes<a class="headerlink" href="#master-notes" title="Permalink to this headline">¶</a></h1>
-<p>A place to store machine learning concepts</p>
-<div class="toctree-wrapper compound">
+  <div class="section" id="intro">
+<h1>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h1>
+<p>Welcome! I am currently in my first semester of my MS in Electrical Engineering at Columbia University with a focus in machine learning and reinforcement learning.</p>
+<p>Please see my <span class="xref myst">LinkedIn</span> for information on my experience including an internship at Tesla and 3 years as an engineer at Apple</p>
+<p>I will be using this jupyter book to keep high quality notes on my courses while at Columbia. This includes theory, formulas, code snippets and links to useful resources.</p>
 </div>
-<div class="toctree-wrapper compound">
-</div>
+<div class="section" id="fall-2021-courses">
+<h1>Fall 2021 Courses<a class="headerlink" href="#fall-2021-courses" title="Permalink to this headline">¶</a></h1>
+<p><strong>Machine Learning for signals, information, data</strong></p>
+<ul class="simple">
+<li><p>Introduction, maximum likelihood estimation</p></li>
+<li><p>linear regression, least squares, geometric view</p></li>
+<li><p>ridge regression, probabilistic views of linear regression</p></li>
+<li><p>bias-variance, Bayes rule, maximum a posteriori</p></li>
+<li><p>Bayesian linear regression</p></li>
+<li><p>sparsity, subset selection for linear regression</p></li>
+<li><p>nearest neighbor classification, Bayes classifiers</p></li>
+<li><p>linear classifiers, perceptron</p></li>
+<li><p>logistic regression, Laplace approximation</p></li>
+<li><p>kernel methods, Gaussian processes</p></li>
+<li><p>maximum margin, support vector machines</p></li>
+<li><p>trees, random forests</p></li>
+<li><p>boosting</p></li>
+<li><p>clustering, k-means</p></li>
+<li><p>EM algorithm, missing data</p></li>
+<li><p>mixtures of Gaussians</p></li>
+<li><p>matrix factorization</p></li>
+<li><p>non-negative matrix factorization</p></li>
+<li><p>latent factor models, PCA and variations</p></li>
+<li><p>Markov models</p></li>
+<li><p>hidden Markov models</p></li>
+<li><p>continuous state-space models</p></li>
+<li><p>association analysis</p></li>
+</ul>
+<p><strong>Neural Networks and Deep Learning</strong></p>
+<ul class="simple">
+<li><p>Introduction</p></li>
+<li><p>ML Basics</p></li>
+<li><p>Deep Feedforward networks, backpropagation</p></li>
+</ul>
+<p><strong>Reinforcement Learning</strong></p>
+<ul class="simple">
+<li><p>Introduction</p></li>
+<li><p>Bandit problems and on-line learning</p></li>
+<li><p>Markov decision processes, returns and value functions</p></li>
+<li><p>RL solutions: dynamic programming methods</p></li>
+<li><p>RL solutions: Monte-Carlo methods</p></li>
+<li><p>RL solutions: temporal difference methods</p></li>
+<li><p>Eligibility traces.</p></li>
+<li><p>Value function approximation</p></li>
+<li><p>Models and planning</p></li>
+<li><p>Case studies: applications in artificial intelligence</p></li>
+<li><p>Deep reinforcement learning</p></li>
+</ul>
+<p><strong>Heterogeneous Computing for Signal and Data Processing</strong></p>
+<ul class="simple">
+<li><p>Introduction</p></li>
+<li><p>GPUs</p></li>
+<li><p>OpenCL</p></li>
+<li><p>CUDA</p></li>
+<li><p>Portability and Scalability in HPC</p></li>
+<li><p>Data Parallelism and Threads</p></li>
+<li><p>Memory Hierarchy</p></li>
+<li><p>Memory Allocation and Data Movement</p></li>
+<li><p>Kernel-Based Parallel Programming</p></li>
+<li><p>Memory Bandwidth and Coalescing</p></li>
+<li><p>Matrix-Matrix Multiplications</p></li>
+<li><p>Thread, Warps and Wavefronts</p></li>
+<li><p>Thread Scheduling</p></li>
+<li><p>Tiled Processing for 1D, 2D</p></li>
+<li><p>Control Divergence</p></li>
+<li><p>Convolution and Tiled Convolution</p></li>
+<li><p>Reduction Kernels</p></li>
+<li><p>Atomic Operations</p></li>
+<li><p>Histogram Kernel</p></li>
+<li><p>Applications: Deep Learning, Imaging, Video, …</p></li>
+<li><p>Profiling and Debugging</p></li>
+</ul>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -280,7 +410,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="chapters/Notes/feedforward_neural_network.html" title="next page"><span class="section-number">1. </span>Neural Networks</a>
+    <a class='right-next' id="next-link" href="courses/ELEN4720_overview.html" title="next page">Machine Learning for signals, information, data</a>
 
         </div>
         
