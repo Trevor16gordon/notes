@@ -3,17 +3,16 @@
 
 # # Neural Networks
 # 
-# ![Example](images/feed_forward_example.png)
+# ![Example](https://github.com/Trevor16gordon/notes/blob/master/images/feed_forward_example.png)
+# This page contains a python implementation using only python + numpy to implement a basic feed forward neural network with a fixed single hidden layer and a variable number of neurons in the input/hidden/output layers.
 # 
-# # Important Papers
-# \begin{align}
-# \dfrac{2L}{\partial \widehat{y}}RSS=2\times \left( y-\widehat{y}\right) 
-# \begin{aligned}\dfrac{2L}{\partial \widehat{y}}RSS=2\times \left( y-\widehat{y}\right) \\
-# \dfrac{2\widehat{y}}{2h^{2}}signoid=\sigma \left( \widehat{y}\right) \left( 1-\sigma \left( \widehat{y}\right) \right) \\
-# \dfrac{\partial h2}{\partial W2}=21\\
-# \dfrac{2h^{2}}{\partial z^{1}}=W2\\
-# \dfrac{221}{2h1}=f|^{1}=f|_{s:gmoid}^{1}=\sigma \left( z\right) )\left( 1-\sigma \left( zI\right) \right) \end{aligned}
-# \end{align}
+# Drawing largely from Machine Learning From Scratch:
+# https://dafriedman97.github.io/mlbook/content/c7/concept.html
+# and 3BlueOneBrown's excellent series on Neural Networks:
+# https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi
+# 
+# Here are some notes on the derivations for the gradients used to fit the network.
+# 
 # ## Derive dL/dW2 and dL/dc2
 # We want to update W1, W2, c1, c2.
 # To do this we need to update using dL/dW1, dL/dW2, dL/dc1, dL/dc1
