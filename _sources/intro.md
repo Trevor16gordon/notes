@@ -1,6 +1,6 @@
 # Intro
 
-Welcome! I am currently in my first semester of my MS in Electrical Engineering at Columbia University with a focus in machine learning and reinforcement learning.
+Welcome! My name is Trevor Gordon and I am currently in my first semester of my MS in Electrical Engineering at Columbia University with a focus in machine learning and reinforcement learning.
 
 Please see my LinkedIn for information on my experience: https://www.linkedin.com/in/tgordon-ubc/
 
@@ -20,6 +20,12 @@ I will be using this jupyter book to keep high quality notes on my courses while
 - Models and planning
 - Case studies: applications in artificial intelligence
 - Deep reinforcement learning
+
+**Neural Networks and Deep Learning**
+- Introduction
+- ML Basics
+- [Implementing a neural network from scratch](https://trevor16gordon.github.io/notes/chapters/Notes/feedforward_neural_network.html)
+- Deep Feedforward networks, backpropagation
 
 **Machine Learning for signals, information, data**
 - Introduction, maximum likelihood estimation
@@ -45,11 +51,6 @@ I will be using this jupyter book to keep high quality notes on my courses while
 - hidden Markov models	
 - continuous state-space models	
 - association analysis
-
-**Neural Networks and Deep Learning**
-- Introduction
-- ML Basics
-- Deep Feedforward networks, backpropagation
 
 **Heterogeneous Computing for Signal and Data Processing**
 - Introduction
