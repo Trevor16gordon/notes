@@ -2,11 +2,24 @@
 
 Welcome! I am currently in my first semester of my MS in Electrical Engineering at Columbia University with a focus in machine learning and reinforcement learning.
 
-Please see my [LinkedIn]("https://www.linkedin.com/in/tgordon-ubc/") for information on my experience including an internship at Tesla and 3 years as an engineer at Apple
+Please see my LinkedIn for information on my experience: https://www.linkedin.com/in/tgordon-ubc/
 
 I will be using this jupyter book to keep high quality notes on my courses while at Columbia. This includes theory, formulas, code snippets and links to useful resources.
 
 # Fall 2021 Courses
+
+**Reinforcement Learning**
+- [Introduction](https://trevor16gordon.github.io/notes/courses/ELEN6885/1_overview.html)
+- Bandit problems and on-line learning
+- Markov decision processes, returns and value functions
+- RL solutions: dynamic programming methods
+- RL solutions: Monte-Carlo methods
+- RL solutions: temporal difference methods
+- Eligibility traces.
+- Value function approximation
+- Models and planning
+- Case studies: applications in artificial intelligence
+- Deep reinforcement learning
 
 **Machine Learning for signals, information, data**
 - Introduction, maximum likelihood estimation
@@ -37,20 +50,6 @@ I will be using this jupyter book to keep high quality notes on my courses while
 - Introduction
 - ML Basics
 - Deep Feedforward networks, backpropagation
-
-**Reinforcement Learning**
-- Introduction
-- Bandit problems and on-line learning
-- Markov decision processes, returns and value functions
-- RL solutions: dynamic programming methods
-- RL solutions: Monte-Carlo methods
-- RL solutions: temporal difference methods
-- Eligibility traces.
-- Value function approximation
-- Models and planning
-- Case studies: applications in artificial intelligence
-- Deep reinforcement learning
-
 
 **Heterogeneous Computing for Signal and Data Processing**
 - Introduction
