@@ -309,7 +309,8 @@
                 
   <div class="section" id="neural-networks">
 <h1>Neural Networks<a class="headerlink" href="#neural-networks" title="Permalink to this headline">¶</a></h1>
-<p><img alt="Example" src="https://github.com/Trevor16gordon/notes/blob/master/images/feed_forward_example.png" /></p>
+<p><img alt="Example" src="chapters/Notes/images/feed_forward_example.png" />
+<img src="images/feed_forward_example.png"></p>
 <p>This page contains a python implementation using only python + numpy to implement a basic feed forward neural network with a fixed single hidden layer and a variable number of neurons in the input/hidden/output layers.</p>
 <p>Drawing largely from Machine Learning From Scratch:
 https://dafriedman97.github.io/mlbook/content/c7/concept.html
@@ -321,8 +322,8 @@ https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi</p>
 <p>We want to update W1, W2, c1, c2.
 To do this we need to update using dL/dW1, dL/dW2, dL/dc1, dL/dc1
 These are calculated using the chain rule</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fe43bc2b-d82f-413d-a9d0-4275f47cbca6">
-<span class="eqno">(7)<a class="headerlink" href="#equation-fe43bc2b-d82f-413d-a9d0-4275f47cbca6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-275705ef-f758-46fa-a7f9-ff4a07e269c9">
+<span class="eqno">(7)<a class="headerlink" href="#equation-275705ef-f758-46fa-a7f9-ff4a07e269c9" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \\{\frac{\partial L}{\partial yhat}} RSS 
     &amp;= 2*(y-yhat)
   \\{\frac{\partial yhat}{\partial h2}} sigmoid 
