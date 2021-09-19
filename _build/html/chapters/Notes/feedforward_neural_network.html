@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Neural Networks &#8212; Columbia MS EE Notes</title>
+    <title>Neural Networks &#8212; Columbia MS EE Notes</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -177,7 +177,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. Neural Networks
+   Neural Networks
   </a>
  </li>
 </ul>
@@ -281,19 +281,19 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   1. Neural Networks
+   Neural Networks
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#derive-dl-dw2-and-dl-dc2">
-     1.1. Derive dL/dW2 and dL/dc2
+     Derive dL/dW2 and dL/dc2
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-neural-network-from-scratch">
-   2. Example Neural Network From Scratch
+   Example Neural Network From Scratch
   </a>
  </li>
 </ul>
@@ -308,8 +308,8 @@
               <div>
                 
   <div class="section" id="neural-networks">
-<h1><span class="section-number">1. </span>Neural Networks<a class="headerlink" href="#neural-networks" title="Permalink to this headline">¶</a></h1>
-<p><img alt="Example" src="https://github.com/Trevor16gordon/notes/blob/master/images/feed_forward_example.png" />
+<h1>Neural Networks<a class="headerlink" href="#neural-networks" title="Permalink to this headline">¶</a></h1>
+<p><img alt="Example" src="chapters/Notes/images/feed_forward_example.png" />
 This page contains a python implementation using only python + numpy to implement a basic feed forward neural network with a fixed single hidden layer and a variable number of neurons in the input/hidden/output layers.</p>
 <p>Drawing largely from Machine Learning From Scratch:
 https://dafriedman97.github.io/mlbook/content/c7/concept.html
@@ -317,12 +317,12 @@ and 3BlueOneBrown’s excellent series on Neural Networks:
 https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi</p>
 <p>Here are some notes on the derivations for the gradients used to fit the network.</p>
 <div class="section" id="derive-dl-dw2-and-dl-dc2">
-<h2><span class="section-number">1.1. </span>Derive dL/dW2 and dL/dc2<a class="headerlink" href="#derive-dl-dw2-and-dl-dc2" title="Permalink to this headline">¶</a></h2>
+<h2>Derive dL/dW2 and dL/dc2<a class="headerlink" href="#derive-dl-dw2-and-dl-dc2" title="Permalink to this headline">¶</a></h2>
 <p>We want to update W1, W2, c1, c2.
 To do this we need to update using dL/dW1, dL/dW2, dL/dc1, dL/dc1
 These are calculated using the chain rule</p>
-<div class="amsmath math notranslate nohighlight" id="equation-87bc6a57-99c7-4101-8fd1-8f30dff28744">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-87bc6a57-99c7-4101-8fd1-8f30dff28744" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-43e55731-da17-42b4-a004-d124bada071f">
+<span class="eqno">(7)<a class="headerlink" href="#equation-43e55731-da17-42b4-a004-d124bada071f" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \\{\frac{\partial L}{\partial yhat}} RSS 
     &amp;= 2*(y-yhat)
   \\{\frac{\partial yhat}{\partial h2}} sigmoid 
@@ -343,7 +343,7 @@ These are calculated using the chain rule</p>
 </div>
 </div>
 <div class="section" id="example-neural-network-from-scratch">
-<h1><span class="section-number">2. </span>Example Neural Network From Scratch<a class="headerlink" href="#example-neural-network-from-scratch" title="Permalink to this headline">¶</a></h1>
+<h1>Example Neural Network From Scratch<a class="headerlink" href="#example-neural-network-from-scratch" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Trevor Gordon. 2021</span>

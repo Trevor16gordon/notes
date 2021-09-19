@@ -3,7 +3,7 @@
 
 # # Neural Networks
 # 
-# ![Example](https://github.com/Trevor16gordon/notes/blob/master/images/feed_forward_example.png)
+# ![Example](images/feed_forward_example.png)
 # This page contains a python implementation using only python + numpy to implement a basic feed forward neural network with a fixed single hidden layer and a variable number of neurons in the input/hidden/output layers.
 # 
 # Drawing largely from Machine Learning From Scratch:
