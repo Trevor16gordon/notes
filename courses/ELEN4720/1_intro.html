@@ -322,19 +322,44 @@
 </div>
 <div class="section" id="example-guassian-multivariate">
 <h1>Example - Guassian Multivariate<a class="headerlink" href="#example-guassian-multivariate" title="Permalink to this headline">¶</a></h1>
-<div class="amsmath math notranslate nohighlight" id="equation-14065f3c-db59-424e-856f-def44038b9f3">
-<span class="eqno">(1)<a class="headerlink" href="#equation-14065f3c-db59-424e-856f-def44038b9f3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-72a495a5-ab65-4b24-87de-b374d2bd731c">
+<span class="eqno">(1)<a class="headerlink" href="#equation-72a495a5-ab65-4b24-87de-b374d2bd731c" title="Permalink to this equation">¶</a></span>\[\begin{align}
 p\left( x|\mu ,\Sigma \right) :=\dfrac{1}{\left( 2\pi \right) ^{\dfrac{d}{2}}\sqrt{\det \left( \Sigma \right) }}\exp \left[ -\dfrac{1}{2}\left( x-\mu \right) ^{T}\Sigma ^{-1}\left( x-\mu \right) \right] 
 \end{align}\]</div>
 <p><strong>1.Data</strong>
-Data \begin{align} x_{1}\ldots x_{n}|x_{i}\in \mathbb{R} ^{d}\end{align}</p>
+Data</p>
+<div class="amsmath math notranslate nohighlight" id="equation-39bbddee-1258-405c-8e26-e49c72774b85">
+<span class="eqno">(2)<a class="headerlink" href="#equation-39bbddee-1258-405c-8e26-e49c72774b85" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+x_{1}\ldots x_{n}|x_{i}\in \mathbb{R} ^{d}
+\end{align}\]</div>
 <p><strong>2. Build Model</strong>
-In this case we choose a probabilistic model Gaussian. We know the distribution family but don’t know the parameters for the model
-\begin{align} p\left( x|\theta \right) ,\theta =\left{ \mu ,\Sigma \right} end{align}</p>
-<p>We make an assumption about the data that it is i.i.d. (independant and identically distributed)
-\begin{align}x _{i}n^{iid}p\left( x|\theta \right) ,i=1,\ldots n end{align}</p>
-<p>With the assumption that the data is iid when know that the joint probability distribution is equal to the product of the marginal distributions:
-\begin{align} p\left( x_{1},\ldots x_{n}|\theta \right) =\prod ^{n}<em>{i=1}p\left( x</em>{i}|\theta \right) end{align}</p>
+In this case we choose a probabilistic model Gaussian. We know the distribution family but don’t know the parameters for the model</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b2e75253-6b49-4d07-a753-bb80ada94116">
+<span class="eqno">(3)<a class="headerlink" href="#equation-b2e75253-6b49-4d07-a753-bb80ada94116" title="Permalink to this equation">¶</a></span>\[\begin{align}
+p\left( x|\theta \right) ,\theta =\left\{ \mu ,\Sigma \right\} 
+\end{align}\]</div>
+<p>We make an assumption about the data that it is i.i.d. (independant and identically distributed)</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3868c4af-0756-4cff-af04-7bede61f7f94">
+<span class="eqno">(4)<a class="headerlink" href="#equation-3868c4af-0756-4cff-af04-7bede61f7f94" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\chi _{i}n^{iid}p\left( x|\theta \right) ,i=1,\ldots n
+\end{align}\]</div>
+<p>With the assumption that the data is iid when know that the joint probability distribution is equal to the product of the marginal distributions:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7738d896-c661-4054-b29c-a572a8574bd0">
+<span class="eqno">(5)<a class="headerlink" href="#equation-7738d896-c661-4054-b29c-a572a8574bd0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+p\left( x_{1},\ldots x_{n}|\theta \right) =\prod ^{n}_{i=1}p\left( x_{i}|\theta \right)
+\end{align}\]</div>
+<p><strong>3.Infer Hidden Variables</strong>
+Looking for the <strong>maxiumum likelihood</strong> we seek to find the value of \theta that maximizes the likelihood function</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d77f5074-dfc3-43c3-9887-c88093921223">
+<span class="eqno">(6)<a class="headerlink" href="#equation-d77f5074-dfc3-43c3-9887-c88093921223" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\nabla _{\theta }\prod ^{n}_{i:=1}p\left( x_{i}|\theta \right) =0
+\end{align}\]</div>
+<p><strong>Logarithmic Trick</strong>
+Applying a log function does not change the location of the maximums of a function, just the value. If we apply the logarithm before deriving the gradient, it is easier to determine.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-60dfdc82-0c72-47b5-8f30-44cb4f7e9505">
+<span class="eqno">(7)<a class="headerlink" href="#equation-60dfdc82-0c72-47b5-8f30-44cb4f7e9505" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\ln \left( \prod _{i}f_{i}\right) =\sum _{i}\ln \left( f_{1}\right) 
+\end{align}\]</div>
 </div>
 
     <script type="text/x-thebe-config">
