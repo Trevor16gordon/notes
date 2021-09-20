@@ -2,12 +2,14 @@
 
 ## Data Modeling
 Data modeling generally broken down into
+```
  _____________
 |   1.Data    |       ________________________      ______________________
  ‾‾‾‾‾‾‾‾‾‾‾‾‾    -> |3.Infer hidden variables| -> |4.Predict and explore |
  _____________        ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾      ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 |2.Build Model|
  ‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+ ```
 
 ## Example - Guassian Multivariate
 
