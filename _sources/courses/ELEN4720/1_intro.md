@@ -16,3 +16,17 @@ Data modeling generally broken down into
 \begin{align}
 p\left( x|\mu ,\Sigma \right) :=\dfrac{1}{\left( 2\pi \right) ^{\dfrac{d}{2}}\sqrt{\det \left( \Sigma \right) }}\exp \left[ -\dfrac{1}{2}\left( x-\mu \right) ^{T}\Sigma ^{-1}\left( x-\mu \right) \right] 
 \end{align}
+
+
+**1.Data**
+Data \begin{align} x_{1}\ldots x_{n}|x_{i}\in \mathbb{R} ^{d}\end{align}
+
+**2. Build Model**
+In this case we choose a probabilistic model Gaussian. We know the distribution family but don't know the parameters for the model
+\begin{align} p\left( x|\theta \right) ,\theta =\left\{ \mu ,\Sigma \right\} end{align}
+
+We make an assumption about the data that it is i.i.d. (independant and identically distributed)
+\begin{align}x _{i}n^{iid}p\left( x|\theta \right) ,i=1,\ldots n end{align}
+
+With the assumption that the data is iid when know that the joint probability distribution is equal to the product of the marginal distributions:
+\begin{align} p\left( x_{1},\ldots x_{n}|\theta \right) =\prod ^{n}_{i=1}p\left( x_{i}|\theta \right) end{align}

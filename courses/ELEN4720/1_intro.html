@@ -322,10 +322,19 @@
 </div>
 <div class="section" id="example-guassian-multivariate">
 <h1>Example - Guassian Multivariate<a class="headerlink" href="#example-guassian-multivariate" title="Permalink to this headline">¶</a></h1>
-<div class="amsmath math notranslate nohighlight" id="equation-a1e3ad41-3771-48a6-8d50-51d30675cd77">
-<span class="eqno">(1)<a class="headerlink" href="#equation-a1e3ad41-3771-48a6-8d50-51d30675cd77" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-14065f3c-db59-424e-856f-def44038b9f3">
+<span class="eqno">(1)<a class="headerlink" href="#equation-14065f3c-db59-424e-856f-def44038b9f3" title="Permalink to this equation">¶</a></span>\[\begin{align}
 p\left( x|\mu ,\Sigma \right) :=\dfrac{1}{\left( 2\pi \right) ^{\dfrac{d}{2}}\sqrt{\det \left( \Sigma \right) }}\exp \left[ -\dfrac{1}{2}\left( x-\mu \right) ^{T}\Sigma ^{-1}\left( x-\mu \right) \right] 
 \end{align}\]</div>
+<p><strong>1.Data</strong>
+Data \begin{align} x_{1}\ldots x_{n}|x_{i}\in \mathbb{R} ^{d}\end{align}</p>
+<p><strong>2. Build Model</strong>
+In this case we choose a probabilistic model Gaussian. We know the distribution family but don’t know the parameters for the model
+\begin{align} p\left( x|\theta \right) ,\theta =\left{ \mu ,\Sigma \right} end{align}</p>
+<p>We make an assumption about the data that it is i.i.d. (independant and identically distributed)
+\begin{align}x _{i}n^{iid}p\left( x|\theta \right) ,i=1,\ldots n end{align}</p>
+<p>With the assumption that the data is iid when know that the joint probability distribution is equal to the product of the marginal distributions:
+\begin{align} p\left( x_{1},\ldots x_{n}|\theta \right) =\prod ^{n}<em>{i=1}p\left( x</em>{i}|\theta \right) end{align}</p>
 </div>
 
     <script type="text/x-thebe-config">
