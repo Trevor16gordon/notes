@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Intro &#8212; Columbia MS EE Notes</title>
+    <title>Introduction &#8212; Columbia MS EE Notes</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,6 +49,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Neural Networks and Deep Learning" href="../ECBM4040_overview.html" />
@@ -105,7 +107,7 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Intro
+     Introduction
     </a>
    </li>
   </ul>
@@ -272,6 +274,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-modeling">
+   Data Modeling
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-guassian-multivariate">
+   Example - Guassian Multivariate
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -280,9 +305,25 @@
         
               <div>
                 
-  <div class="section" id="intro">
-<h1>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h1>
-<p>This is a course.</p>
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="data-modeling">
+<h1>Data Modeling<a class="headerlink" href="#data-modeling" title="Permalink to this headline">¶</a></h1>
+<p>Data modeling generally broken down into</p>
+<hr class="docutils" />
+<p>|   1.Data    |       ________________________      ______________________
+‾‾‾‾‾‾‾‾‾‾‾‾‾    -&gt; |3.Infer hidden variables| -&gt; |4.Predict and explore |
+_____________        ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾      ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+|2.Build Model|
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾</p>
+</div>
+<div class="section" id="example-guassian-multivariate">
+<h1>Example - Guassian Multivariate<a class="headerlink" href="#example-guassian-multivariate" title="Permalink to this headline">¶</a></h1>
+<div class="amsmath math notranslate nohighlight" id="equation-6f5dfe65-e0bb-4c37-a005-1bea625a97ec">
+<span class="eqno">(1)<a class="headerlink" href="#equation-6f5dfe65-e0bb-4c37-a005-1bea625a97ec" title="Permalink to this equation">¶</a></span>\[\begin{align}
+p\left( x|\mu ,\Sigma \right) :=\dfrac{1}{\left( 2\pi \right) ^{\dfrac{d}{2}}\sqrt{\det \left( \Sigma \right) }}\exp \left[ -\dfrac{1}{2}\left( x-\mu \right) ^{T}\Sigma ^{-1}\left( x-\mu \right) \right] 
+\end{align}\]</div>
 </div>
 
     <script type="text/x-thebe-config">
