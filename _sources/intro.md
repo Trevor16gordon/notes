@@ -23,9 +23,18 @@ I will be using this jupyter book to keep high quality notes on my courses while
 
 **Neural Networks and Deep Learning**
 - Introduction
-- ML Basics
-- [Implementing a neural network from scratch](https://trevor16gordon.github.io/notes/chapters/Notes/feedforward_neural_network.html)
-- Deep Feedforward networks, backpropagation
+- Machine Learning Review
+- Deep Forward Networks
+  - [Implementing a neural network from scratch](https://trevor16gordon.github.io/notes/chapters/Notes/feedforward_neural_network.html)
+- Backpropagation
+- Machine Learning
+- Optimization for Deep Learning
+- Convolutional Neural Networks
+- Regularization for Deep Learning
+- Practical Methodology
+- RNNs
+- Autoencoders
+- GANs, Variational Encoders, DLL trends
 
 **Machine Learning for signals, information, data**
 - Introduction, maximum likelihood estimation
