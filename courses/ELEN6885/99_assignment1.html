@@ -1,0 +1,526 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ELEN 6885 Assignment 1 - Trevor Gordon &#8212; Columbia MS EE Notes</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Heterogeneous Computing for Signal and Data Processing" href="../EECS4750_overview.html" />
+    <link rel="prev" title="Overview" href="1_overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Columbia MS EE Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course Notes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ELEN4720_overview.html">
+   Machine Learning for signals, information, data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/1_intro.html">
+     Introduction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ECBM4040_overview.html">
+   Neural Networks and Deep Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ECBM4040/1_intro.html">
+     Intro
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../ELEN6885_overview.html">
+   Reinforcement Learning
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="1_overview.html">
+     Overview
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     ELEN 6885 Assignment 1 - Trevor Gordon
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../EECS4750_overview.html">
+   Heterogeneous Computing for Signal and Data Processing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../EECS4750/1_intro.html">
+     Intro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../EECS4750/2_overview.html">
+     Overview
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Other Notes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../chapters/Notes/feedforward_neural_network.html">
+   Neural Networks
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Key Terminology
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../chapters/key_terminology/notes.html">
+   Key Terminology
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/courses/ELEN6885/99_assignment1.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://trevor16gordon.github.io/notes/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://trevor16gordon.github.io/notes//issues/new?title=Issue%20on%20page%20%2Fcourses/ELEN6885/99_assignment1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-1">
+   Problem 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-2">
+   Problem 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-3">
+   Problem 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-4">
+   Problem 4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-5">
+   Problem 5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-6">
+   Problem 6
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="elen-6885-assignment-1-trevor-gordon">
+<h1>ELEN 6885 Assignment 1 - Trevor Gordon<a class="headerlink" href="#elen-6885-assignment-1-trevor-gordon" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="problem-1">
+<h2>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h2>
+<p>Consider the following 2-armed bandit problem: the first arm has a fixed reward 0.3 and the second arm has a 0-1 reward following a Bernoulli distribution with probability 0.6, i.e., arm 2 yields reward 1 with probability 0.6. Assume we selected arm 1 at t = 1, and arm 2 four times at t = 2, 3, 4, 5 with reward 0, 1, 0, 0, respectively. We use the sample-average technique to estimate the action-value, and then use it to guide our choices starting from t = 6.</p>
+<p><strong>1. [5 pts] Which arm will be played at t = 6, 7, respectively, if the greedy method is used to select actions?</strong></p>
+<p>To solve this problem we need to start by calculating the estimated value of action for both arms at time 6. We can average the rewards seen by each arm to calculate the expected rewards.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-58149e21-9824-4d25-9c2e-fdf81ee34dca">
+<span class="eqno">(14)<a class="headerlink" href="#equation-58149e21-9824-4d25-9c2e-fdf81ee34dca" title="Permalink to this equation">¶</a></span>\[\begin{align}Q_{6}\left( 1\right) =\dfrac{0.3}{1}=0.3\\Q_{6}\left( 2\right) =\dfrac{0+1+0+0}{4}=0.25\end{align}\]</div>
+<p>So, for t=6 we will choose arm 1. Because our reward from arm 1 is constant at 0.3, and we won’t have any new data from arm 2, our expected rewards for t=7 will be the same and we will choose arm1 for t=7.</p>
+<p><strong>2. [10 pts] What is the probability to play arm 2 at t = 6, 7, respectively, if the ε-greedy method is used to select actions (ε = 0.1)?</strong></p>
+<p>If the ε-greedy method is used we will select the arm with the current best expected reward (arm 1) with value (1-ε) + ε/N = 0.9 + 0.1/2 = 0.95 probability. We will select the other arms with ε/N = 0.05. So the probability of playing arm 2 at t=6 = 0.05</p>
+<p>For t=7 we have to look at all the possibilities of what might happen.</p>
+<ul class="simple">
+<li><p>Arm 1 could be selected (with probability 0.95) in which case the rewards don’t change and we still select arm 2 with probability 0.05</p></li>
+<li><p>Arm 2 could be selected (with probability 0.05) and we get a reward of zero (0.4 liklihood) so the return for arm 2 is updated from 0.25 to 0.2. The rewards don’t change and we still select arm 2 with probability 0.05</p></li>
+<li><p>Arm 2 could be selected (with probability 0.05) and we get a reward of 1 (0.6 liklihood) so the return for arm 2 is updated from 0.25 to 0.4. In this case this becomes the highest reward so we select arm 2 with liklihood 0.95</p></li>
+</ul>
+<p>Adding all these together, the liklihood of selecting arm 2 at t=7 is
+= (0.95 * 0.05) + (0.05 * 0.4 * 0.05) + (0.05 * 0.6 * 0.95)
+= 0.077</p>
+<p><strong>3. 3. [5 pts] Why could the greedy method perform significantly worse than the ε-greedy method in the long run?</strong></p>
+<p>The greedy method perform significantly worse than the ε-greedy method in the long run because it may never have tested the best arm. It has no incentive to explore untested options.</p>
+</div>
+<div class="section" id="problem-2">
+<h2>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h2>
+<p>For the softmax action selection, show the following.</p>
+<p><strong>1. [5 pts] In the limit as the temperature τ → 0, softmax action selection becomes the same as greedy action selection.</strong></p>
+<p>Let the best greedy action be Ag. To take this limit we should multiply the numerator and denominator by -exp(Ag) so that we can evaluate the limit. After doing this we can see that the exp in the numerator will always be negative for actions that aren’t the greedy action. In this case we get the exp of a large negative number which becomes zero and the probability of picking that action becomes zero.</p>
+<p>But, when our action is the greedy action we get a cancellation and get the exp of zero which becomes 1. Following this, we get a probability of 1 of choosing this action.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2b42ed6b-dd99-4257-8857-8be69dcedd2a">
+<span class="eqno">(15)<a class="headerlink" href="#equation-2b42ed6b-dd99-4257-8857-8be69dcedd2a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\begin{aligned}P\left( a\right) =\dfrac{\left( \exp \left( Q_{t}\left( a\right) /\tau \right) \ast \exp \left( -Q_{t}\left( a_{9}\right) /\tau \right) \right) }{\left( \Sigma _{i=1}^{n}\exp \left( Q_{t}\left( i\right) /\tau \right) \ast \exp \left( -Q_{t}\left( a_{g}\right) /\tau \right) \right) }\\
+P\left( a\right) =\dfrac{exp\left( \left( Q_{t}\left( a\right) -Q_{t}\left( a_{g}\right) \right) /\tau \right) }{\sum ^{n}_{i=1}\exp \left( \left( Q_{t}\left( i\right) -Q_{t}\left( ag\right) \right) /\tau \right) }\end{aligned}\\
+\\
+\begin{aligned}i\neq a_{g}\\
+Q_{t}\left( i\right) -Q_{t}\left( a_{9}\right)  &lt;0\\
+\lim _{T\rightarrow 0}\exp \left( \left( Q_{t}\left( i\right) -Q_{t}\left( a_{g}\right) \right) /T\right) =0\end{aligned}\\
+\\
+\begin{aligned}i=a_(g)\\
+\lim _{\tau \rightarrow 0}\exp \left( \left( Q_{t}\left( a_{9}\right) -Q_{t}\left( a_{g}\right) \right) /\tau \right) =1\end{aligned}\\
+\end{align}\]</div>
+<p><strong>2. [5 pts] In the limit as τ → ∞, softmax action selection yields equiprobable selection among all actions.</strong>
+As τ → ∞ the numerator approaches 1. Furthermore, each of the summed terms in the denominator approaches 1 and each action has a proability of 1/n.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8dd21245-1776-4955-9f1f-1cce7cdcd16e">
+<span class="eqno">(16)<a class="headerlink" href="#equation-8dd21245-1776-4955-9f1f-1cce7cdcd16e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\begin{aligned}\lim _{\tau \rightarrow \infty }P\left( a\right) =\dfrac{\exp \left( Q_{t}\left( a\right) /\tau \right) }{\Sigma _{i=1}^{n}\exp \left( Q_{t}\left( i\right) /\tau \right) }\\
+\lim _{\tau \rightarrow \infty }P\left( a\right) =\dfrac{\exp \left( Q_{t}\left( a\right) /\infty \right) }{\sum ^{n}_{i=1}\exp \left( Q_{t}\left( i\right) /\infty \right) }\\
+\lim _{t\rightarrow \infty }P\left( a\right) =\dfrac{1}{n}\end{aligned}
+\end{align}\]</div>
+<p><strong>3. [5 pts] In the case of two actions, the softmax operation using the Gibbs distribution becomes the logistic (or sigmoid) function commonly used in artificial neural networks.</strong>
+TODO: The second formula isn’t formatting correctly</p>
+<p>In the case f two actions, the softmax operation becomes the sigmoid function where the input is a decaying difference between the rewards of the two actions.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2b7e5a7b-6fa2-4cf4-8851-343d4427946f">
+<span class="eqno">(17)<a class="headerlink" href="#equation-2b7e5a7b-6fa2-4cf4-8851-343d4427946f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\begin{aligned}p\left( a=1\right) =\dfrac{e^{Q_{t}\left( 1\right) /\tau }}{e^{Q_{t}\left( 1\right) /\tau }+e^{Q_{t}\left( 2\right) /\tau }}\\
+\dfrac{1}{Q_{t}\left( 2\right) /\tau }\\
+P\left( a=1\right) =1+\dfrac{e}{e^{Qt}}\dfrac{}{\left( 1\right) /\tau }\\
+P\left( a=1\right) =\dfrac{1}{1+e^{\dfrac{1}{T}\left( Q+121-Q+\left( 1\right) \right) }}\end{aligned}
+\end{align}\]</div>
+</div>
+<div class="section" id="problem-3">
+<h2>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h2>
+<p>Suppose we have a sequence of returns G1, G2, · · · , Gn−1, all starting in the same state and each with a corresponding random weight Wi, i = 1,2,··· ,n − 1. We wish to form the
+estimate
+􏰀n−1 WkGk k=1
+Vn= 􏰀n−1W ,n≥2,</p>
+<p>and keep it up-to-date as we obtain an additional return Gn. In addition to keeping track of Vn, we must maintain for each state the cumulative sum Cn of the weights given to the first n returns. Show that the update rule for Vn+1, n ≥ 1 is
+V =V +Wn􏰁G −V􏰂, n+1 n C n n
+n
+and
+where C0 = 0 (and V1 is arbitrary and thus need not be specified).</p>
+<p>Solution:</p>
+<p>Given:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4526c93c-096e-4a3b-82b1-2ed794000457">
+<span class="eqno">(18)<a class="headerlink" href="#equation-4526c93c-096e-4a3b-82b1-2ed794000457" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\begin{aligned}V_{n}=\dfrac{\sum ^{n-1}_{k=1}W_{k}G_{k}}{\sum ^{n-1}_{k=1}W_{k}}\\
+C_{n+1}=C_{n}+W_{n+1}\end{aligned}
+\end{align}\]</div>
+<p>We can determine:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e308e0fc-f2fd-4996-8a77-36be070d7520">
+<span class="eqno">(19)<a class="headerlink" href="#equation-e308e0fc-f2fd-4996-8a77-36be070d7520" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\begin{aligned}V_{n+1}=\dfrac{\sum ^{n}_{k=1}W_{k}G_{k}}{\sum ^{n}_{k=1}W_{k}}\\
+V_{n+1}=\dfrac{V_{1}C_{n-1}+W_{n}G_{n}}{C_{n}}\\
+V_{n+1}=\dfrac{V\left( C_{n}-W_{n}\right) +W_{n}G_{n}}{C_{n}}\\
+V_{1+1}=V_{n}+\dfrac{W_{n}}{Cn}\left( G_{n}-V_{n}\right) \end{aligned}
+\end{align}\]</div>
+</div>
+<div class="section" id="problem-4">
+<h2>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">¶</a></h2>
+<p>Compute the state value for St in all the MDPs in Fig. ?? – ??. The decimal number above lines refers to the probability of choosing the corresponding action. The value r refers to reward, which can be deterministic or stochastic. Assume γ = 1 for all questions and all terminal states (i.e., no successors in the graph) always have zero values.</p>
+<p>Solution:
+Using the Bellman equation we can work backwards from the terminal states to calculate the state values.</p>
+<p><img alt="problem" src="../../_images/problem_4.jpg" /></p>
+</div>
+<div class="section" id="problem-5">
+<h2>Problem 5<a class="headerlink" href="#problem-5" title="Permalink to this headline">¶</a></h2>
+<p>Given an arbitrary MDP with reward function Ras and constants α and β &gt; 0, prove that
+the following modified MDPs have the same optimal policy as the original MDP.</p>
+<p><strong>1. Everything remains the same as the original MDP, except it has a new reward function α + Rs . Assume that there is no terminal state and discount factor γ &lt; 1.</strong></p>
+<p>In this example we are adding a constant reward to all states. Starting with the Bellman Expectation Equation we then add in the constant reward alpha. As there are no terminal states we can rearrange the infinite sum then pull it out of the equation because it is a constant.</p>
+<p><img alt="problem" src="../../_images/problem_5.jpeg" /></p>
+<p><strong>2. Everything remains the same as the original MDP, except it has a new reward function β · Rs .</strong></p>
+<p>For the second part we multiple the reward by a constant so we can easily take this out of the original expectation.</p>
+<p><img alt="problem" src="../../_images/problem_5_2.jpeg" /></p>
+<p>In both of these cases the orginal Q function simply has a constant or is multiplied by a constant and so the location of the maximum is unchanged.</p>
+</div>
+<div class="section" id="problem-6">
+<h2>Problem 6<a class="headerlink" href="#problem-6" title="Permalink to this headline">¶</a></h2>
+<p>In a card game, you repeatedly draw a card (with replacement) that is equally likely to be a 2 or 3. You can either Draw or Stop if the total score of the cards you have drawn is less than 6. Otherwise, you must Stop. When you Stop, your reward is equal to your total score (up to 5), or zero if you get a total of 6 or higher. When you Draw, you receive no reward. Assume there is no discount (γ = 1). We formulate this problem as an MDP with the following states: 0, 2, 3, 4, 5, and a Done state for when the game ends.</p>
+<p>Solution:</p>
+<p><strong>1. What is the state transition function and the reward function for this MDP?</strong></p>
+<p>The state transitions are highlighted in yellow below. The corresponding rewards are highlighted in purple. The rewards are always equal to zero expect when the rewards are equal to the value of the state when the action chosen is DONE.</p>
+<p><img alt="problem" src="../../_images/problem_6.jpg" /></p>
+<p><strong>2. What is the optimal state-value function and optimal action-value function for this MDP? (Hint: Solve Bellman optimality equation starting from states 4 and 5.)</strong></p>
+<p>We can work backwards from states 4 and 5 and get the values of each state action pair.</p>
+<p>Values:
+<img alt="problem" src="../../_images/problem_6_part2.jpeg" /></p>
+<p>And the optimal action value function:
+<img alt="problem" src="../../_images/problem_6_part2_2.jpeg" /></p>
+<p><strong>3. What is the optimal policy for this MDP?</strong></p>
+<p>As shown above, the optimal policy is to draw if in state 0 or 2 and to stop if you are in any of the other states.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./courses/ELEN6885"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="1_overview.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Overview</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../EECS4750_overview.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Heterogeneous Computing for Signal and Data Processing</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Trevor Gordon<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -42,15 +42,15 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Neural Networks and Deep Learning" href="../ECBM4040_overview.html" />
@@ -74,13 +74,14 @@
     <a class="navbar-brand text-wrap" href="../../index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">Columbia MS EE Notes</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -142,6 +143,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../ELEN6885/1_overview.html">
      Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/99_assignment1.html">
+     ELEN 6885 Assignment 1
     </a>
    </li>
   </ul>
@@ -277,7 +283,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
@@ -322,42 +328,42 @@
 </div>
 <div class="section" id="example-guassian-multivariate">
 <h1>Example - Guassian Multivariate<a class="headerlink" href="#example-guassian-multivariate" title="Permalink to this headline">¶</a></h1>
-<div class="amsmath math notranslate nohighlight" id="equation-72a495a5-ab65-4b24-87de-b374d2bd731c">
-<span class="eqno">(1)<a class="headerlink" href="#equation-72a495a5-ab65-4b24-87de-b374d2bd731c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0e0e08a0-80f9-4264-bd43-7bd2401b2ea7">
+<span class="eqno">(1)<a class="headerlink" href="#equation-0e0e08a0-80f9-4264-bd43-7bd2401b2ea7" title="Permalink to this equation">¶</a></span>\[\begin{align}
 p\left( x|\mu ,\Sigma \right) :=\dfrac{1}{\left( 2\pi \right) ^{\dfrac{d}{2}}\sqrt{\det \left( \Sigma \right) }}\exp \left[ -\dfrac{1}{2}\left( x-\mu \right) ^{T}\Sigma ^{-1}\left( x-\mu \right) \right] 
 \end{align}\]</div>
 <p><strong>1.Data</strong>
 Data</p>
-<div class="amsmath math notranslate nohighlight" id="equation-39bbddee-1258-405c-8e26-e49c72774b85">
-<span class="eqno">(2)<a class="headerlink" href="#equation-39bbddee-1258-405c-8e26-e49c72774b85" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+<div class="amsmath math notranslate nohighlight" id="equation-e1ee5143-2eaf-4283-a103-11cad4912145">
+<span class="eqno">(2)<a class="headerlink" href="#equation-e1ee5143-2eaf-4283-a103-11cad4912145" title="Permalink to this equation">¶</a></span>\[\begin{align} 
 x_{1}\ldots x_{n}|x_{i}\in \mathbb{R} ^{d}
 \end{align}\]</div>
 <p><strong>2. Build Model</strong>
 In this case we choose a probabilistic model Gaussian. We know the distribution family but don’t know the parameters for the model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b2e75253-6b49-4d07-a753-bb80ada94116">
-<span class="eqno">(3)<a class="headerlink" href="#equation-b2e75253-6b49-4d07-a753-bb80ada94116" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5d4dbaf2-2f46-44f6-becc-f18cae737a0b">
+<span class="eqno">(3)<a class="headerlink" href="#equation-5d4dbaf2-2f46-44f6-becc-f18cae737a0b" title="Permalink to this equation">¶</a></span>\[\begin{align}
 p\left( x|\theta \right) ,\theta =\left\{ \mu ,\Sigma \right\} 
 \end{align}\]</div>
 <p>We make an assumption about the data that it is i.i.d. (independant and identically distributed)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3868c4af-0756-4cff-af04-7bede61f7f94">
-<span class="eqno">(4)<a class="headerlink" href="#equation-3868c4af-0756-4cff-af04-7bede61f7f94" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-30c3d36b-8516-4402-9310-e2dc2d26f3cd">
+<span class="eqno">(4)<a class="headerlink" href="#equation-30c3d36b-8516-4402-9310-e2dc2d26f3cd" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \chi _{i}n^{iid}p\left( x|\theta \right) ,i=1,\ldots n
 \end{align}\]</div>
 <p>With the assumption that the data is iid when know that the joint probability distribution is equal to the product of the marginal distributions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7738d896-c661-4054-b29c-a572a8574bd0">
-<span class="eqno">(5)<a class="headerlink" href="#equation-7738d896-c661-4054-b29c-a572a8574bd0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1fe9e736-0eca-4c47-ae02-cb64d7c7b2ad">
+<span class="eqno">(5)<a class="headerlink" href="#equation-1fe9e736-0eca-4c47-ae02-cb64d7c7b2ad" title="Permalink to this equation">¶</a></span>\[\begin{align}
 p\left( x_{1},\ldots x_{n}|\theta \right) =\prod ^{n}_{i=1}p\left( x_{i}|\theta \right)
 \end{align}\]</div>
 <p><strong>3.Infer Hidden Variables</strong>
 Looking for the <strong>maxiumum likelihood</strong> we seek to find the value of \theta that maximizes the likelihood function</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d77f5074-dfc3-43c3-9887-c88093921223">
-<span class="eqno">(6)<a class="headerlink" href="#equation-d77f5074-dfc3-43c3-9887-c88093921223" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2b464b0d-3f2b-4cd2-8d19-b3da9ed61ebc">
+<span class="eqno">(6)<a class="headerlink" href="#equation-2b464b0d-3f2b-4cd2-8d19-b3da9ed61ebc" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \nabla _{\theta }\prod ^{n}_{i:=1}p\left( x_{i}|\theta \right) =0
 \end{align}\]</div>
 <p><strong>Logarithmic Trick</strong>
 Applying a log function does not change the location of the maximums of a function, just the value. If we apply the logarithm before deriving the gradient, it is easier to determine.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-60dfdc82-0c72-47b5-8f30-44cb4f7e9505">
-<span class="eqno">(7)<a class="headerlink" href="#equation-60dfdc82-0c72-47b5-8f30-44cb4f7e9505" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3c738c23-6b2d-4379-a280-4d316ccbcb84">
+<span class="eqno">(7)<a class="headerlink" href="#equation-3c738c23-6b2d-4379-a280-4d316ccbcb84" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \ln \left( \prod _{i}f_{i}\right) =\sum _{i}\ln \left( f_{1}\right) 
 \end{align}\]</div>
 </div>
@@ -385,16 +391,36 @@ Applying a log function does not change the location of the maximums of a functi
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../ELEN4720_overview.html" title="previous page">Machine Learning for signals, information, data</a>
-    <a class='right-next' id="next-link" href="../ECBM4040_overview.html" title="next page">Neural Networks and Deep Learning</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../ELEN4720_overview.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Machine Learning for signals, information, data</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../ECBM4040_overview.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Neural Networks and Deep Learning</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

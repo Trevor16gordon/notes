@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -42,18 +42,18 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Heterogeneous Computing for Signal and Data Processing" href="../EECS4750_overview.html" />
+    <link rel="next" title="ELEN 6885 Assignment 1" href="99_assignment1.html" />
     <link rel="prev" title="Reinforcement Learning" href="../ELEN6885_overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -74,13 +74,14 @@
     <a class="navbar-brand text-wrap" href="../../index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">Columbia MS EE Notes</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -142,6 +143,11 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="99_assignment1.html">
+     ELEN 6885 Assignment 1
     </a>
    </li>
   </ul>
@@ -277,7 +283,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#overview-of-reinforcement-learning">
@@ -317,27 +323,27 @@
 <div class="section" id="elements-of-rl">
 <h3>Elements of RL<a class="headerlink" href="#elements-of-rl" title="Permalink to this headline">¶</a></h3>
 <p><strong>Policy</strong> is a mapping from percieved states of the environment to the probability action space $S$.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f9215a67-b162-4ae3-b652-543d1af6c336">
-<span class="eqno">(8)<a class="headerlink" href="#equation-f9215a67-b162-4ae3-b652-543d1af6c336" title="Permalink to this equation">¶</a></span>\[\begin{align} s\in S\rightarrow \pi \left( a|s\right)\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f958747a-0d53-49fa-a0aa-cd23d9fb9534">
+<span class="eqno">(8)<a class="headerlink" href="#equation-f958747a-0d53-49fa-a0aa-cd23d9fb9534" title="Permalink to this equation">¶</a></span>\[\begin{align} s\in S\rightarrow \pi \left( a|s\right)\end{align}\]</div>
 <p><strong>Reward</strong> is a mapping from each percieved state of the environment to a single number indicating the intrinsic desirability of the space.</p>
 <p><strong>Return</strong> is a cumulative sequence of recieved rewards after a given timestep.</p>
 <p><strong>Finite state return</strong>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cbcb67dd-6e66-4852-819b-374266aed860">
-<span class="eqno">(9)<a class="headerlink" href="#equation-cbcb67dd-6e66-4852-819b-374266aed860" title="Permalink to this equation">¶</a></span>\[\begin{align}(G_{t}=R_{t+1}+R_{t+2}+R_{t+3}+\ldots +R_{T})\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f0fa895d-86f8-4c6a-9578-8a0953277f04">
+<span class="eqno">(9)<a class="headerlink" href="#equation-f0fa895d-86f8-4c6a-9578-8a0953277f04" title="Permalink to this equation">¶</a></span>\[\begin{align}(G_{t}=R_{t+1}+R_{t+2}+R_{t+3}+\ldots +R_{T})\end{align}\]</div>
 <p><strong>Discounted Return</strong>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f20138fb-7411-4d8d-9104-7da5af548d9b">
-<span class="eqno">(10)<a class="headerlink" href="#equation-f20138fb-7411-4d8d-9104-7da5af548d9b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-87d38a46-5d2d-4d43-ba66-b29b4c463315">
+<span class="eqno">(10)<a class="headerlink" href="#equation-87d38a46-5d2d-4d43-ba66-b29b4c463315" title="Permalink to this equation">¶</a></span>\[\begin{align}
 0\leq \Upsilon \leq 1
 G_{T}=\sum ^{\infty }_{k=0}\gamma ^{k}R_{t+k+1}\end{align}\]</div>
 <p><strong>Value Function</strong> is an estimate of how good it is to be in a specific state. For a Markov Decision Process (MDP) the value of a state is defined formally as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c0493275-6256-427d-a72e-78b9496920f3">
-<span class="eqno">(11)<a class="headerlink" href="#equation-c0493275-6256-427d-a72e-78b9496920f3" title="Permalink to this equation">¶</a></span>\[\begin{align}v_{\pi }\left( s\right) =E_{\pi }\left[ G_{t}|S_{T}=S\right] =E_{\pi }\left[ \sum ^{\infty }_{k:0}\Upsilon ^{k}R_{t+k+1}|S_{t}=S\right]\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-73d2eb03-701f-42b8-aa2b-c7c71de5d43e">
+<span class="eqno">(11)<a class="headerlink" href="#equation-73d2eb03-701f-42b8-aa2b-c7c71de5d43e" title="Permalink to this equation">¶</a></span>\[\begin{align}v_{\pi }\left( s\right) =E_{\pi }\left[ G_{t}|S_{T}=S\right] =E_{\pi }\left[ \sum ^{\infty }_{k:0}\Upsilon ^{k}R_{t+k+1}|S_{t}=S\right]\end{align}\]</div>
 <p>For an MDP the value of an action state pair is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4db9f35f-ab6c-4e8a-80bd-60d9a042260c">
-<span class="eqno">(12)<a class="headerlink" href="#equation-4db9f35f-ab6c-4e8a-80bd-60d9a042260c" title="Permalink to this equation">¶</a></span>\[\begin{align}q_{\pi }\left( s, a\right) =E_{\pi }\left[ G_{t}|S_{T}=S, A_{T}=a\right] =E_{\pi }\left[ \sum ^{\infty }_{k:0}\Upsilon ^{k}R_{t+k+1}|S_{t}=S, A_{T}=a\right]\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3bc88ec5-0c02-4b3a-9678-d17861816653">
+<span class="eqno">(12)<a class="headerlink" href="#equation-3bc88ec5-0c02-4b3a-9678-d17861816653" title="Permalink to this equation">¶</a></span>\[\begin{align}q_{\pi }\left( s, a\right) =E_{\pi }\left[ G_{t}|S_{T}=S, A_{T}=a\right] =E_{\pi }\left[ \sum ^{\infty }_{k:0}\Upsilon ^{k}R_{t+k+1}|S_{t}=S, A_{T}=a\right]\end{align}\]</div>
 <p>The <strong>Model</strong> is used to mimic the environment and is a translation from the current state and desired action to resulting state.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bef90b92-66bb-4f6b-9b93-db45e56525bc">
-<span class="eqno">(13)<a class="headerlink" href="#equation-bef90b92-66bb-4f6b-9b93-db45e56525bc" title="Permalink to this equation">¶</a></span>\[\begin{align}P_{ss'}^{a}=P\left[ S_{t+'}=S^{'}|S_{t}=s,A_{t}=a\right]\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b38f6d36-8995-4e5f-a432-f038c72e38a7">
+<span class="eqno">(13)<a class="headerlink" href="#equation-b38f6d36-8995-4e5f-a432-f038c72e38a7" title="Permalink to this equation">¶</a></span>\[\begin{align}P_{ss'}^{a}=P\left[ S_{t+'}=S^{'}|S_{t}=s,A_{t}=a\right]\end{align}\]</div>
 </div>
 </div>
 </div>
@@ -365,16 +371,36 @@ G_{T}=\sum ^{\infty }_{k=0}\gamma ^{k}R_{t+k+1}\end{align}\]</div>
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../ELEN6885_overview.html" title="previous page">Reinforcement Learning</a>
-    <a class='right-next' id="next-link" href="../EECS4750_overview.html" title="next page">Heterogeneous Computing for Signal and Data Processing</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../ELEN6885_overview.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Reinforcement Learning</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="99_assignment1.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">ELEN 6885 Assignment 1</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
