@@ -36,7 +36,7 @@ We make an assumption about the data that it is i.i.d. (independant and identica
 \chi _{i}n^{iid}p\left( x|\theta \right) ,i=1,\ldots n
 \end{align}
 
-With the assumption that the data is iid when know that the joint probability distribution is equal to the product of the marginal distributions:
+With the assumption that the data is iid when know that the joint probability distribution is equal to the product of the marginal distributions:x
 
 \begin{align}
 p\left( x_{1},\ldots x_{n}|\theta \right) =\prod ^{n}_{i=1}p\left( x_{i}|\theta \right)

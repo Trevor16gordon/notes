@@ -1,0 +1,49 @@
+Traceback (most recent call last):
+  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/client.py", line 1117, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/util.py", line 78, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/util.py", line 57, in just_run
+    return loop.run_until_complete(coro)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/client.py", line 559, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/client.py", line 862, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/client.py", line 765, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+# %% Part C RMS Error
+rr = RidgeRegression()
+
+data = []
+degress_freedom = []
+for lammy in range(0, 50, 1):
+    rr._lambda = lammy
+    w_rr, degrees_freedom = rr.fit(X_train_using, y_train_using)
+    y_pred = rr.predict(X_test)
+    rms = math.sqrt((sum((y_pred-y_test)**2) / (len(y_pred)))[0])
+    dataline = np.append(w_rr, [lammy, degrees_freedom, rms])
+    data.append(dataline)
+predicted_df = pd.DataFrame(np.array(data).reshape(len(data),10))
+predicted_df = predicted_df.rename({7:"lambda", 8:"df", 9: "rms"}, axis=1)
+predicted_df = predicted_df.melt(id_vars=["lambda", "df", "rms"])
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m/var/folders/w3/8cmbpqt17zgg1lcgbdw84r6c0000gn/T/ipykernel_9755/3246474927.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      7[0m     [0mrr[0m[0;34m.[0m[0m_lambda[0m [0;34m=[0m [0mlammy[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      8[0m     [0mw_rr[0m[0;34m,[0m [0mdegrees_freedom[0m [0;34m=[0m [0mrr[0m[0;34m.[0m[0mfit[0m[0;34m([0m[0mX_train_using[0m[0;34m,[0m [0my_train_using[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 9[0;31m     [0my_pred[0m [0;34m=[0m [0mrr[0m[0;34m.[0m[0mpredict[0m[0;34m([0m[0mX_test[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     10[0m     [0mrms[0m [0;34m=[0m [0mmath[0m[0;34m.[0m[0msqrt[0m[0;34m([0m[0;34m([0m[0msum[0m[0;34m([0m[0;34m([0m[0my_pred[0m[0;34m-[0m[0my_test[0m[0;34m)[0m[0;34m**[0m[0;36m2[0m[0;34m)[0m [0;34m/[0m [0;34m([0m[0mlen[0m[0;34m([0m[0my_pred[0m[0;34m)[0m[0;34m)[0m[0;34m)[0m[0;34m[[0m[0;36m0[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     11[0m     [0mdataline[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mappend[0m[0;34m([0m[0mw_rr[0m[0;34m,[0m [0;34m[[0m[0mlammy[0m[0;34m,[0m [0mdegrees_freedom[0m[0;34m,[0m [0mrms[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mNameError[0m: name 'X_test' is not defined
+NameError: name 'X_test' is not defined
+

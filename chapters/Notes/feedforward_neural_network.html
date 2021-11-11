@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Key Terminology" href="../key_terminology/notes.html" />
-    <link rel="prev" title="Overview" href="../../courses/EECS4750/2_overview.html" />
+    <link rel="prev" title="Block And Grid Size" href="../../courses/EECS4750/3_block_grid_size.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -111,6 +111,36 @@
      Introduction
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ELEN4720/2_regression.html">
+     Ridge / Polynomial Regression From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ELEN4720/3_classification.html">
+     Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ELEN4720/4_class_naive_bayes.html">
+     Naive Bayes Classifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ELEN4720/4_naive_bayes.html">
+     Naive Bayes Classifier From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ELEN4720/5_logistic_regression.html">
+     Logistic Regression Classifier From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ELEN4720/6_gaussian_processes.html">
+     Gaussian Processes ML Model From Scratch
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -128,6 +158,31 @@
      Intro
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ECBM4040/2_normalization.html">
+     Batch Normalization for NN
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ECBM4040/3_optimizers.html">
+     Optimizers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ECBM4040/4_cnn.html">
+     Convolutional Neural Networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ECBM4040/6_residual_neural_networks.html">
+     Residual Neural Networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ECBM4040/7_recurren_neural_netowkrs.html">
+     Recurrent Neural Networks
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -141,13 +196,38 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../courses/ELEN6885/1_overview.html">
+    <a class="reference internal" href="../../courses/ELEN6885/1_1_overview.html">
      Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ELEN6885/1_2_bandit_problems.html">
+     Bandit Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ELEN6885/2_mdp.html">
+     Markov Decision Processes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ELEN6885/3_model_based_rl.html">
+     Model Based RL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ELEN6885/4_model_free_rl.html">
+     Model Free RL
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../courses/ELEN6885/99_assignment1.html">
      ELEN 6885 Assignment 1 - Trevor Gordon
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ELEN6885/rl_balancing_exploration_notebook.html">
+     Simple Reinforcement Algorithms From Scratch
     </a>
    </li>
   </ul>
@@ -170,6 +250,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../courses/EECS4750/2_overview.html">
      Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/EECS4750/3_block_grid_size.html">
+     Block And Grid Size
     </a>
    </li>
   </ul>
@@ -332,8 +417,8 @@ https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi</p>
 <p>We want to update W1, W2, c1, c2.
 To do this we need to update using dL/dW1, dL/dW2, dL/dc1, dL/dc1
 These are calculated using the chain rule</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a554cfcd-046c-406e-a4a8-595740251610">
-<span class="eqno">(20)<a class="headerlink" href="#equation-a554cfcd-046c-406e-a4a8-595740251610" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ff8e7b96-3cfb-4798-906a-230c055b7efb">
+<span class="eqno">(31)<a class="headerlink" href="#equation-ff8e7b96-3cfb-4798-906a-230c055b7efb" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \\{\frac{\partial L}{\partial yhat}} RSS 
     &amp;= 2*(y-yhat)
   \\{\frac{\partial yhat}{\partial h2}} sigmoid 
@@ -630,11 +715,11 @@ These are calculated using the chain rule</p>
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../../courses/EECS4750/2_overview.html" title="previous page">
+        <a class="left-prev" href="../../courses/EECS4750/3_block_grid_size.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Overview</p>
+                <p class="prevnext-title">Block And Grid Size</p>
             </div>
         </a>
     </div>
