@@ -6,7 +6,13 @@ Please see my LinkedIn for information on my experience: https://www.linkedin.co
 
 I will be using this jupyter book to keep notes on my courses while at Columbia. This includes theory, formulas, code snippets and links to useful resources. These notes are a work in progress as the semester progresses.
 
+
 # Fall 2021 Courses
+
+**Projects**
+- Neural Networks & Deep Learning: Piano music generation using LSTM neural network and TensorFlow. Checkout the [final report](https://github.com/jannikjw/music_generation_rnn/blob/main/Project_Report.pdf) and [code](https://github.com/jannikjw/music_generation_rnn)
+- Reinforcement Learning: Literature review and study on open source multi agent reinforcement learning research. Checkout the [final report](https://github.com/Trevor16gordon/multi_agent_rl_proj/blob/main/RL_Final_Report.pdf)
+- GPU Programming Project: Developed random forests from scratch using CUDA and NVIDIA GPU. Checkout the [final report](https://github.com/Trevor16gordon/random-forests-cuda/blob/main/report.pdf) and [code](https://github.com/Trevor16gordon/random-forests-cuda)
 
 **Reinforcement Learning**
 - [Introduction](https://trevor16gordon.github.io/notes/courses/ELEN6885/1_overview.html)
