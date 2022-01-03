@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Intro &#8212; Columbia MS EE Notes</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -31,19 +31,19 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -53,7 +53,10 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Machine Learning for signals, information, data" href="courses/ELEN4720_overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -87,7 +90,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Course Notes
  </span>
@@ -114,16 +117,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="courses/ELEN4720/3_classification.html">
-     Classification
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="courses/ELEN4720/4_class_naive_bayes.html">
-     Naive Bayes Classifier
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="courses/ELEN4720/4_naive_bayes.html">
      Naive Bayes Classifier From Scratch
     </a>
@@ -136,6 +129,21 @@
    <li class="toctree-l2">
     <a class="reference internal" href="courses/ELEN4720/6_gaussian_processes.html">
      Gaussian Processes ML Model From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="courses/ELEN4720/baysians_classifier.html">
+     Baysian Classifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="courses/ELEN4720/boosting.html">
+     Implementing a boosting algorithm for a classifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="courses/ELEN4720/k_means_clustering.html">
+     K Mean Clustering
     </a>
    </li>
   </ul>
@@ -151,28 +159,23 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="courses/ECBM4040/1_intro.html">
-     Intro
+    <a class="reference internal" href="courses/ECBM4040/1_feed_forward_networks.html">
+     Feed Forward Networks
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="courses/ECBM4040/2_normalization.html">
-     Batch Normalization for NN
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="courses/ECBM4040/3_optimizers.html">
+    <a class="reference internal" href="courses/ECBM4040/2_optimizers.html">
      Optimizers
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="courses/ECBM4040/4_cnn.html">
+    <a class="reference internal" href="courses/ECBM4040/3_cnn.html">
      Convolutional Neural Networks
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="courses/ECBM4040/6_residual_neural_networks.html">
-     Residual Neural Networks
+    <a class="reference internal" href="courses/ECBM4040/3_dropout.html">
+     Methods For Improving Neural Networks
     </a>
    </li>
    <li class="toctree-l2">
@@ -218,6 +221,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="courses/ELEN6885/6_deep_reinforcement_learning.html">
+     Deep Reinforcement Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="courses/ELEN6885/99_assignment1.html">
      ELEN 6885 Assignment 1 - Trevor Gordon
     </a>
@@ -257,7 +265,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Other Notes
  </span>
@@ -266,18 +274,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="chapters/Notes/feedforward_neural_network.html">
    Neural Networks
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Key Terminology
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="chapters/key_terminology/notes.html">
-   Key Terminology
   </a>
  </li>
 </ul>
@@ -390,14 +386,20 @@
         
               <div>
                 
-  <div class="section" id="intro">
+  <div class="tex2jax_ignore mathjax_ignore section" id="intro">
 <h1>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h1>
 <p>Welcome! My name is Trevor Gordon and I am currently in my first semester of my MS in Electrical Engineering at Columbia University with a focus in machine learning and reinforcement learning.</p>
 <p>Please see my LinkedIn for information on my experience: https://www.linkedin.com/in/tgordon-ubc/</p>
 <p>I will be using this jupyter book to keep notes on my courses while at Columbia. This includes theory, formulas, code snippets and links to useful resources. These notes are a work in progress as the semester progresses.</p>
 </div>
-<div class="section" id="fall-2021-courses">
+<div class="tex2jax_ignore mathjax_ignore section" id="fall-2021-courses">
 <h1>Fall 2021 Courses<a class="headerlink" href="#fall-2021-courses" title="Permalink to this headline">¶</a></h1>
+<p><strong>Projects</strong></p>
+<ul class="simple">
+<li><p>Neural Networks &amp; Deep Learning: Piano music generation using LSTM neural network and TensorFlow. Checkout the <a class="reference external" href="https://github.com/jannikjw/music_generation_rnn/blob/main/Project_Report.pdf">final report</a> and <a class="reference external" href="https://github.com/jannikjw/music_generation_rnn">code</a></p></li>
+<li><p>Reinforcement Learning: Literature review and study on open source multi agent reinforcement learning research. Checkout the <a class="reference external" href="https://github.com/Trevor16gordon/multi_agent_rl_proj/blob/main/RL_Final_Report.pdf">final report</a></p></li>
+<li><p>GPU Programming Project: Developed random forests from scratch using CUDA and NVIDIA GPU. Checkout the <a class="reference external" href="https://github.com/Trevor16gordon/random-forests-cuda/blob/main/report.pdf">final report</a> and <a class="reference external" href="https://github.com/Trevor16gordon/random-forests-cuda">code</a></p></li>
+</ul>
 <p><strong>Reinforcement Learning</strong></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://trevor16gordon.github.io/notes/courses/ELEN6885/1_overview.html">Introduction</a></p></li>
@@ -529,22 +531,15 @@
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-     <div id="next">
-        <a class="right-next" href="courses/ELEN4720_overview.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Machine Learning for signals, information, data</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="courses/ELEN4720_overview.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Machine Learning for signals, information, data</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -565,8 +560,7 @@
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

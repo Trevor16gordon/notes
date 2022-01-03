@@ -1,49 +1,100 @@
 Traceback (most recent call last):
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
-    record_timing=False,
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/client.py", line 1117, in execute
+  File "/Users/trevorgordon/.venvs/sandbox/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/trevorgordon/.venvs/sandbox/lib/python3.10/site-packages/nbclient/client.py", line 1093, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/util.py", line 78, in wrapped
+  File "/Users/trevorgordon/.venvs/sandbox/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/util.py", line 57, in just_run
+  File "/Users/trevorgordon/.venvs/sandbox/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
     return loop.run_until_complete(coro)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 641, in run_until_complete
     return future.result()
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/client.py", line 559, in async_execute
-    cell, index, execution_count=self.code_cells_executed + 1
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/client.py", line 862, in async_execute_cell
+  File "/Users/trevorgordon/.venvs/sandbox/lib/python3.10/site-packages/nbclient/client.py", line 559, in async_execute
+    await self.async_execute_cell(
+  File "/Users/trevorgordon/.venvs/sandbox/lib/python3.10/site-packages/nbclient/client.py", line 854, in async_execute_cell
     self._check_raise_for_error(cell, exec_reply)
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/client.py", line 765, in _check_raise_for_error
+  File "/Users/trevorgordon/.venvs/sandbox/lib/python3.10/site-packages/nbclient/client.py", line 756, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
+base_path = "/Users/loreliegordon/Library/Mobile Documents/com~apple~CloudDocs/Documents/root/Columbia/Fall2021/ELEN4720/Assignments/assignment1/"
 
-# %% Part C RMS Error
-rr = RidgeRegression()
+X_train_raw = pd.read_csv(base_path + "hw1-data/X_train.csv", header=None)
+y_train_raw = pd.read_csv(base_path + "hw1-data/y_train.csv", header=None)
+X_test_raw = pd.read_csv(base_path + "hw1-data/X_test.csv", header=None)
+y_test_raw = pd.read_csv(base_path + "hw1-data/y_test.csv", header=None)
 
-data = []
-degress_freedom = []
-for lammy in range(0, 50, 1):
-    rr._lambda = lammy
-    w_rr, degrees_freedom = rr.fit(X_train_using, y_train_using)
-    y_pred = rr.predict(X_test)
-    rms = math.sqrt((sum((y_pred-y_test)**2) / (len(y_pred)))[0])
-    dataline = np.append(w_rr, [lammy, degrees_freedom, rms])
-    data.append(dataline)
-predicted_df = pd.DataFrame(np.array(data).reshape(len(data),10))
-predicted_df = predicted_df.rename({7:"lambda", 8:"df", 9: "rms"}, axis=1)
-predicted_df = predicted_df.melt(id_vars=["lambda", "df", "rms"])
+X_train_using = X_train_raw.copy().to_numpy()
+y_train_using = y_train_raw.copy().to_numpy()
+X_test_using = X_test_raw.copy().to_numpy()
+y_test_using = y_test_raw.copy().to_numpy()
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/var/folders/w3/8cmbpqt17zgg1lcgbdw84r6c0000gn/T/ipykernel_9755/3246474927.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      7[0m     [0mrr[0m[0;34m.[0m[0m_lambda[0m [0;34m=[0m [0mlammy[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      8[0m     [0mw_rr[0m[0;34m,[0m [0mdegrees_freedom[0m [0;34m=[0m [0mrr[0m[0;34m.[0m[0mfit[0m[0;34m([0m[0mX_train_using[0m[0;34m,[0m [0my_train_using[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 9[0;31m     [0my_pred[0m [0;34m=[0m [0mrr[0m[0;34m.[0m[0mpredict[0m[0;34m([0m[0mX_test[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     10[0m     [0mrms[0m [0;34m=[0m [0mmath[0m[0;34m.[0m[0msqrt[0m[0;34m([0m[0;34m([0m[0msum[0m[0;34m([0m[0;34m([0m[0my_pred[0m[0;34m-[0m[0my_test[0m[0;34m)[0m[0;34m**[0m[0;36m2[0m[0;34m)[0m [0;34m/[0m [0;34m([0m[0mlen[0m[0;34m([0m[0my_pred[0m[0;34m)[0m[0;34m)[0m[0;34m)[0m[0;34m[[0m[0;36m0[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     11[0m     [0mdataline[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mappend[0m[0;34m([0m[0mw_rr[0m[0;34m,[0m [0;34m[[0m[0mlammy[0m[0;34m,[0m [0mdegrees_freedom[0m[0;34m,[0m [0mrms[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+[0;32m/var/folders/sw/31vsr7sd3dggcqkkgn59gsl80000gn/T/ipykernel_32082/570967028.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0mbase_path[0m [0;34m=[0m [0;34m"/Users/loreliegordon/Library/Mobile Documents/com~apple~CloudDocs/Documents/root/Columbia/Fall2021/ELEN4720/Assignments/assignment1/"[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      2[0m [0;34m[0m[0m
+[0;32m----> 3[0;31m [0mX_train_raw[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0mbase_path[0m [0;34m+[0m [0;34m"hw1-data/X_train.csv"[0m[0;34m,[0m [0mheader[0m[0;34m=[0m[0;32mNone[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      4[0m [0my_train_raw[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0mbase_path[0m [0;34m+[0m [0;34m"hw1-data/y_train.csv"[0m[0;34m,[0m [0mheader[0m[0;34m=[0m[0;32mNone[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0mX_test_raw[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0mbase_path[0m [0;34m+[0m [0;34m"hw1-data/X_test.csv"[0m[0;34m,[0m [0mheader[0m[0;34m=[0m[0;32mNone[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mNameError[0m: name 'X_test' is not defined
-NameError: name 'X_test' is not defined
+[0;32m~/.venvs/sandbox/lib/python3.10/site-packages/pandas/util/_decorators.py[0m in [0;36mwrapper[0;34m(*args, **kwargs)[0m
+[1;32m    309[0m                     [0mstacklevel[0m[0;34m=[0m[0mstacklevel[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    310[0m                 )
+[0;32m--> 311[0;31m             [0;32mreturn[0m [0mfunc[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    312[0m [0;34m[0m[0m
+[1;32m    313[0m         [0;32mreturn[0m [0mwrapper[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/.venvs/sandbox/lib/python3.10/site-packages/pandas/io/parsers/readers.py[0m in [0;36mread_csv[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)[0m
+[1;32m    584[0m     [0mkwds[0m[0;34m.[0m[0mupdate[0m[0;34m([0m[0mkwds_defaults[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    585[0m [0;34m[0m[0m
+[0;32m--> 586[0;31m     [0;32mreturn[0m [0m_read[0m[0;34m([0m[0mfilepath_or_buffer[0m[0;34m,[0m [0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    587[0m [0;34m[0m[0m
+[1;32m    588[0m [0;34m[0m[0m
+
+[0;32m~/.venvs/sandbox/lib/python3.10/site-packages/pandas/io/parsers/readers.py[0m in [0;36m_read[0;34m(filepath_or_buffer, kwds)[0m
+[1;32m    480[0m [0;34m[0m[0m
+[1;32m    481[0m     [0;31m# Create the parser.[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 482[0;31m     [0mparser[0m [0;34m=[0m [0mTextFileReader[0m[0;34m([0m[0mfilepath_or_buffer[0m[0;34m,[0m [0;34m**[0m[0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    483[0m [0;34m[0m[0m
+[1;32m    484[0m     [0;32mif[0m [0mchunksize[0m [0;32mor[0m [0miterator[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/.venvs/sandbox/lib/python3.10/site-packages/pandas/io/parsers/readers.py[0m in [0;36m__init__[0;34m(self, f, engine, **kwds)[0m
+[1;32m    809[0m             [0mself[0m[0;34m.[0m[0moptions[0m[0;34m[[0m[0;34m"has_index_names"[0m[0;34m][0m [0;34m=[0m [0mkwds[0m[0;34m[[0m[0;34m"has_index_names"[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m    810[0m [0;34m[0m[0m
+[0;32m--> 811[0;31m         [0mself[0m[0;34m.[0m[0m_engine[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_make_engine[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mengine[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    812[0m [0;34m[0m[0m
+[1;32m    813[0m     [0;32mdef[0m [0mclose[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/.venvs/sandbox/lib/python3.10/site-packages/pandas/io/parsers/readers.py[0m in [0;36m_make_engine[0;34m(self, engine)[0m
+[1;32m   1038[0m             )
+[1;32m   1039[0m         [0;31m# error: Too many arguments for "ParserBase"[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1040[0;31m         [0;32mreturn[0m [0mmapping[0m[0;34m[[0m[0mengine[0m[0;34m][0m[0;34m([0m[0mself[0m[0;34m.[0m[0mf[0m[0;34m,[0m [0;34m**[0m[0mself[0m[0;34m.[0m[0moptions[0m[0;34m)[0m  [0;31m# type: ignore[call-arg][0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1041[0m [0;34m[0m[0m
+[1;32m   1042[0m     [0;32mdef[0m [0m_failover_to_python[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/.venvs/sandbox/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py[0m in [0;36m__init__[0;34m(self, src, **kwds)[0m
+[1;32m     49[0m [0;34m[0m[0m
+[1;32m     50[0m         [0;31m# open handles[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 51[0;31m         [0mself[0m[0;34m.[0m[0m_open_handles[0m[0;34m([0m[0msrc[0m[0;34m,[0m [0mkwds[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     52[0m         [0;32massert[0m [0mself[0m[0;34m.[0m[0mhandles[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     53[0m [0;34m[0m[0m
+
+[0;32m~/.venvs/sandbox/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py[0m in [0;36m_open_handles[0;34m(self, src, kwds)[0m
+[1;32m    220[0m         [0mLet[0m [0mthe[0m [0mreaders[0m [0mopen[0m [0mIOHandles[0m [0mafter[0m [0mthey[0m [0mare[0m [0mdone[0m [0;32mwith[0m [0mtheir[0m [0mpotential[0m [0mraises[0m[0;34m.[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    221[0m         """
+[0;32m--> 222[0;31m         self.handles = get_handle(
+[0m[1;32m    223[0m             [0msrc[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    224[0m             [0;34m"r"[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/.venvs/sandbox/lib/python3.10/site-packages/pandas/io/common.py[0m in [0;36mget_handle[0;34m(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)[0m
+[1;32m    700[0m         [0;32mif[0m [0mioargs[0m[0;34m.[0m[0mencoding[0m [0;32mand[0m [0;34m"b"[0m [0;32mnot[0m [0;32min[0m [0mioargs[0m[0;34m.[0m[0mmode[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    701[0m             [0;31m# Encoding[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 702[0;31m             handle = open(
+[0m[1;32m    703[0m                 [0mhandle[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    704[0m                 [0mioargs[0m[0;34m.[0m[0mmode[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/Users/loreliegordon/Library/Mobile Documents/com~apple~CloudDocs/Documents/root/Columbia/Fall2021/ELEN4720/Assignments/assignment1/hw1-data/X_train.csv'
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/loreliegordon/Library/Mobile Documents/com~apple~CloudDocs/Documents/root/Columbia/Fall2021/ELEN4720/Assignments/assignment1/hw1-data/X_train.csv'
 

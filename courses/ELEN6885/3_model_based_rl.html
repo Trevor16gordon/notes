@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Model Based RL &#8212; Columbia MS EE Notes</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -31,21 +31,21 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -56,7 +56,10 @@
     <link rel="next" title="Model Free RL" href="4_model_free_rl.html" />
     <link rel="prev" title="Markov Decision Processes" href="2_mdp.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -90,7 +93,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Course Notes
  </span>
@@ -117,16 +120,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ELEN4720/3_classification.html">
-     Classification
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ELEN4720/4_class_naive_bayes.html">
-     Naive Bayes Classifier
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../ELEN4720/4_naive_bayes.html">
      Naive Bayes Classifier From Scratch
     </a>
@@ -139,6 +132,21 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../ELEN4720/6_gaussian_processes.html">
      Gaussian Processes ML Model From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/baysians_classifier.html">
+     Baysian Classifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/boosting.html">
+     Implementing a boosting algorithm for a classifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/k_means_clustering.html">
+     K Mean Clustering
     </a>
    </li>
   </ul>
@@ -154,28 +162,23 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ECBM4040/1_intro.html">
-     Intro
+    <a class="reference internal" href="../ECBM4040/1_feed_forward_networks.html">
+     Feed Forward Networks
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ECBM4040/2_normalization.html">
-     Batch Normalization for NN
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ECBM4040/3_optimizers.html">
+    <a class="reference internal" href="../ECBM4040/2_optimizers.html">
      Optimizers
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ECBM4040/4_cnn.html">
+    <a class="reference internal" href="../ECBM4040/3_cnn.html">
      Convolutional Neural Networks
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ECBM4040/6_residual_neural_networks.html">
-     Residual Neural Networks
+    <a class="reference internal" href="../ECBM4040/3_dropout.html">
+     Methods For Improving Neural Networks
     </a>
    </li>
    <li class="toctree-l2">
@@ -221,6 +224,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="6_deep_reinforcement_learning.html">
+     Deep Reinforcement Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="99_assignment1.html">
      ELEN 6885 Assignment 1 - Trevor Gordon
     </a>
@@ -260,7 +268,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Other Notes
  </span>
@@ -269,18 +277,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../../chapters/Notes/feedforward_neural_network.html">
    Neural Networks
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Key Terminology
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../chapters/key_terminology/notes.html">
-   Key Terminology
   </a>
  </li>
 </ul>
@@ -408,7 +404,7 @@
         
               <div>
                 
-  <div class="section" id="model-based-rl">
+  <div class="tex2jax_ignore mathjax_ignore section" id="model-based-rl">
 <h1>Model Based RL<a class="headerlink" href="#model-based-rl" title="Permalink to this headline">¶</a></h1>
 <p>For model based RL we need to have full knowledge of all states and the dynamics of the environment: the state transition matrix. Dynamic programming methods operate on sweeps of the states performing a full backup. That means a state is updated based on all possible futures states, the rewards, and their probability of occuring</p>
 <p>Bootstrapping: Using estimates of the value to update other estimates of value until the system stabilizes at certain values</p>
@@ -436,26 +432,26 @@ see this notebook<a class="reference external" href="https://trevor16gordon.gith
 </ul>
 </div>
 </div>
-<div class="section" id="bellman-expectation-equations">
+<div class="tex2jax_ignore mathjax_ignore section" id="bellman-expectation-equations">
 <h1>Bellman Expectation Equations<a class="headerlink" href="#bellman-expectation-equations" title="Permalink to this headline">¶</a></h1>
 <p>The bellman expecation equation for the value function shown below says that the value of a state is the expectation of the total discounted future rewards G given that state.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7ebda01a-ff2a-450c-9afc-0c28b6cbf297">
-<span class="eqno">(18)<a class="headerlink" href="#equation-7ebda01a-ff2a-450c-9afc-0c28b6cbf297" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d28e8b49-b4bb-4ef5-980d-0db0854acbfa">
+<span class="eqno">(20)<a class="headerlink" href="#equation-d28e8b49-b4bb-4ef5-980d-0db0854acbfa" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \begin{aligned}v_{\pi }\left( s\right) =E_{\pi }\left[ G_{t}|S_{t}=s\right]\end{aligned}
 \end{align}\]</div>
 <p>Similarily the bellman expecation equation for the state-value function shown below says that the value of a state action pair is the expectation of the total discounted future rewards G given that state and action.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-67f1a51a-cc62-4893-ba10-004b16b49a64">
-<span class="eqno">(19)<a class="headerlink" href="#equation-67f1a51a-cc62-4893-ba10-004b16b49a64" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cd7f010e-4224-4e9f-907f-fb74122385f9">
+<span class="eqno">(21)<a class="headerlink" href="#equation-cd7f010e-4224-4e9f-907f-fb74122385f9" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \begin{aligned}q_{\pi }\left( s,a\right) =E_{\pi }\left[ G_{t}|S_{t}=S,A_{t}=a\right] \end{aligned}
 \end{align}\]</div>
 <p>The bellman expecation equation for the value function shown below says that the value of a state is the immediate reward plus the discounted value of the next state.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e5485faa-3279-426a-9e17-b063cf08b21d">
-<span class="eqno">(20)<a class="headerlink" href="#equation-e5485faa-3279-426a-9e17-b063cf08b21d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-117240bf-78b0-4605-a402-c59e75e1d33e">
+<span class="eqno">(22)<a class="headerlink" href="#equation-117240bf-78b0-4605-a402-c59e75e1d33e" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \begin{aligned}V_{\pi }\left( s\right) =E_{\pi }\left[ R_{t+1}+\Upsilon V_{\pi }\left( S_{t+1}\right) |S_{t}=S\right] \end{aligned} 
 \end{align}\]</div>
 <p>Similarily the bellman expecation equation for the state-value function shown below says that the value of a state action pair is the immediate reward plus the discounted value of the next state-action.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a5ea2d2d-6a30-4255-9497-b699bf5928be">
-<span class="eqno">(21)<a class="headerlink" href="#equation-a5ea2d2d-6a30-4255-9497-b699bf5928be" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bf13a332-6ceb-4ca2-8828-c2bcbdc6b6f7">
+<span class="eqno">(23)<a class="headerlink" href="#equation-bf13a332-6ceb-4ca2-8828-c2bcbdc6b6f7" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \begin{aligned}q_{\pi }\left( s\right) =E_{\pi }\left[ R_{t+1}+\Upsilon q_{-\pi }\left( S_{t+1},A_{t+1}\right) |S_{t}=s,A_{t}=a\right] \end{aligned} 
 \end{align}\]</div>
 </div>
@@ -483,31 +479,22 @@ see this notebook<a class="reference external" href="https://trevor16gordon.gith
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="2_mdp.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Markov Decision Processes</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="2_mdp.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Markov Decision Processes</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="4_model_free_rl.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Model Free RL</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="4_model_free_rl.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Model Free RL</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -528,8 +515,7 @@ see this notebook<a class="reference external" href="https://trevor16gordon.gith
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

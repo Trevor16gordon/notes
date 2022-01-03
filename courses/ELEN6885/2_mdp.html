@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Markov Decision Processes &#8212; Columbia MS EE Notes</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -31,21 +31,21 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -56,7 +56,10 @@
     <link rel="next" title="Model Based RL" href="3_model_based_rl.html" />
     <link rel="prev" title="Bandit Problems" href="1_2_bandit_problems.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -90,7 +93,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Course Notes
  </span>
@@ -117,16 +120,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ELEN4720/3_classification.html">
-     Classification
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ELEN4720/4_class_naive_bayes.html">
-     Naive Bayes Classifier
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../ELEN4720/4_naive_bayes.html">
      Naive Bayes Classifier From Scratch
     </a>
@@ -139,6 +132,21 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../ELEN4720/6_gaussian_processes.html">
      Gaussian Processes ML Model From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/baysians_classifier.html">
+     Baysian Classifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/boosting.html">
+     Implementing a boosting algorithm for a classifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/k_means_clustering.html">
+     K Mean Clustering
     </a>
    </li>
   </ul>
@@ -154,28 +162,23 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ECBM4040/1_intro.html">
-     Intro
+    <a class="reference internal" href="../ECBM4040/1_feed_forward_networks.html">
+     Feed Forward Networks
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ECBM4040/2_normalization.html">
-     Batch Normalization for NN
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ECBM4040/3_optimizers.html">
+    <a class="reference internal" href="../ECBM4040/2_optimizers.html">
      Optimizers
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ECBM4040/4_cnn.html">
+    <a class="reference internal" href="../ECBM4040/3_cnn.html">
      Convolutional Neural Networks
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ECBM4040/6_residual_neural_networks.html">
-     Residual Neural Networks
+    <a class="reference internal" href="../ECBM4040/3_dropout.html">
+     Methods For Improving Neural Networks
     </a>
    </li>
    <li class="toctree-l2">
@@ -221,6 +224,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="6_deep_reinforcement_learning.html">
+     Deep Reinforcement Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="99_assignment1.html">
      ELEN 6885 Assignment 1 - Trevor Gordon
     </a>
@@ -260,7 +268,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Other Notes
  </span>
@@ -269,18 +277,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../../chapters/Notes/feedforward_neural_network.html">
    Neural Networks
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Key Terminology
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../chapters/key_terminology/notes.html">
-   Key Terminology
   </a>
  </li>
 </ul>
@@ -425,10 +421,10 @@
         
               <div>
                 
-  <div class="section" id="markov-decision-processes">
+  <div class="tex2jax_ignore mathjax_ignore section" id="markov-decision-processes">
 <h1>Markov Decision Processes<a class="headerlink" href="#markov-decision-processes" title="Permalink to this headline">¶</a></h1>
 </div>
-<div class="section" id="markov">
+<div class="tex2jax_ignore mathjax_ignore section" id="markov">
 <h1>Markov<a class="headerlink" href="#markov" title="Permalink to this headline">¶</a></h1>
 <p>A markov process is a stochastic process that is memoryless. That means that the future only depends on the current state, not on the history.</p>
 <div class="section" id="markov-reward-processes">
@@ -438,6 +434,12 @@
 <strong>Rewards</strong>: Rs is the expecation of awards for a given state
 <strong>State Transition Prob Matrix</strong>: Probability of moving to the other states given a current state
 <strong>Discount Factor</strong>: How much to weigh current rewards vs future ones. In range [0,1].</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e180b382-f1ab-4786-81e8-b86841f00089">
+<span class="eqno">(15)<a class="headerlink" href="#equation-e180b382-f1ab-4786-81e8-b86841f00089" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\begin{aligned}v\left( s\right) =E\left[ G_{t}|S_{t}=s\right] \\
+v\left( s\right) =E\left[ R_{t+1}+\Upsilon \cdot v\left( s_{t+1}\right) \ldots |S_{t}=s\right] \\
+v\left( s\right) =R_{s}+\Upsilon \cdot \sum _{sES}P_{ss},v\left( s\cdot \right) \end{aligned}
+\end{align}\]</div>
 </div>
 <div class="section" id="id1">
 <h2>Markov Decision Processes<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
@@ -449,11 +451,11 @@
 <strong>Discount Factor</strong>: How much to weigh current rewards vs future ones. In range [0,1].</p>
 </div>
 </div>
-<div class="section" id="policy">
+<div class="tex2jax_ignore mathjax_ignore section" id="policy">
 <h1>Policy<a class="headerlink" href="#policy" title="Permalink to this headline">¶</a></h1>
 <p>A policy’s value function assigns a value to each state or to each state, action pair. There is one optimal value function but many possible optimal policies</p>
-<div class="amsmath math notranslate nohighlight" id="equation-91f9cab7-ed9d-4b7a-bb20-bd17c82bdb06">
-<span class="eqno">(14)<a class="headerlink" href="#equation-91f9cab7-ed9d-4b7a-bb20-bd17c82bdb06" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ba5f2a1c-2b3c-478c-a6cb-9cfe98bd0b19">
+<span class="eqno">(16)<a class="headerlink" href="#equation-ba5f2a1c-2b3c-478c-a6cb-9cfe98bd0b19" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \pi \left( a|s\right) =P\left[ A_{t}=a|S_{t}=s\right] 
 \end{align}\]</div>
 <div class="section" id="greedy-policy">
@@ -467,22 +469,22 @@
 <div class="section" id="softmax-policy">
 <h2>Softmax Policy<a class="headerlink" href="#softmax-policy" title="Permalink to this headline">¶</a></h2>
 <p>The softmax policy allows you to tweak the temperature over time to explore less and exploit more as time goes to infinity.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8fae7281-06e9-458e-9b4a-c18178164edb">
-<span class="eqno">(15)<a class="headerlink" href="#equation-8fae7281-06e9-458e-9b4a-c18178164edb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0e41f050-2800-4e4b-9457-fd7e0c50ce18">
+<span class="eqno">(17)<a class="headerlink" href="#equation-0e41f050-2800-4e4b-9457-fd7e0c50ce18" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \sigma \left( Q(a)\right) =\dfrac{e^{\dfrac{Q(a)}{\tau}}}{\sum ^{k}_{j=1}e^{\dfrac{Q(a)}{\tau};}}
 \end{align}\]</div>
 <p>In the limit as the temperature τ → 0, softmax action selection becomes the same as greedy action selection.
 Proof:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-614d6086-7eff-415a-9a67-1be3a6de93de">
-<span class="eqno">(16)<a class="headerlink" href="#equation-614d6086-7eff-415a-9a67-1be3a6de93de" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2097de76-2fee-444d-8532-e3fcfd0838e7">
+<span class="eqno">(18)<a class="headerlink" href="#equation-2097de76-2fee-444d-8532-e3fcfd0838e7" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \begin{aligned}\lim _{\tau \rightarrow \infty }P\left( a\right) =\dfrac{\exp \left( Q_{t}\left( a\right) /\tau \right) }{\Sigma _{i=1}^{n}\exp \left( Q_{t}\left( i\right) /\tau \right) }\\
 \lim _{\tau \rightarrow \infty }P\left( a\right) =\dfrac{\exp \left( Q_{t}\left( a\right) /\infty \right) }{\sum ^{n}_{i=1}\exp \left( Q_{t}\left( i\right) /\infty \right) }\\
 \lim _{t\rightarrow \infty }P\left( a\right) =\dfrac{1}{n}\end{aligned}
 \end{align}\]</div>
 <p>In the limit as τ → ∞, softmax action selection yields equiprobable selection among all actions.
 Proof:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-73890754-72fe-49a8-9d8f-28145e2fb61e">
-<span class="eqno">(17)<a class="headerlink" href="#equation-73890754-72fe-49a8-9d8f-28145e2fb61e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fcab8815-fea0-431e-ad78-da4c6cd0b572">
+<span class="eqno">(19)<a class="headerlink" href="#equation-fcab8815-fea0-431e-ad78-da4c6cd0b572" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \begin{aligned}p\left( a=1\right) =\dfrac{e^{Q_{t}\left( 1\right) /\tau }}{e^{Q_{t}\left( 1\right) /\tau }+e^{Q_{t}\left( 2\right) /\tau }}\\
 \dfrac{1}{Q_{t}\left( 2\right) /\tau }\\
 P\left( a=1\right) =1+\dfrac{e}{e^{Qt}}\dfrac{}{\left( 1\right) /\tau }\\
@@ -514,31 +516,22 @@ P\left( a=1\right) =\dfrac{1}{1+e^{\dfrac{1}{T}\left( Q+121-Q+\left( 1\right) \r
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="1_2_bandit_problems.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Bandit Problems</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="1_2_bandit_problems.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Bandit Problems</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="3_model_based_rl.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Model Based RL</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="3_model_based_rl.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Model Based RL</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -559,8 +552,7 @@ P\left( a=1\right) =\dfrac{1}{1+e^{\dfrac{1}{T}\left( Q+121-Q+\left( 1\right) \r
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

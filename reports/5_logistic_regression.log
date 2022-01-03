@@ -1,39 +1,101 @@
 Traceback (most recent call last):
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/client.py", line 627, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/util.py", line 89, in ensure_async
-    result = await obj
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/jupyter_client/channels.py", line 230, in get_msg
-    raise Empty
-_queue.Empty
+  File "/Users/trevorgordon/.venvs/sandbox/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/trevorgordon/.venvs/sandbox/lib/python3.10/site-packages/nbclient/client.py", line 1093, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/trevorgordon/.venvs/sandbox/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/trevorgordon/.venvs/sandbox/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 641, in run_until_complete
+    return future.result()
+  File "/Users/trevorgordon/.venvs/sandbox/lib/python3.10/site-packages/nbclient/client.py", line 559, in async_execute
+    await self.async_execute_cell(
+  File "/Users/trevorgordon/.venvs/sandbox/lib/python3.10/site-packages/nbclient/client.py", line 854, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/Users/trevorgordon/.venvs/sandbox/lib/python3.10/site-packages/nbclient/client.py", line 756, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+import chartify
+ch = chartify.Chart(blank_labels=True)
+ch.set_title("Training Error For Logistic Regression Using Gradient Descent")
+ch.plot.line(
+    data_frame=all_losses_df,
+    color_column="variable",
+    x_column='iter',
+    y_column="value")
+ch.axes.set_yaxis_label("Training Loss")
+ch.axes.set_xaxis_label("Iteration")
+ch.axes.set_xaxis_tick_orientation("vertical")
+ch.show('png')
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+[0;32m~/.venvs/sandbox/lib/python3.10/site-packages/selenium/webdriver/common/service.py[0m in [0;36mstart[0;34m(self)[0m
+[1;32m     71[0m             [0mcmd[0m[0;34m.[0m[0mextend[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mcommand_line_args[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 72[0;31m             self.process = subprocess.Popen(cmd, env=self.env,
+[0m[1;32m     73[0m                                             [0mclose_fds[0m[0;34m=[0m[0mplatform[0m[0;34m.[0m[0msystem[0m[0;34m([0m[0;34m)[0m [0;34m!=[0m [0;34m'Windows'[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/subprocess.py[0m in [0;36m__init__[0;34m(self, args, bufsize, executable, stdin, stdout, stderr, preexec_fn, close_fds, shell, cwd, env, universal_newlines, startupinfo, creationflags, restore_signals, start_new_session, pass_fds, user, group, extra_groups, encoding, errors, text, umask, pipesize)[0m
+[1;32m    965[0m [0;34m[0m[0m
+[0;32m--> 966[0;31m             self._execute_child(args, executable, preexec_fn, close_fds,
+[0m[1;32m    967[0m                                 [0mpass_fds[0m[0;34m,[0m [0mcwd[0m[0;34m,[0m [0menv[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/subprocess.py[0m in [0;36m_execute_child[0;34m(self, args, executable, preexec_fn, close_fds, pass_fds, cwd, env, startupinfo, creationflags, shell, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, restore_signals, gid, gids, uid, umask, start_new_session)[0m
+[1;32m   1841[0m                         [0merr_msg[0m [0;34m=[0m [0mos[0m[0;34m.[0m[0mstrerror[0m[0;34m([0m[0merrno_num[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1842[0;31m                     [0;32mraise[0m [0mchild_exception_type[0m[0;34m([0m[0merrno_num[0m[0;34m,[0m [0merr_msg[0m[0;34m,[0m [0merr_filename[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1843[0m                 [0;32mraise[0m [0mchild_exception_type[0m[0;34m([0m[0merr_msg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'chromedriver'
 
 During handling of the above exception, another exception occurred:
 
-Traceback (most recent call last):
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
-    record_timing=False,
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/client.py", line 1117, in execute
-    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/util.py", line 78, in wrapped
-    return just_run(coro(*args, **kwargs))
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/util.py", line 57, in just_run
-    return loop.run_until_complete(coro)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
-    return future.result()
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/client.py", line 559, in async_execute
-    cell, index, execution_count=self.code_cells_executed + 1
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/client.py", line 846, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/client.py", line 651, in _async_poll_for_reply
-    await self._async_handle_timeout(timeout, cell)
-  File "/Users/loreliegordon/.virtualenvs/sandbox2/lib/python3.7/site-packages/nbclient/client.py", line 702, in _async_handle_timeout
-    "Cell execution timed out", timeout, cell
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-['y_test_1_y_pred_1 = []', 'y_test_0_y_pred_0 = []', 'y_test_1_y_pred_0 = []', 'y_test_0_y_pred_1 = []', '']
-...
-['all_losses_df = np.array(all_losses)', 'all_losses_df = all_losses_df.reshape(len(all_losses_df), len(all_losses_df[0]))', 'all_losses_df = pd.DataFrame(all_losses_df).T', 'all_losses_df["iter"] = all_losses_df.index', 'all_losses_df = all_losses_df.melt(id_vars=["iter"])']
--------------------
+[0;31mWebDriverException[0m                        Traceback (most recent call last)
+[0;32m/var/folders/sw/31vsr7sd3dggcqkkgn59gsl80000gn/T/ipykernel_32517/870544772.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     10[0m [0mch[0m[0;34m.[0m[0maxes[0m[0;34m.[0m[0mset_xaxis_label[0m[0;34m([0m[0;34m"Iteration"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     11[0m [0mch[0m[0;34m.[0m[0maxes[0m[0;34m.[0m[0mset_xaxis_tick_orientation[0m[0;34m([0m[0;34m"vertical"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 12[0;31m [0mch[0m[0;34m.[0m[0mshow[0m[0;34m([0m[0;34m'png'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m~/.venvs/sandbox/lib/python3.10/site-packages/chartify/_core/chart.py[0m in [0;36mshow[0;34m(self, format)[0m
+[1;32m    372[0m             [0;32mreturn[0m [0mbokeh[0m[0;34m.[0m[0mio[0m[0;34m.[0m[0mshow[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mfigure[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    373[0m         [0;32melif[0m [0mformat[0m [0;34m==[0m [0;34m'png'[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 374[0;31m             [0mimage[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_figure_to_png[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    375[0m             [0;31m# Need to re-enable this when logos are added back.[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    376[0m             [0;31m# image = self.logo._add_logo_to_image(image)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/.venvs/sandbox/lib/python3.10/site-packages/chartify/_core/chart.py[0m in [0;36m_figure_to_png[0;34m(self)[0m
+[1;32m    451[0m         [0mTo[0m [0mconvert[0m [0mto[0m [0mPNG[0m [0mthe[0m [0mHTML[0m [0mfile[0m [0;32mis[0m [0mopened[0m [0;32min[0m [0ma[0m [0mheadless[0m [0mbrowser[0m[0;34m.[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    452[0m         """
+[0;32m--> 453[0;31m         [0mdriver[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_initialize_webdriver[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    454[0m         [0;31m# Save figure as HTML[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    455[0m         [0mhtml[0m [0;34m=[0m [0mfile_html[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mfigure[0m[0;34m,[0m [0mresources[0m[0;34m=[0m[0mINLINE[0m[0;34m,[0m [0mtitle[0m[0;34m=[0m[0;34m""[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/.venvs/sandbox/lib/python3.10/site-packages/chartify/_core/chart.py[0m in [0;36m_initialize_webdriver[0;34m(self)[0m
+[1;32m    443[0m         [0moptions[0m[0;34m.[0m[0madd_argument[0m[0;34m([0m[0;34m'--headless'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    444[0m         [0moptions[0m[0;34m.[0m[0madd_argument[0m[0;34m([0m[0;34m'--hide-scrollbars'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 445[0;31m         [0mdriver[0m [0;34m=[0m [0mwebdriver[0m[0;34m.[0m[0mChrome[0m[0;34m([0m[0moptions[0m[0;34m=[0m[0moptions[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    446[0m         [0;32mreturn[0m [0mdriver[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    447[0m [0;34m[0m[0m
+
+[0;32m~/.venvs/sandbox/lib/python3.10/site-packages/selenium/webdriver/chrome/webdriver.py[0m in [0;36m__init__[0;34m(self, executable_path, port, options, service_args, desired_capabilities, service_log_path, chrome_options)[0m
+[1;32m     66[0m             [0mservice_args[0m[0;34m=[0m[0mservice_args[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     67[0m             log_path=service_log_path)
+[0;32m---> 68[0;31m         [0mself[0m[0;34m.[0m[0mservice[0m[0;34m.[0m[0mstart[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     69[0m [0;34m[0m[0m
+[1;32m     70[0m         [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/.venvs/sandbox/lib/python3.10/site-packages/selenium/webdriver/common/service.py[0m in [0;36mstart[0;34m(self)[0m
+[1;32m     77[0m         [0;32mexcept[0m [0mOSError[0m [0;32mas[0m [0merr[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     78[0m             [0;32mif[0m [0merr[0m[0;34m.[0m[0merrno[0m [0;34m==[0m [0merrno[0m[0;34m.[0m[0mENOENT[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 79[0;31m                 raise WebDriverException(
+[0m[1;32m     80[0m                     "'%s' executable needs to be in PATH. %s" % (
+[1;32m     81[0m                         os.path.basename(self.path), self.start_error_message)
+
+[0;31mWebDriverException[0m: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+
 

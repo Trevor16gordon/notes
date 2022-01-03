@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Overview &#8212; Columbia MS EE Notes</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -31,19 +31,19 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -51,10 +51,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Neural Networks" href="../../chapters/Notes/feedforward_neural_network.html" />
+    <link rel="next" title="Block And Grid Size" href="3_block_grid_size.html" />
     <link rel="prev" title="Intro" href="1_intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -88,7 +91,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Course Notes
  </span>
@@ -109,6 +112,41 @@
      Introduction
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/2_regression.html">
+     Ridge / Polynomial Regression From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/4_naive_bayes.html">
+     Naive Bayes Classifier From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/5_logistic_regression.html">
+     Logistic Regression Classifier From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/6_gaussian_processes.html">
+     Gaussian Processes ML Model From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/baysians_classifier.html">
+     Baysian Classifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/boosting.html">
+     Implementing a boosting algorithm for a classifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/k_means_clustering.html">
+     K Mean Clustering
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -122,8 +160,28 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ECBM4040/1_intro.html">
-     Intro
+    <a class="reference internal" href="../ECBM4040/1_feed_forward_networks.html">
+     Feed Forward Networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ECBM4040/2_optimizers.html">
+     Optimizers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ECBM4040/3_cnn.html">
+     Convolutional Neural Networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ECBM4040/3_dropout.html">
+     Methods For Improving Neural Networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ECBM4040/7_recurren_neural_netowkrs.html">
+     Recurrent Neural Networks
     </a>
    </li>
   </ul>
@@ -139,13 +197,43 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ELEN6885/1_overview.html">
+    <a class="reference internal" href="../ELEN6885/1_1_overview.html">
      Overview
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/1_2_bandit_problems.html">
+     Bandit Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/2_mdp.html">
+     Markov Decision Processes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/3_model_based_rl.html">
+     Model Based RL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/4_model_free_rl.html">
+     Model Free RL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/6_deep_reinforcement_learning.html">
+     Deep Reinforcement Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../ELEN6885/99_assignment1.html">
-     ELEN 6885 Assignment 1
+     ELEN 6885 Assignment 1 - Trevor Gordon
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/rl_balancing_exploration_notebook.html">
+     Simple Reinforcement Algorithms From Scratch
     </a>
    </li>
   </ul>
@@ -170,10 +258,15 @@
      Overview
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3_block_grid_size.html">
+     Block And Grid Size
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Other Notes
  </span>
@@ -182,18 +275,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../../chapters/Notes/feedforward_neural_network.html">
    Neural Networks
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Key Terminology
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../chapters/key_terminology/notes.html">
-   Key Terminology
   </a>
  </li>
 </ul>
@@ -289,6 +370,355 @@
   <div class="section" id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
 <p>This is an overview</p>
+<p><strong>1.2.HC.HeterogeneousParallelComputing.20200924.pdf</strong></p>
+<p>GPUs</p>
+<ul class="simple">
+<li><p>Throughput oriented cores</p></li>
+<li><p>Single Instruction Multiple Data</p></li>
+</ul>
+<p>CPUs</p>
+<ul class="simple">
+<li><p>Latency</p></li>
+<li><p>Perform many different types of operations</p></li>
+<li><p>Large caches</p></li>
+<li><p>Branch prediction</p></li>
+</ul>
+<p><strong>1.3.HC.PortabilityAndScalability.SWCost.20200924.pdf</strong></p>
+<p>Parallel programming work flow</p>
+<ul class="simple">
+<li><p>Identify compute instensive parts of application</p></li>
+<li><p>Optimize data arrangement to maximus locality</p></li>
+<li><p>performance tuning</p></li>
+</ul>
+<p>Software should be scalable and portable</p>
+<p>Any algorithm complexity higher than linear is not data scalable</p>
+<ul class="simple">
+<li><p>A sequential algorithm with linear data scalability can outperform a parallel algorithm with nlog(n) complexity</p></li>
+<li><p>Parallelism cannot overcome complexity for large data sets</p></li>
+</ul>
+<p>Load balance is important</p>
+<p><strong>1.4.HC.CUDA.DataParallelismAndThreads.20200924.pdf</strong></p>
+<p>Programming hierchy</p>
+<p>Natural Language
+Algorithm
+High LEvel Language (C / C++)
+&lt;— Compiler —-&gt;
+Instruction Set (Contract between hardware and software)
+Microarchitecture
+Circuits
+Electrons</p>
+<p>CUDA Overview</p>
+<ul class="simple">
+<li><p>Kernel executed by a grid of threads.</p></li>
+<li><p>All threads in a grid run the same kernel code (SPMD)</p></li>
+<li><p>Each thread has an index that is uses to compute memory addresses and make control decisions</p></li>
+<li><p>Threads within a thread block cooperate via shared memory atomic operations and barrier synchronization</p></li>
+<li><p>Blockidx and threadidx simplifies memory addressing when processing multidimensional data</p></li>
+</ul>
+<p><strong>1.5.HC.CUDA.DataAllocationandMovement.APIs.20200924.pdf</strong></p>
+<p>CUDA Continued</p>
+<p>Host Code</p>
+<ol class="simple">
+<li><p>Allocate device memory</p></li>
+<li><p>Kernel launch code</p></li>
+<li><p>Copy result data</p></li>
+</ol>
+<p>cudaMalloc</p>
+<ul class="simple">
+<li><p>Allocates object in the device global memory</p></li>
+<li><p>Take addresses of a pointer to the allocated object and size of allocated object in terms of bytes</p></li>
+</ul>
+<p>cudaFree</p>
+<ul class="simple">
+<li><p>Frees object from device glocal memory</p></li>
+<li><p>Pointer to freed object</p></li>
+</ul>
+<p>cudaMemcpy()</p>
+<ul class="simple">
+<li><p>Memory data transfer</p></li>
+<li><p>Requries four parameters</p>
+<ul>
+<li><p>Pointer to destination</p></li>
+<li><p>pointer to source</p></li>
+<li><p>number of bytes coped</p></li>
+<li><p>type / direction of transfer</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>1.6.HC.CUDA.Kernel-BasedParallelProgramming.20200924.pdf</strong></p>
+<p>CUDA Continued</p>
+<p>Example vector addition kernel</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">__global__</span> <span class="n">void</span> <span class="n">vector_addition</span><span class="p">(</span><span class="nb">float</span><span class="o">*</span> <span class="n">A_d</span><span class="p">,</span> <span class="nb">float</span><span class="o">*</span> <span class="n">B_d</span><span class="p">,</span> <span class="nb">float</span><span class="o">*</span> <span class="n">C_d</span><span class="p">,</span> <span class="nb">int</span> <span class="n">n</span><span class="p">)</span>
+    <span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">blockIdx</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">blockDim</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">threadIdx</span><span class="o">.</span><span class="n">x</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">){</span>
+        <span class="n">C_d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">A_d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">B_d</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>num_blocks = (len_vec // blocksize + 1)
+num_threads_per_block = blocksize</p>
+<p>dim_block = (blocksize, 1, 1)
+dim_grid = (num_blocks, 1, 1)
+To run this, run {num_blocks} blocks of {num_threads_per_block} threads each</p>
+<p>Cuda function declarations</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Executed On</p></th>
+<th class="head"><p>Only callable from the:</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>device</strong> float DeviceFunc()</p></td>
+<td><p>device</p></td>
+<td><p>device</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>global</strong> void KernelFunc()</p></td>
+<td><p>device</p></td>
+<td><p>host</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>host</strong> float HostFunc()</p></td>
+<td><p>host</p></td>
+<td><p>host</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>1.7.HC.MultidimensionalKernelConfiguration.20201001.pdf</strong></p>
+<p>Multidimensional Kernel Configuration</p>
+<ul class="simple">
+<li><p>Row Major layout in C/C++</p>
+<ul>
+<li><p>To access i = row*width+col</p></li>
+</ul>
+</li>
+</ul>
+<p>Grid, block thread</p>
+<ul class="simple">
+<li><p>A grid is a three dimensionall array of blocks</p></li>
+<li><p>Each block is a three dimensional array of threads</p></li>
+</ul>
+<p>Host code for launching a picture kernel</p>
+<ul class="simple">
+<li><p>16 threads per block</p></li>
+<li><p>length of picture / block_size + 1 to make sure threads for all parts</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">assume</span> <span class="n">that</span> <span class="n">the</span> <span class="n">picture</span> <span class="ow">is</span> <span class="n">size</span> <span class="n">mxn</span><span class="p">,</span>
+<span class="o">//</span> <span class="n">m</span> <span class="n">pixels</span> <span class="ow">in</span> <span class="n">y</span> <span class="n">dimension</span> <span class="ow">and</span> <span class="n">n</span> <span class="n">pixels</span> <span class="ow">in</span> <span class="n">x</span> <span class="n">dimension</span>
+<span class="o">//</span> <span class="nb">input</span> <span class="n">d_Pin</span> <span class="n">has</span> <span class="n">been</span> <span class="n">allocated</span> <span class="n">on</span> <span class="ow">and</span> <span class="n">copied</span> <span class="n">to</span> <span class="n">device</span>
+<span class="o">//</span> <span class="n">output</span> <span class="n">d_Pout</span> <span class="n">has</span> <span class="n">been</span> <span class="n">allocated</span> <span class="n">on</span> <span class="n">device</span>
+<span class="n">dim3</span> <span class="n">DimGrid</span> <span class="p">(</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span><span class="mi">16</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+<span class="p">(</span> <span class="p">(</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span><span class="mi">16</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">dim3</span> <span class="n">DimBlock</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">;</span>
+<span class="n">PictureKernel</span><span class="o">&lt;&lt;&lt;</span><span class="n">DimGrid</span><span class="p">,</span><span class="n">DimBlock</span><span class="o">&gt;&gt;&gt;</span><span class="p">(</span><span class="n">d</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">d</span> <span class="n">Pout</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>1.8.HC.BasicMatrix-MatrixMultiplication.20201001.pdf</strong></p>
+<p>Simple Square matrix multiplication</p>
+<ul class="simple">
+<li><p>Each thread calculates one element of P</p></li>
+<li><p>Each row of M is loaded width times from global memory</p></li>
+<li><p>Each column is load width times from global memory</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">__global__</span> <span class="n">void</span> <span class="n">matrix_mult_simple</span><span class="p">(</span><span class="nb">float</span><span class="o">*</span> <span class="n">A</span><span class="p">,</span> <span class="nb">float</span><span class="o">*</span> <span class="n">B</span><span class="p">,</span> <span class="nb">float</span><span class="o">*</span> <span class="n">P</span><span class="p">,</span> <span class="nb">int</span> <span class="n">m</span><span class="p">,</span> <span class="nb">int</span> <span class="n">n</span><span class="p">,</span> <span class="nb">int</span> <span class="n">k</span><span class="p">)){</span>
+    <span class="o">//</span> <span class="n">Matrix</span> <span class="n">A</span> <span class="ow">is</span> <span class="p">(</span><span class="n">m</span> <span class="n">X</span> <span class="n">n</span><span class="p">)</span>  <span class="p">(</span><span class="n">m</span> <span class="ow">is</span> <span class="n">height</span> <span class="p">(</span><span class="n">num_rows</span><span class="p">),</span> <span class="n">n</span> <span class="ow">is</span> <span class="n">width</span> <span class="p">(</span><span class="n">num_cols</span><span class="p">))</span>
+    <span class="o">//</span> <span class="n">Matrix</span> <span class="n">B</span> <span class="ow">is</span> <span class="p">(</span><span class="n">n</span> <span class="n">X</span> <span class="n">k</span><span class="p">)</span>  <span class="p">(</span><span class="n">n</span> <span class="ow">is</span> <span class="n">height</span> <span class="p">(</span><span class="n">num_rows</span><span class="p">),</span> <span class="n">k</span> <span class="ow">is</span> <span class="n">width</span> <span class="p">(</span><span class="n">num_cols</span><span class="p">))</span>
+    <span class="o">//</span> <span class="n">Return</span> <span class="ow">is</span> <span class="p">(</span><span class="n">m</span> <span class="n">X</span> <span class="n">k</span><span class="p">)</span>    <span class="p">(</span><span class="n">m</span> <span class="ow">is</span> <span class="n">height</span> <span class="p">(</span><span class="n">num_rows</span><span class="p">),</span> <span class="n">k</span> <span class="ow">is</span> <span class="n">width</span> <span class="p">(</span><span class="n">num_cols</span><span class="p">))</span>
+    <span class="n">row_out</span> <span class="o">=</span> <span class="n">blockIdx</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">blockDim</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">threadIdx</span><span class="o">.</span><span class="n">x</span><span class="p">;</span>
+    <span class="n">col_out</span> <span class="o">=</span> <span class="n">blockIdx</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">blockDim</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">threadIdx</span><span class="o">.</span><span class="n">y</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">((</span><span class="n">row_out</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">col_out</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">))</span>
+    <span class="nb">int</span> <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">row_width</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="nb">sum</span> <span class="o">+=</span> <span class="n">M</span><span class="p">[</span><span class="n">row_out</span><span class="o">*</span><span class="n">row_width_1</span> <span class="o">+</span> <span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">N</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">row_width_2</span> <span class="o">+</span> <span class="n">col_out</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="n">P</span><span class="p">[</span><span class="n">row_out</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="n">col_out</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Started tiled matrix operation?</p>
+<p><strong>2.1.HC.ThreadScheduling.20201001.pdf</strong></p>
+<p>Instruction Level Parallelism:</p>
+<ul class="simple">
+<li><p>1st gen: instructions executed sequentially in program order</p></li>
+<li><p>2nd gen: Pipelined execution. Don’t wait until clothes are finished in dryer before starting next wash cycle</p></li>
+<li><p>3rd level: instructions executed in paralle. (Need to be independent)</p></li>
+<li><p>4th gen: multi threading. Same processor</p></li>
+<li><p>5th gen: multi core, multi processors</p></li>
+</ul>
+<p>Von Neurmann Model with SIMD Units</p>
+<p>memory
+ALU
+Reg
+etc</p>
+<p>Warps as a scheduling Unit</p>
+<ul class="simple">
+<li><p>Each block executed as 32 thread warps</p></li>
+<li><p>Hardware imlementation decision. Not part of the cuda programing model</p></li>
+</ul>
+<p>Question: If 3 blocks are assigned to a streaming multiprocesser and each block has 256 threads, how many warps are there in a streaming multiproccesor.</p>
+<p>Answer: Each block is divided into 256/32 = 8 warps. There are 8*3=24 warps</p>
+<p>All threads in a warp execute the same instruction</p>
+<p>For matrix multiplication using multiple blocks.</p>
+<ul class="simple">
+<li><p>8x8 blocks for fermi:</p>
+<ul>
+<li><p>64 threads per block</p></li>
+<li><p>Each SM can take up to 1536 threads</p></li>
+<li><p>1536 threads / 64 threads/block = 24 blocks</p></li>
+<li><p>Each SM only takes 8 blocks, only 64*8=512 threads per block</p></li>
+</ul>
+</li>
+<li><p>16x16 blocks for fermi:</p>
+<ul>
+<li><p>256 threads per block</p></li>
+<li><p>Each SM can take up to 1536 threads</p></li>
+<li><p>1536 threads / 256 threads/block = 6 blocks</p></li>
+<li><p>Each SM takes 6 blocks, only 256*6=1536 threads per block</p></li>
+</ul>
+</li>
+<li><p>32x32 blocks for fermi:</p>
+<ul>
+<li><p>1024 threads per block</p></li>
+<li><p>Each SM can take up to 1536 threads</p></li>
+<li><p>1536 threads / 1024 threads/block =~ 1 block</p></li>
+<li><p>Each SM takes 1 blocks, only 1024 threads per block</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>2.2.HC.ControlDivergence.20200924.pdf</strong></p>
+<p>Control divergence</p>
+<p>Warps as scheduling units</p>
+<ul class="simple">
+<li><p>Implementation decision. Not part of the CUDA programming model</p></li>
+<li><p>Thread IDs within a warp are consecutive and increasing</p></li>
+<li><p>If working across warps, can’t rely on any rdering. Need to use __syncthreads()</p></li>
+<li><p>Need to keep track of control divergence within a warp</p></li>
+</ul>
+<p>Example with divergence:
+<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(threadIdx.x</span> <span class="pre">&gt;</span> <span class="pre">2)</span></code></p>
+<ul class="simple">
+<li><p>Threads within a block have different paths</p></li>
+</ul>
+<p>Example without divergence:
+<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(blockDim.x</span> <span class="pre">&gt;</span> <span class="pre">2)</span></code></p>
+<ul class="simple">
+<li><p>Branch granularity is a multiple of block size. Al threads in any given warp follow the same path</p></li>
+</ul>
+<p><strong>2.3.HC.CUDAmemories.modelAndLocality.20200924.pdf</strong></p>
+<p>CUDA memory delay</p>
+<ul class="simple">
+<li><p>Read/write per threads</p>
+<ul>
+<li><p>Registers (~1 cycle) per-thread</p></li>
+<li><p>Shared memory (~5 cycles) per-block</p></li>
+<li><p>Global memory (~500 cycles) per-grid</p></li>
+</ul>
+</li>
+<li><p>Read only</p>
+<ul>
+<li><p>Constant memory (~5 cycles with cache) per-grid</p></li>
+</ul>
+</li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable declartion</p></th>
+<th class="head"><p>Memory</p></th>
+<th class="head"><p>Scope</p></th>
+<th class="head"><p>Lifetime</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">local_var;</span> </code></p></td>
+<td><p>register</p></td>
+<td><p>thread</p></td>
+<td><p>thread</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">__device__</span> <span class="pre">__shared__</span> <span class="pre">int</span> <span class="pre">shared_var;</span>&#160; </code></p></td>
+<td><p>shared</p></td>
+<td><p>block</p></td>
+<td><p>block</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">__device__</span> <span class="pre">int</span> <span class="pre">global_var;</span> </code></p></td>
+<td><p>global</p></td>
+<td><p>grid</p></td>
+<td><p>application</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">__device__</span> <span class="pre">__constant__</span> <span class="pre">int</span> <span class="pre">const_var;</span> </code></p></td>
+<td><p>constant</p></td>
+<td><p>grid</p></td>
+<td><p>application</p></td>
+</tr>
+</tbody>
+</table>
+<p>Common programming strategy is to partition data into subsets or tiles that fit into shared memory. Use one thread block to handle each tile by
+- Loading the tile from global memory into shared memory. (Uses multiple threads bu only loaded once per block)
+- Perform operation with access to shared memory</p>
+<p><strong>2.4.HC.TiledParallelAlgorithms.20200924.pdf</strong></p>
+<p>Study on speed of traditional matrix multiplication without tiling</p>
+<ul class="simple">
+<li><p>Two memory accesses (8 bytes) per floating point multiply add</p></li>
+<li><p>4 B /s of memory bandwith per FLOPS (floating point operations per section)</p></li>
+<li><p>Peak floating point rate is 1000 G FLOPS</p></li>
+<li><p>4*1000 = 4000 GB/s required to achieve peak FLOP rating</p></li>
+<li><p>Reality 150 GB/s limits the code at 37.5 GFlops</p></li>
+</ul>
+<p><strong>2.5.HC.TiledMatrixMultiplication.20201007.pdf</strong></p>
+<p>Tiled matrix multiply:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="n">__global__</span> <span class="n">void</span> <span class="n">tiled_mat_mul</span><span class="p">(</span><span class="nb">float</span><span class="o">*</span> <span class="n">A</span><span class="p">,</span> <span class="nb">float</span><span class="o">*</span> <span class="n">B</span><span class="p">,</span> <span class="nb">float</span><span class="o">*</span> <span class="n">C</span><span class="p">,</span> <span class="n">w</span><span class="p">){</span>
+
+  <span class="o">//</span> <span class="n">Define</span> <span class="n">the</span> <span class="n">__shared__</span> <span class="n">mem</span> <span class="n">tiles</span>
+  <span class="o">//</span> <span class="n">Tile</span> <span class="n">width</span> <span class="n">should</span> <span class="n">be</span> <span class="n">same</span> 
+  <span class="nb">int</span> <span class="n">row</span> <span class="o">=</span> <span class="n">blockDim</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">blockIdx</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">threadIdx</span><span class="o">.</span><span class="n">x</span><span class="p">;</span>
+  <span class="nb">int</span> <span class="n">col</span> <span class="o">=</span> <span class="n">blockDim</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">blockIdx</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">threadIdx</span><span class="o">.</span><span class="n">y</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">something</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+
+
+    <span class="n">__shared__</span> <span class="nb">float</span> <span class="n">load_tile_a</span><span class="p">[</span><span class="n">blockDim</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="n">threadIdx</span><span class="o">.</span><span class="n">y</span><span class="p">][</span><span class="n">blockDim</span><span class="o">.</span><span class="n">x</span><span class="p">];</span>
+    <span class="n">__shared__</span> <span class="nb">float</span> <span class="n">load_tile_b</span><span class="p">[</span><span class="n">blockDim</span><span class="o">.</span><span class="n">y</span><span class="p">][</span><span class="n">blockDim</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="n">threadIdx</span><span class="o">.</span><span class="n">x</span><span class="p">];</span>
+    
+    <span class="o">//</span><span class="n">Loading</span>
+
+    <span class="n">load_tile_a</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">row</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">row</span><span class="p">];</span>
+    <span class="n">load_tile_b</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">row</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">row</span><span class="p">];</span>
+
+
+
+    <span class="n">__syncthreads</span><span class="p">();</span>
+
+
+    <span class="o">//</span> <span class="n">Perform</span> <span class="n">the</span> <span class="n">mat</span> <span class="n">mult</span>
+
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</pre></div>
+</div>
+<p><strong>2.6.HC.TiledMatrixMultiplicationKernel.20201007.pdf</strong>
+<strong>2.7.HC.BoundaryConditionsInTiling.20201007.pdf</strong>
+<strong>2.8.HC.BoundaryConditionsTilingKernel.20201007.pdf</strong>
+<strong>3.1.HC.DramBandwidth.20201022.pdf</strong>
+<strong>3.2.HC.MemoryCoalescing.20211028.pdf</strong>
+<strong>3.3.HC.Convolution.20201008.pdf</strong>
+<strong>3.4.HC.TiledConvolution.20201008.pdf</strong></p>
+<p><strong>3.5.HC.TileBoundaryConditionKernel.20201008.pdf</strong>
+<strong>3.6.HC.ConvolutionReuse.20191009.pdf</strong>
+<strong>4.1.HC.Reduction.20201022.pdf</strong>
+<strong>4.2.HC.ReductionKernel.20201022.pdf</strong>
+<strong>4.3.HC.BetterReductionKernel.20201022.pdf</strong>
+<strong>4.4.HC.ScanParallelPrefixSum.20201022.pdf</strong>
+<strong>4.5.HC.WorkInefficientScanKernel.20201022.pdf</strong>
+<strong>4.6.HC.WorkEfficientScanKernel.20201022.pdf</strong>
+<strong>4.7.HC.MoreOnParallelScan.20191014.pdf</strong>
+<strong>5.1.HC.Histogramming.20201028.pdf</strong>
+<strong>5.2.HC.AtomicOperations.20201028.pdf</strong>
+<strong>5.3.HC.AtomicOperationsInCUDA.20201028.pdf</strong>
+<strong>5.4.HC.AtomicOperationPerformance.20201028.pdf</strong>
+<strong>5.5.HC.PrivatizedHistogram.20201028.pdf</strong>
+<strong>15.1.HC.FloatingPoint.20201029.pdf</strong>
+<strong>15.2.HC.FloatingPointGPUs.20201029.pdf</strong></p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -314,31 +744,22 @@
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="1_intro.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Intro</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="1_intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Intro</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="3_block_grid_size.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Block And Grid Size</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="../../chapters/Notes/feedforward_neural_network.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Neural Networks</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -359,8 +780,7 @@
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

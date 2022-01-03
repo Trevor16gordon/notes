@@ -10,6 +10,11 @@ A markov reward process has
 **State Transition Prob Matrix**: Probability of moving to the other states given a current state
 **Discount Factor**: How much to weigh current rewards vs future ones. In range [0,1].
 
+\begin{align}
+\begin{aligned}v\left( s\right) =E\left[ G_{t}|S_{t}=s\right] \\
+v\left( s\right) =E\left[ R_{t+1}+\Upsilon \cdot v\left( s_{t+1}\right) \ldots |S_{t}=s\right] \\
+v\left( s\right) =R_{s}+\Upsilon \cdot \sum _{sES}P_{ss},v\left( s\cdot \right) \end{aligned}
+\end{align}
 
 ## Markov Decision Processes
 A markov decision process is an extension of the MRP where the agent now has a set of actions.
@@ -58,3 +63,4 @@ Proof:
 P\left( a=1\right) =1+\dfrac{e}{e^{Qt}}\dfrac{}{\left( 1\right) /\tau }\\
 P\left( a=1\right) =\dfrac{1}{1+e^{\dfrac{1}{T}\left( Q+121-Q+\left( 1\right) \right) }}\end{aligned}
 \end{align}
+
