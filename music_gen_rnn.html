@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Intro &#8212; Columbia MS EE Notes</title>
+    <title>Music Generation RNN &#8212; Columbia MS EE Notes</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,7 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Music Generation RNN" href="music_gen_rnn.html" />
+    <link rel="next" title="Machine Learning for signals, information, data" href="courses/ELEN4720_overview.html" />
+    <link rel="prev" title="Intro" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -84,8 +85,8 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
    Intro
   </a>
  </li>
@@ -95,9 +96,9 @@
   Projects
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="music_gen_rnn.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Music Generation RNN
   </a>
  </li>
@@ -324,7 +325,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/music_gen_rnn.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -344,7 +345,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://trevor16gordon.github.io/notes//issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+            href="https://trevor16gordon.github.io/notes//issues/new?title=Issue%20on%20page%20%2Fmusic_gen_rnn.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -370,17 +371,47 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Intro
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model">
+   Model
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fall-2021-courses">
-   Fall 2021 Courses
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessing">
+   Preprocessing
   </a>
-  <ul class="visible nav section-nav flex-column">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#background">
+     Background
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#note-specfic-inputs">
+     Note Specfic Inputs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-specfic-inputs">
+     Time Specfic Inputs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#putting-it-all-together">
+     Putting it all together
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-labels">
+     Data Labels
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Model
+  </a>
  </li>
 </ul>
 
@@ -393,127 +424,65 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="intro">
-<h1>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h1>
-<p>Welcome! My name is Trevor Gordon and I am currently in my first semester of my MS in Electrical Engineering at Columbia University with a focus in machine learning and reinforcement learning.</p>
-<p>Please see my LinkedIn for information on my experience: https://www.linkedin.com/in/tgordon-ubc/</p>
-<p>I will be using this jupyter book to keep notes on my courses while at Columbia. This includes theory, formulas, code snippets and links to useful resources. These notes are a work in progress as the semester progresses.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="music-generation-rnn">
+<h1>Music Generation RNN<a class="headerlink" href="#music-generation-rnn" title="Permalink to this headline">¶</a></h1>
+<p>In this project I prepare midi music files and train a recurrent neural network to be able to generate music! The structure of the model is based off ![this blog](https://www.danieldjohnson.com/2015/08/03/ composing-music-with-recurrent-neural-networks/) by Daniel Johnson but it has been reproduced using TensorFlow.</p>
+<p>First, here are some results!</p>
+<audio controls="controls">
+  <source type="audio/mp3" src="https://github.com/Trevor16gordon/notes/blob/master/music_example_1.mp3?raw=true"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+<div class="section" id="model">
+<h2>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h2>
+<p>In short, a model for predicting music should be trained with short music segments and the model should predict which output notes should then be played.</p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="fall-2021-courses">
-<h1>Fall 2021 Courses<a class="headerlink" href="#fall-2021-courses" title="Permalink to this headline">¶</a></h1>
-<p><strong>Projects</strong></p>
-<ul class="simple">
-<li><p>Neural Networks &amp; Deep Learning: Piano music generation using LSTM neural network and TensorFlow. Checkout the <a class="reference external" href="https://github.com/jannikjw/music_generation_rnn/blob/main/Project_Report.pdf">final report</a> and <a class="reference external" href="https://github.com/jannikjw/music_generation_rnn">code</a></p></li>
-<li><p>Reinforcement Learning: Literature review and study on open source multi agent reinforcement learning research. Checkout the <a class="reference external" href="https://github.com/Trevor16gordon/multi_agent_rl_proj/blob/main/RL_Final_Report.pdf">final report</a></p></li>
-<li><p>GPU Programming Project: Developed random forests from scratch using CUDA and NVIDIA GPU. Checkout the <a class="reference external" href="https://github.com/Trevor16gordon/random-forests-cuda/blob/main/report.pdf">final report</a> and <a class="reference external" href="https://github.com/Trevor16gordon/random-forests-cuda">code</a></p></li>
-</ul>
-<p><strong>Reinforcement Learning</strong></p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://trevor16gordon.github.io/notes/courses/ELEN6885/1_overview.html">Introduction</a></p></li>
-<li><p>Bandit problems and on-line learning</p></li>
-<li><p>Markov decision processes, returns and value functions</p></li>
-<li><p>RL solutions: dynamic programming methods</p></li>
-<li><p>RL solutions: Monte-Carlo methods</p></li>
-<li><p>RL solutions: temporal difference methods</p></li>
-<li><p><a class="reference external" href="https://trevor16gordon.github.io/notes/courses/ELEN6885/rl_balancing_exploration_notebook.html">RL algorithms from scratch and intro to OpenAI Gym</a></p></li>
-<li><p>Eligibility traces.</p></li>
-<li><p>Value function approximation</p></li>
-<li><p>Models and planning</p></li>
-<li><p>Case studies: applications in artificial intelligence</p></li>
-<li><p>Deep reinforcement learning</p></li>
-</ul>
-<p><strong>Neural Networks and Deep Learning</strong></p>
-<ul class="simple">
-<li><p>Introduction</p></li>
-<li><p>Machine Learning Review</p></li>
-<li><p>Deep Forward Networks</p>
-<ul>
-<li><p><a class="reference external" href="https://trevor16gordon.github.io/notes/chapters/Notes/feedforward_neural_network.html">Implementing a neural network from scratch</a></p></li>
-</ul>
-</li>
-<li><p>Backpropagation</p></li>
-<li><p>Machine Learning</p></li>
-<li><p><a class="reference external" href="https://trevor16gordon.github.io/notes/courses/ECBM4040/3_optimizers.html">Optimization for Deep Learning</a></p></li>
-<li><p>Convolutional Neural Networks</p></li>
-<li><p>Regularization for Deep Learning</p></li>
-<li><p>Practical Methodology</p></li>
-<li><p>RNNs</p></li>
-<li><p>Autoencoders</p></li>
-<li><p>GANs, Variational Encoders, DLL trends</p></li>
-</ul>
-<p><strong>Machine Learning for signals, information, data</strong></p>
-<ul class="simple">
-<li><p>Introduction, maximum likelihood estimation</p></li>
-<li><p>Linear regression, least squares, geometric view</p></li>
-<li><p>Ridge regression, probabilistic views of linear regression</p>
-<ul>
-<li><p><a class="reference external" href="https://trevor16gordon.github.io/notes/courses/ELEN4720/2_regression.html">Ridge regression and polynomial regression from scratch</a></p></li>
-</ul>
-</li>
-<li><p>Bias-variance, Bayes rule, maximum a posteriori</p></li>
-<li><p>Bayesian linear regression</p></li>
-<li><p>Sparsity, subset selection for linear regression</p></li>
-<li><p>Nearest neighbor classification, Bayes classifiers</p></li>
-<li><p>Linear classifiers, perceptron</p>
-<ul>
-<li><p><a class="reference external" href="https://trevor16gordon.github.io/notes/courses/ELEN4720/4_naive_bayes.html">Naive Bayes from scratch</a></p></li>
-</ul>
-</li>
-<li><p>Logistic regression, Laplace approximation</p>
-<ul>
-<li><p><a class="reference external" href="https://trevor16gordon.github.io/notes/courses/ELEN4720/5_logistic_regression.html">Logistic regression from scratch</a></p></li>
-</ul>
-</li>
-<li><p>Kernel methods, Gaussian processes</p>
-<ul>
-<li><p><a class="reference external" href="https://trevor16gordon.github.io/notes/courses/ELEN4720/6_gaussian_processes.html">Gaussian processes from scratch</a></p></li>
-</ul>
-</li>
-<li><p>Maximum margin, support vector machines</p></li>
-<li><p>Rrees, random forests</p></li>
-<li><p>Boosting</p></li>
-<li><p>Clustering, k-means</p></li>
-<li><p>EM algorithm, missing data</p></li>
-<li><p>Mixtures of Gaussians</p></li>
-<li><p>Matrix factorization</p></li>
-<li><p>Non-negative matrix factorization</p></li>
-<li><p>Latent factor models, PCA and variations</p></li>
-<li><p>Markov models</p></li>
-<li><p>Hidden Markov models</p></li>
-<li><p>Continuous state-space models</p></li>
-<li><p>Association analysis</p></li>
-</ul>
-<p><strong>Heterogeneous Computing for Signal and Data Processing</strong></p>
-<ul class="simple">
-<li><p>Introduction</p></li>
-<li><p>GPUs</p></li>
-<li><p>OpenCL</p></li>
-<li><p>CUDA</p></li>
-<li><p>Portability and Scalability in HPC</p></li>
-<li><p>Data Parallelism and Threads</p></li>
-<li><p>Memory Hierarchy</p></li>
-<li><p>Memory Allocation and Data Movement</p></li>
-<li><p>Kernel-Based Parallel Programming</p></li>
-<li><p>Memory Bandwidth and Coalescing</p></li>
-<li><p>Matrix-Matrix Multiplications</p></li>
-<li><p>Thread, Warps and Wavefronts</p></li>
-<li><p>Thread Scheduling</p></li>
-<li><p>Tiled Processing for 1D, 2D</p></li>
-<li><p>Control Divergence</p></li>
-<li><p>Convolution and Tiled Convolution</p></li>
-<li><p>Reduction Kernels</p></li>
-<li><p>Atomic Operations</p></li>
-<li><p>Histogram Kernel</p></li>
-<li><p>Applications: Deep Learning, Imaging, Video, …</p></li>
-<li><p>Profiling and Debugging</p></li>
-</ul>
-<div class="toctree-wrapper compound">
+<div class="section" id="preprocessing">
+<h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this headline">¶</a></h2>
+<p>A significant portion of the work comes in preprocessing data</p>
+<div class="section" id="background">
+<h3>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h3>
+<p>All training data is first obtained as midi files. Midi files are structured with instruments have timestamps when notes turn off and on. Each instrument can play notes at different frequencies spanning the ‘piano roll’. The piano roll consists of 128 unique steps. It includes notes A,A#,B,C .. etc at different octaves. I use the module pretty-midi to convert the midi file to the piano roll. This module provides a method for converting from midi to a piano roll but it takes in a frequency to sample at. THe midi files have information about the tempo of the song. I sample at a frequency higher than than 4x the tempo and then pull out notes for every beat in a 16 beat bar. This corresponds with 4/4 time in music notation.</p>
+<p><img alt="Piano roll to matrix form" src="_images/piano_roll_to_mat.jpg" /></p>
 </div>
-<div class="toctree-wrapper compound">
+<div class="section" id="note-specfic-inputs">
+<h3>Note Specfic Inputs<a class="headerlink" href="#note-specfic-inputs" title="Permalink to this headline">¶</a></h3>
+<p><strong>Piano Convolved Per Note</strong></p>
+<p>It’s intuitive that the next set of notes in a song depends on the notes than came before it. However, it is also true that the notes within a time step depend on the other notes in that time step. This model will be structured in a way that it predicts one note, one timestep at a time so that it these relationships can be modeled. To do this, the input data needs to be restructured in a per-note, per-timestep way so that the output can be taken as per-note and per-timestep. However, just because the output is a single note, single timestep doesn’t mean that the input has to be a single note (“Using middle C from last timestep to predict if we should play middle C this timestep). The first input this model will use is an octave above and an octave below for each note to predict whether it should be played in the next timestep. This is referred to as “Note Vicinity”. This is essentially a convolution along the note axis for each time step.</p>
+<p>Single timestep:
+<img alt="Piano roll to matrix form" src="_images/note_convolve.jpg" /></p>
+<p>Multiple timestep:
+<img alt="Piano roll to matrix form" src="_images/note_convolve_multiple_timesteps.jpg" /></p>
+<p><strong>Adding note reference</strong></p>
+<p>All notes are trained and predicted from the same network. We want the model to be have some information about which note it is current training/predicting with. So a single element is added that represents the midi value for that note note 0-&gt;128. Additionally I also add a one hot encoding for which of the 12 lettered notes it currently is.</p>
+<p><img alt="Note inputs" src="_images/note_inputs.jpg" /></p>
 </div>
-<div class="toctree-wrapper compound">
+<div class="section" id="time-specfic-inputs">
+<h3>Time Specfic Inputs<a class="headerlink" href="#time-specfic-inputs" title="Permalink to this headline">¶</a></h3>
+<p><strong>Adding Beats</strong></p>
+<p>In western music it is common to divide music into 16 segments per bar. We want the model to pick up on patterns in music like playing chords on the downbeats of every bar. So, we give each timestep a length 4 vector that counts from 0 to 15 in binary form telling the model where is currently is within the bar.</p>
+<p><strong>Adding Note Counts</strong></p>
+<p>Although our midi piano roll has a length of 128, there are only 12 lettered notes: A, A#, B, C, C#, D, D#, E, F, F#, G, G#. Notes of the same letter from different octaves can be played together with no issue. We want the model to be able to understand which notes are emphasized in each timestep regardless of their octave. So we reduce the piano roll down to a count of each of the 12 notes and give this as input.</p>
+<p><img alt="Time inputs" src="_images/time_inputs.jpg" /></p>
 </div>
-<div class="toctree-wrapper compound">
+<div class="section" id="putting-it-all-together">
+<h3>Putting it all together<a class="headerlink" href="#putting-it-all-together" title="Permalink to this headline">¶</a></h3>
+<p>The training data is represented in three dimensions as shown below. Some parts of the input change in the note dimension but are constant in the time dimension. The opposite is also true. The note vicinity part of input changes along the note and time dimension.</p>
+<p><img alt="Time inputs" src="_images/3d_input.jpg" /></p>
+</div>
+<div class="section" id="data-labels">
+<h3>Data Labels<a class="headerlink" href="#data-labels" title="Permalink to this headline">¶</a></h3>
+<p>The data labels are the notes in the future timestep.</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Model<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The model is based on a type of recurrent neural network called LSTM. See <img alt="this page" src="https://towardsdatascience.com/illustrated-guide-to-recurrent-neural-networks-79e5eb8049c9" /> for a good intro into recurrent neural networks.</p>
+<p>Long Short Term Memory (LSTM) networks are a type of neural network with recurrent connections. Nodes in the network receive input from the nodes before it. They also receive the hidden state from the network in the previous timestep. Internally these networks have dense neural networks (and associated weights) for different internal gates: forget, remember, input_modulation, and output. During training, data is fed in sequentially and states are updated. Using back propogation through time the network learned how to processes sequential data such that it can accurately predict the training labels.</p>
+<p>As described before, the network should be able to predict output based on the earlier output in time. The output should also predict notes within a time step based on the other notes in the time step.</p>
+<p>The solution is to use two networks, one with recurrent connections in time, and another network with recurrent connections along the note dimension.</p>
+<p>See this description from Daniel Johnson’s blog:
+<img alt="Time inputs" src="_images/recurrent_note_time.jpg" /></p>
+<p>In practice, this is accomplished by passing the 3D input to the first time recurrent networks with notes along the batch dimension. Then the note and time dimensions are swapped. This swapped data is concatenated with the last previousely output note and data is passed to the note recurrent network. During training this additional input to the second network is just a shifted version of the labels so it is easy to obtain. However, during predicting this data doesn’t exist yet so prediction needs to happen 1 at a time.</p>
 </div>
 </div>
 
@@ -541,11 +510,18 @@
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="music_gen_rnn.html" title="next page">
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Intro</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="courses/ELEN4720_overview.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Music Generation RNN</p>
+        <p class="prev-next-title">Machine Learning for signals, information, data</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
