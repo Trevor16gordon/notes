@@ -1,9 +1,10 @@
 # Music Generation RNN
 
+![Model](images/rnn_music/model_overview.jpg)
 
-In this project I prepare midi music files and train a recurrent neural network to be able to generate music! The structure of the model is based off ![this blog](https://www.danieldjohnson.com/2015/08/03/ composing-music-with-recurrent-neural-networks/) by Daniel Johnson but it has been reproduced using TensorFlow.
+In this project I prepare midi music files and train a recurrent neural network to be able to generate music! The structure of the model is based off [this blog](<https://www.danieldjohnson.com/2015/08/03/ composing-music-with-recurrent-neural-networks/>) by Daniel Johnson. Check out the implementation using Tensorflow in the repo [here](https://github.com/Trevor16gordon/music_generation_rnn/tree/trevor_develop)
 
-First, here are some results!
+First, here's one result!
 
 <audio controls="controls">
   <source type="audio/mp3" src="https://github.com/Trevor16gordon/notes/blob/master/music_example_1.mp3?raw=true"></source>
@@ -11,15 +12,9 @@ First, here are some results!
 </audio>
 
 
-## Model
+## Data Preprocessing
 
-In short, a model for predicting music should be trained with short music segments and the model should predict which output notes should then be played.
-
-## Preprocessing
-
-A significant portion of the work comes in preprocessing data
-
-
+A significant portion of the work comes in preprocessing data. Below I give some background on how songs are represented as matrices. Then I describe how I preprocess the data.
 
 ### Background
 
@@ -80,7 +75,19 @@ As described before, the network should be able to predict output based on the e
 
 The solution is to use two networks, one with recurrent connections in time, and another network with recurrent connections along the note dimension.
 
-See this description from Daniel Johnson's blog:
-![Time inputs](images/rnn_music/recurrent_note_time.jpg)
 
 In practice, this is accomplished by passing the 3D input to the first time recurrent networks with notes along the batch dimension. Then the note and time dimensions are swapped. This swapped data is concatenated with the last previousely output note and data is passed to the note recurrent network. During training this additional input to the second network is just a shifted version of the labels so it is easy to obtain. However, during predicting this data doesn't exist yet so prediction needs to happen 1 at a time. 
+
+![](images/rnn_music/model_training_arch.jpg)
+
+![](images/rnn_music/model_predicting_arch.jpg)
+
+
+## Data
+
+The model was trained using 100 songs from the Nottingham dataset obtained from [here](http://www-ens.iro.umontreal.ca/~boulanni/icml2012)
+
+
+## Results
+
+Here are some outputs from the network:

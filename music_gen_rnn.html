@@ -372,13 +372,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#model">
-   Model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preprocessing">
-   Preprocessing
+  <a class="reference internal nav-link" href="#data-preprocessing">
+   Data Preprocessing
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -409,8 +404,18 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+  <a class="reference internal nav-link" href="#model">
    Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data">
+   Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#results">
+   Results
   </a>
  </li>
 </ul>
@@ -426,19 +431,16 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="music-generation-rnn">
 <h1>Music Generation RNN<a class="headerlink" href="#music-generation-rnn" title="Permalink to this headline">¶</a></h1>
-<p>In this project I prepare midi music files and train a recurrent neural network to be able to generate music! The structure of the model is based off ![this blog](https://www.danieldjohnson.com/2015/08/03/ composing-music-with-recurrent-neural-networks/) by Daniel Johnson but it has been reproduced using TensorFlow.</p>
-<p>First, here are some results!</p>
+<p><img alt="Model" src="_images/model_overview.jpg" /></p>
+<p>In this project I prepare midi music files and train a recurrent neural network to be able to generate music! The structure of the model is based off <a class="reference external" href="https://www.danieldjohnson.com/2015/08/03/%20composing-music-with-recurrent-neural-networks/">this blog</a> by Daniel Johnson. Check out the implementation using Tensorflow in the repo <a class="reference external" href="https://github.com/Trevor16gordon/music_generation_rnn/tree/trevor_develop">here</a></p>
+<p>First, here’s one result!</p>
 <audio controls="controls">
   <source type="audio/mp3" src="https://github.com/Trevor16gordon/notes/blob/master/music_example_1.mp3?raw=true"></source>
   <p>Your browser does not support the audio element.</p>
 </audio>
-<div class="section" id="model">
-<h2>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h2>
-<p>In short, a model for predicting music should be trained with short music segments and the model should predict which output notes should then be played.</p>
-</div>
-<div class="section" id="preprocessing">
-<h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this headline">¶</a></h2>
-<p>A significant portion of the work comes in preprocessing data</p>
+<div class="section" id="data-preprocessing">
+<h2>Data Preprocessing<a class="headerlink" href="#data-preprocessing" title="Permalink to this headline">¶</a></h2>
+<p>A significant portion of the work comes in preprocessing data. Below I give some background on how songs are represented as matrices. Then I describe how I preprocess the data.</p>
 <div class="section" id="background">
 <h3>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h3>
 <p>All training data is first obtained as midi files. Midi files are structured with instruments have timestamps when notes turn off and on. Each instrument can play notes at different frequencies spanning the ‘piano roll’. The piano roll consists of 128 unique steps. It includes notes A,A#,B,C .. etc at different octaves. I use the module pretty-midi to convert the midi file to the piano roll. This module provides a method for converting from midi to a piano roll but it takes in a frequency to sample at. THe midi files have information about the tempo of the song. I sample at a frequency higher than than 4x the tempo and then pull out notes for every beat in a 16 beat bar. This corresponds with 4/4 time in music notation.</p>
@@ -474,15 +476,23 @@
 <p>The data labels are the notes in the future timestep.</p>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>Model<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="model">
+<h2>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h2>
 <p>The model is based on a type of recurrent neural network called LSTM. See <img alt="this page" src="https://towardsdatascience.com/illustrated-guide-to-recurrent-neural-networks-79e5eb8049c9" /> for a good intro into recurrent neural networks.</p>
 <p>Long Short Term Memory (LSTM) networks are a type of neural network with recurrent connections. Nodes in the network receive input from the nodes before it. They also receive the hidden state from the network in the previous timestep. Internally these networks have dense neural networks (and associated weights) for different internal gates: forget, remember, input_modulation, and output. During training, data is fed in sequentially and states are updated. Using back propogation through time the network learned how to processes sequential data such that it can accurately predict the training labels.</p>
 <p>As described before, the network should be able to predict output based on the earlier output in time. The output should also predict notes within a time step based on the other notes in the time step.</p>
 <p>The solution is to use two networks, one with recurrent connections in time, and another network with recurrent connections along the note dimension.</p>
-<p>See this description from Daniel Johnson’s blog:
-<img alt="Time inputs" src="_images/recurrent_note_time.jpg" /></p>
 <p>In practice, this is accomplished by passing the 3D input to the first time recurrent networks with notes along the batch dimension. Then the note and time dimensions are swapped. This swapped data is concatenated with the last previousely output note and data is passed to the note recurrent network. During training this additional input to the second network is just a shifted version of the labels so it is easy to obtain. However, during predicting this data doesn’t exist yet so prediction needs to happen 1 at a time.</p>
+<p><img alt="" src="_images/model_training_arch.jpg" /></p>
+<p><img alt="" src="_images/model_predicting_arch.jpg" /></p>
+</div>
+<div class="section" id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
+<p>The model was trained using 100 songs from the Nottingham dataset obtained from <a class="reference external" href="http://www-ens.iro.umontreal.ca/~boulanni/icml2012">here</a></p>
+</div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<p>Here are some outputs from the network:</p>
 </div>
 </div>
 
