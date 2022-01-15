@@ -7,7 +7,7 @@ In this project I prepare midi music files and train a recurrent neural network 
 First, here's one result!
 
 <audio controls="controls">
-  <source type="audio/mp3" src="https://github.com/Trevor16gordon/notes/blob/master/music_example_1.mp3?raw=true"></source>
+  <source type="audio/mp3" src="https://github.com/Trevor16gordon/notes/blob/master/music_examples/music_example_2.mp3?raw=true"></source>
   <p>Your browser does not support the audio element.</p>
 </audio>
 
@@ -91,3 +91,48 @@ The model was trained using 100 songs from the Nottingham dataset obtained from 
 ## Results
 
 Here are some outputs from the network:
+
+<audio controls="controls">
+  <source type="audio/mp3" src="https://github.com/Trevor16gordon/notes/blob/master/music_examples/music_example_1.mp3?raw=true"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+
+<audio controls="controls">
+  <source type="audio/mp3" src="https://github.com/Trevor16gordon/notes/blob/master/music_examples/music_example_3.mp3?raw=true"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+
+<audio controls="controls">
+  <source type="audio/mp3" src="https://github.com/Trevor16gordon/notes/blob/master/music_examples/music_example_4.mp3?raw=true"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+
+<audio controls="controls">
+  <source type="audio/mp3" src="https://github.com/Trevor16gordon/notes/blob/master/music_examples/music_example_5.mp3?raw=true"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+
+<audio controls="controls">
+  <source type="audio/mp3" src="https://github.com/Trevor16gordon/notes/blob/master/music_examples/music_example_6.mp3?raw=true"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+
+<audio controls="controls">
+  <source type="audio/mp3" src="https://github.com/Trevor16gordon/notes/blob/master/music_examples/music_example_7.mp3?raw=true"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+
+<audio controls="controls">
+  <source type="audio/mp3" src="https://github.com/Trevor16gordon/notes/blob/master/music_examples/music_example_8.mp3?raw=true"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+
+<audio controls="controls">
+  <source type="audio/mp3" src="https://github.com/Trevor16gordon/notes/blob/master/music_examples/music_example_9.mp3?raw=true"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
+
+<audio controls="controls">
+  <source type="audio/mp3" src="https://github.com/Trevor16gordon/notes/blob/master/music_examples/music_example_2.mp3?raw=true"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
