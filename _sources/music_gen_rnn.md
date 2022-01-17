@@ -18,7 +18,7 @@ A significant portion of the work comes in preprocessing data. Below I give some
 
 ### Background
 
-All training data is first obtained as midi files. Midi files are structured with instruments have timestamps when notes turn off and on. Each instrument can play notes at different frequencies spanning the 'piano roll'. The piano roll consists of 128 unique steps. It includes notes A,A#,B,C .. etc at different octaves. I use the module pretty-midi to convert the midi file to the piano roll. This module provides a method for converting from midi to a piano roll but it takes in a frequency to sample at. THe midi files have information about the tempo of the song. I sample at a frequency higher than than 4x the tempo and then pull out notes for every beat in a 16 beat bar. This corresponds with 4/4 time in music notation.
+All training data is first obtained as midi files. Midi files are structured into instruments with a list of timestamps when notes turn off and on. Each instrument can play notes at different frequencies spanning the 'piano roll'. The piano roll consists of 128 unique steps. It includes notes A,A#,B,C .. etc at different octaves. I use the module pretty-midi to convert the midi file to the piano roll. This module provides a method for converting from midi to a piano roll but it takes in a frequency to sample at. The midi files have information about the tempo of the song. I sample at a frequency higher than than 4x the tempo and then pull out notes for every beat in a 16 beat bar. This corresponds with 4/4 time in music notation.
 
 ![Piano roll to matrix form](images/rnn_music/piano_roll_to_mat.jpg)
 
@@ -26,7 +26,7 @@ All training data is first obtained as midi files. Midi files are structured wit
 
 **Piano Convolved Per Note**
 
-It's intuitive that the next set of notes in a song depends on the notes than came before it. However, it is also true that the notes within a time step depend on the other notes in that time step. This model will be structured in a way that it predicts one note, one timestep at a time so that it these relationships can be modeled. To do this, the input data needs to be restructured in a per-note, per-timestep way so that the output can be taken as per-note and per-timestep. However, just because the output is a single note, single timestep doesn't mean that the input has to be a single note ("Using middle C from last timestep to predict if we should play middle C this timestep). The first input this model will use is an octave above and an octave below for each note to predict whether it should be played in the next timestep. This is referred to as "Note Vicinity". This is essentially a convolution along the note axis for each time step.
+It's intuitive that the next set of notes in a song depends on the notes than came before it. However, it is also true that the notes within a time step depend on the other notes in that time step. This model will be structured in a way that it predicts one note, one timestep at a time so that it these relationships can be modeled. To do this, the input data needs to be restructured in a per-note, per-timestep way so that the output can be taken as per-note and per-timestep. However, just because the output is a single note, single timestep doesn't mean that the input has to be a single note ("Using middle C from last timestep to predict if we should play middle C this timestep). So, the first input this model will use is an octave above and an octave below for each note to predict whether it should be played in the next timestep. This is referred to as "Note Vicinity". This is essentially a convolution along the note axis for each time step.
 
 Single timestep:
 ![Piano roll to matrix form](images/rnn_music/note_convolve.jpg)
@@ -36,7 +36,7 @@ Multiple timestep:
 
 **Adding note reference**
 
-All notes are trained and predicted from the same network. We want the model to be have some information about which note it is current training/predicting with. So a single element is added that represents the midi value for that note note 0->128. Additionally I also add a one hot encoding for which of the 12 lettered notes it currently is.
+All notes are trained and predicted from the same network. We want the model to be have some information about which note it is current training/predicting with. So a single element is added that represents the midi value for that note note 0->128. Additionally I also add a one hot encoding for which of the 12 lettered notes (A, A#, B, C, C#, D, D#, E, F, F#, G, G#) it currently is.
 
 ![Note inputs](images/rnn_music/note_inputs.jpg)
 
@@ -63,20 +63,20 @@ The training data is represented in three dimensions as shown below. Some parts 
 
 ### Data Labels
 
-The data labels are the notes in the future timestep. 
+The data labels are the notes in the next timestep. 
 
 ## Model
 
-The model is based on a type of recurrent neural network called LSTM. See ![this page](https://towardsdatascience.com/illustrated-guide-to-recurrent-neural-networks-79e5eb8049c9) for a good intro into recurrent neural networks.
+The model is based on a type of recurrent neural network called LSTM. See [this page](https://towardsdatascience.com/illustrated-guide-to-recurrent-neural-networks-79e5eb8049c9) for a good intro into recurrent neural networks.
 
-Long Short Term Memory (LSTM) networks are a type of neural network with recurrent connections. Nodes in the network receive input from the nodes before it. They also receive the hidden state from the network in the previous timestep. Internally these networks have dense neural networks (and associated weights) for different internal gates: forget, remember, input_modulation, and output. During training, data is fed in sequentially and states are updated. Using back propogation through time the network learned how to processes sequential data such that it can accurately predict the training labels.
+Long Short Term Memory (LSTM) networks are a type of neural network with recurrent connections. Nodes in the network receive input from the nodes before it. They also receive the hidden state from the network in the previous timestep. Internally these networks have dense neural networks (and associated weights) for different internal gates: forget, remember, input_modulation, and output. During training, data is fed in sequentially and states are updated. Using back propogation through time the network learns how to processes sequential data such that it can accurately predict the training labels.
 
 As described before, the network should be able to predict output based on the earlier output in time. The output should also predict notes within a time step based on the other notes in the time step.
 
 The solution is to use two networks, one with recurrent connections in time, and another network with recurrent connections along the note dimension.
 
 
-In practice, this is accomplished by passing the 3D input to the first time recurrent networks with notes along the batch dimension. Then the note and time dimensions are swapped. This swapped data is concatenated with the last previousely output note and data is passed to the note recurrent network. During training this additional input to the second network is just a shifted version of the labels so it is easy to obtain. However, during predicting this data doesn't exist yet so prediction needs to happen 1 at a time. 
+In practice, this is accomplished by passing the 3D input to the first time recurrent networks with notes along the batch dimension. Then the note and time dimensions are swapped. This swapped data is concatenated with the last previousely output note and data is passed to the note recurrent network. During training this additional input to the second network is just a shifted version of the labels so it is easy to obtain. However, during predicting this data doesn't exist yet so prediction needs to happen 1 note at a time. 
 
 ![](images/rnn_music/model_training_arch.jpg)
 
