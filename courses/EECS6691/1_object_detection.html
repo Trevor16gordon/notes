@@ -1,0 +1,760 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Detection &#8212; Columbia MS EE Notes</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Columbia MS EE Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../music_gen_rnn.html">
+   Music Generation RNN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../spectrum_access_deep_rl.html">
+   Deep Reinforcement Learning For Dynamic Spectrum Access
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Notes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ELEN4720_overview.html">
+   Machine Learning for signals, information, data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/1_intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/2_regression.html">
+     Ridge / Polynomial Regression From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/4_naive_bayes.html">
+     Naive Bayes Classifier From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/5_logistic_regression.html">
+     Logistic Regression Classifier From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/6_gaussian_processes.html">
+     Gaussian Processes ML Model From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/baysians_classifier.html">
+     Baysian Classifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/k_means_clustering.html">
+     K Mean Clustering
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ECBM4040_overview.html">
+   Neural Networks and Deep Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ECBM4040/1_feed_forward_networks.html">
+     Feed Forward Networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ECBM4040/2_optimizers.html">
+     Optimizers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ECBM4040/3_cnn.html">
+     Convolutional Neural Networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ECBM4040/3_dropout.html">
+     Methods For Improving Neural Networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ECBM4040/7_recurren_neural_netowkrs.html">
+     Recurrent Neural Networks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ELEN6885_overview.html">
+   Reinforcement Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/1_1_overview.html">
+     Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/1_2_bandit_problems.html">
+     Bandit Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/2_mdp.html">
+     Markov Decision Processes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/3_model_based_rl.html">
+     Model Based RL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/4_model_free_rl.html">
+     Model Free RL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/6_deep_reinforcement_learning.html">
+     Deep Reinforcement Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/7_policy_gradient.html">
+     Policy Gradients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/8_planning_and_learning.html">
+     Planning and Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/99_assignment1.html">
+     ELEN 6885 Assignment 1 - Trevor Gordon
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/rl_balancing_exploration_notebook.html">
+     Simple Reinforcement Algorithms From Scratch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../EECS4750_overview.html">
+   Heterogeneous Computing for Signal and Data Processing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../EECS4750/1_intro.html">
+     Intro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../EECS4750/2_overview.html">
+     Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../EECS4750/3_block_grid_size.html">
+     Block And Grid Size
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other Notes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../chapters/Notes/feedforward_neural_network.html">
+   Neural Networks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/courses/EECS6691/1_object_detection.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://trevor16gordon.github.io/notes/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://trevor16gordon.github.io/notes//issues/new?title=Issue%20on%20page%20%2Fcourses/EECS6691/1_object_detection.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#image-processing-basics">
+   Image Processing Basics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#image-processing-using-neural-networks">
+   Image Processing Using Neural Networks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluating-object-detection-models">
+   Evaluating Object Detection Models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#region-based-cnn">
+   Region Based CNN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-tricks">
+   Common Tricks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fast-rnn">
+   Fast RNN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#faster-r-cnn-2016">
+   Faster R-CNN 2016
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mask-rnn">
+   Mask RNN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ssd">
+   SSD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#yolo">
+   YOLO
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#improving-yolo">
+   Improving Yolo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#yolo-v3-and-above">
+   Yolo V3 and above
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="object-detection">
+<h1>Object Detection<a class="headerlink" href="#object-detection" title="Permalink to this headline">¶</a></h1>
+<p>When starting to talk about abject detection, before getting into convolutional neural networks and more, we first need to talk about how images are represented</p>
+<div class="section" id="image-processing-basics">
+<h2>Image Processing Basics<a class="headerlink" href="#image-processing-basics" title="Permalink to this headline">¶</a></h2>
+<p><strong>Image Representation</strong></p>
+<ul class="simple">
+<li><p>Represented in a 3d array (x by y by pixel color dim)</p></li>
+<li><p>Intensity represented from 0 to 255</p></li>
+</ul>
+<p><strong>Image Gradient Vecotr</strong></p>
+<ul class="simple">
+<li><p>Contains the magnitude and direction of greatest increase for each pixel (each color)</p></li>
+<li><p>For each color, it contains a partial gradient in the x and the y direction</p></li>
+<li><p>Using both you can get the magnitude and the direction</p></li>
+<li><p>Can be calculated manually by looking at adjacent pixels</p></li>
+<li><p>Can be calculated by convolving a specific across the whole image</p></li>
+<li><p>Looking at the image gradient is useful for edge detection!</p></li>
+</ul>
+<p><strong>Histogram of oriented Gradients</strong></p>
+<ul class="simple">
+<li><p>Binning of gradient magnitude and direction to acheive some useful derivied information</p></li>
+<li><p>Come back to this</p></li>
+<li><p>“HOG algorithm summarizes the information across all the gradient vectors in one image”</p></li>
+</ul>
+<p><strong>Image Segmentation (Felzenszwalb’s Algorithm)</strong></p>
+<ul class="simple">
+<li><p>Useful to divide image into the smaller segments</p></li>
+<li><p>Can perform this using a graph structure where</p>
+<ul>
+<li><p>Pixels are the nodes</p></li>
+<li><p>Connections to other pixels based on the similarities of pixels (coordinates, colors, intensity)</p></li>
+<li><p>Graph can be setup using grid coordinates (x,y position) / connected to 8 adjacent cells</p></li>
+<li><p>Graph can also be setup using  nearest neighbour graph. Coordinates using feature space (x, y, r, g, b)</p></li>
+</ul>
+</li>
+<li><p>Algorithm:</p>
+<ul>
+<li><p>Start with each pixel belonging to it’s own component</p></li>
+<li><p>Calculate all edges. Sort them by highest edges (most similar pixels first)</p></li>
+<li><p>For element in loop</p>
+<ul>
+<li><p>If similarily is less than threshhold and pixels in different groups, merge pixels into the same group</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Selective Search</strong></p>
+<ul class="simple">
+<li><p>Another algorithm for image segmentation that will group existing region together based on similarity</p></li>
+<li><p>Calculated similarity scores of entire regions</p></li>
+<li><p>Doesn’t work by just considering individual pixels</p></li>
+</ul>
+</div>
+<div class="section" id="image-processing-using-neural-networks">
+<h2>Image Processing Using Neural Networks<a class="headerlink" href="#image-processing-using-neural-networks" title="Permalink to this headline">¶</a></h2>
+<p><strong>Convolutional Kernel</strong></p>
+<ul class="simple">
+<li><p>Examples of how a 2D convolutional kernel can work</p></li>
+</ul>
+<p><strong>Alex Net 2012</strong></p>
+<ul class="simple">
+<li><p>5 Layers</p></li>
+</ul>
+<p><strong>VGG (Simonyan and Zisserman, 2014)</strong></p>
+<ul class="simple">
+<li><p>19 layers and was very deep at the time</p></li>
+<li><p>More smaller convolutions. (Only 3x3). Less parameters so you can go deeper</p></li>
+</ul>
+<p><strong>ResNet 2015</strong></p>
+<ul class="simple">
+<li><p>152 Layers</p></li>
+<li><p>Residual “skip connections” which help with training such a deep network</p></li>
+</ul>
+</div>
+<div class="section" id="evaluating-object-detection-models">
+<h2>Evaluating Object Detection Models<a class="headerlink" href="#evaluating-object-detection-models" title="Permalink to this headline">¶</a></h2>
+<p><strong>Mean Average Precision (maP)</strong></p>
+<ul class="simple">
+<li><p>Draw the precision recall curve and get the area underneith it (for each class)</p></li>
+<li><p>Average over the classes</p></li>
+<li><p>A detection is a true positive if it has “intersection over union” (IoU)” above some threshold. Usually 0.5</p></li>
+</ul>
+<p><strong>Deformable Parts Model</strong></p>
+<ul class="simple">
+<li><p>Measure of quality of detection an object</p></li>
+<li><p>It contains 3 major score parts</p>
+<ul>
+<li><p>A coarse root filter with a size that approximately covers an entire object</p></li>
+<li><p>Multiple parts filters that a roughly half the size of the root filter.</p></li>
+<li><p>A spatial model for detecting the relative position of the parts to the root</p></li>
+</ul>
+</li>
+<li><p>When performing this you can get likely positions within a picture of some target.</p></li>
+<li><p>Author claims this can be represented by a CNN</p></li>
+</ul>
+<p><strong>Overfeat</strong></p>
+<ul class="simple">
+<li><p>Integrates the object detection, localization and classification tasks all into one CNN</p></li>
+<li><p>Contains training a classifier and a localization regressor</p></li>
+<li><p>Classifier then connects to regressor to predict 4 locations of bounding box</p></li>
+</ul>
+</div>
+<div class="section" id="region-based-cnn">
+<h2>Region Based CNN<a class="headerlink" href="#region-based-cnn" title="Permalink to this headline">¶</a></h2>
+<p><strong>R-CNN 2014</strong></p>
+<ul class="simple">
+<li><p>Using selective search, find a rough number of regions to select for classification using CNNs</p></li>
+<li><p>Workflow</p>
+<ul>
+<li><p>Pre train CNNs on image recognition tasks</p></li>
+<li><p>Using selective search break image down into regions</p></li>
+<li><p>Select regions for object classification</p></li>
+<li><p>Regions warped to have a fixed size.</p></li>
+<li><p>Forward pass through CNN generates a feature vector, trained for each class independently</p></li>
+<li><p>Positive samples are those with IoU greater than 0.3</p></li>
+<li><p>Localization errors corrected with a regression model</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Bounding Box Regression</strong></p>
+<ul class="simple">
+<li><p>Takes in bounding box predicted coordinates and the true bounding box coordinates</p></li>
+<li><p>Learns scale invariant translations between the centers</p></li>
+<li><p>Learns log-scale translations between the widths and heights</p></li>
+</ul>
+</div>
+<div class="section" id="common-tricks">
+<h2>Common Tricks<a class="headerlink" href="#common-tricks" title="Permalink to this headline">¶</a></h2>
+<p><strong>Non Maximum Supression</strong></p>
+<ul class="simple">
+<li><p>Often models will find multiple bounding boxes for the same object</p></li>
+<li><p>After all bounding boxes discovered, sort by confidence score, remove the least confident ones.</p></li>
+</ul>
+<p><strong>Hard Negative Mining</strong></p>
+<ul class="simple">
+<li><p>Classifier will find some weird texture areas which are not objects</p></li>
+<li><p>Add those to training with label no object to improve training</p></li>
+</ul>
+<p>Everything discussed so far is quite slow as there are many separate steps</p>
+</div>
+<div class="section" id="fast-rnn">
+<h2>Fast RNN<a class="headerlink" href="#fast-rnn" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Girshick (2015) improved the training procedure by unifying three independent models into one jointly trained framework and increasing shared computation results, named Fast R-CNN</p></li>
+<li><p>Workflow</p>
+<ul>
+<li><p>Train classification CNNs</p></li>
+<li><p>Using selective search for proposed regions</p></li>
+<li><p>Alter pretrained CNN</p>
+<ul>
+<li><p>Replace last max pooling layer with ROI pooling layer. ROI pooling layer outputs fixed length feature vectors of region proposals.</p></li>
+<li><p>Replace last fully connected layer and last softmax layer(K classes) with the same thing over K+1 classes.</p></li>
+</ul>
+</li>
+<li><p>Model outputs two main things</p>
+<ul>
+<li><p>Softmax estimator of K+1 classes per each ROI. Extra class for background</p></li>
+<li><p>Bounding box regressor which predicts the offset from the ROI grid to the actual bounding box for each class.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Loss includes loss from</p>
+<ul>
+<li><p>True class label</p></li>
+<li><p>Discrete probability distribution per each ROI</p></li>
+<li><p>True bounding box</p></li>
+<li><p>Predicted bounding box correction</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>ROI Pooling</strong></p>
+<ul class="simple">
+<li><p>“type of max pooling to convert features in the projected region of the image of any size, h x w, into a small fixed window”</p></li>
+</ul>
+<p>Fast RNN still slow because the region proposals still generated by a separate model</p>
+</div>
+<div class="section" id="faster-r-cnn-2016">
+<h2>Faster R-CNN 2016<a class="headerlink" href="#faster-r-cnn-2016" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Integrates the region proposal into the same network</p></li>
+<li><p>Workflow</p>
+<ul>
+<li><p>Pre train models on classification tasks</p></li>
+<li><p>Train a RPN (Region Proposal Network)</p>
+<ul>
+<li><p>Slide a small window across images</p></li>
+<li><p>At center of regioin, predict multiple regions of various sizes</p></li>
+</ul>
+</li>
+<li><p>Train a Fast CNN using the proposals generated with RPN</p></li>
+<li><p>Add them together.</p></li>
+</ul>
+</li>
+<li><p>Loss includes more details from the window finding network</p></li>
+</ul>
+</div>
+<div class="section" id="mask-rnn">
+<h2>Mask RNN<a class="headerlink" href="#mask-rnn" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Builds on Faster RNN by adding pixel level assignment to the output regions</p></li>
+<li><p>Trains a segmentation branch in parallel</p></li>
+<li><p>mask R-CNN improves the RoI pooling layer (named “RoIAlign layer”)</p></li>
+</ul>
+</div>
+<div class="section" id="ssd">
+<h2>SSD<a class="headerlink" href="#ssd" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A single-shot model. Everything including</p></li>
+<li><p>Predict category score with a a fixed set of bounding boxes</p></li>
+<li><p>Predict on different scales and ratios.</p></li>
+<li><p>Includes a pre-trained classification network.</p>
+<ul>
+<li><p>Replaces last layers with convolutions</p></li>
+<li><p>Drops classification layer</p></li>
+</ul>
+</li>
+<li><p>Includes extra feature layer networks</p>
+<ul>
+<li><p>As we go deeper the resolution decreases. So they use all of the last layers to loook for different size objects.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="yolo">
+<h2>YOLO<a class="headerlink" href="#yolo" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Encode the training label as a vector including 4 elements for boudning box and one hot encoding for the classes</p></li>
+<li><p>Works for single class classification</p></li>
+<li><p>For multiclass, split image into grid</p></li>
+<li><p>Only the cell with the center of the object is responsible for predicting the object</p></li>
+<li><p>Loss function includes a normalization so that error between large boxes isn’t more expensive than error for smaller bounding boxes.</p></li>
+<li><p>Very fast: 30 FPS or 150 FPS</p></li>
+<li><p>Drawbacks: Has trouble if many objects in a single cell.</p></li>
+</ul>
+</div>
+<div class="section" id="improving-yolo">
+<h2>Improving Yolo<a class="headerlink" href="#improving-yolo" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li></li>
+<li><p>Anchor boxes, Dimension priors</p></li>
+</ul>
+</div>
+<div class="section" id="yolo-v3-and-above">
+<h2>Yolo V3 and above<a class="headerlink" href="#yolo-v3-and-above" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>More convolutional layers: 53 compared to __</p></li>
+<li><p>Includes residual blocks</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./courses/EECS6691"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Trevor Gordon<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

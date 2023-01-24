@@ -51,7 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Implementing a boosting algorithm for a classifier" href="boosting.html" />
+    <link rel="next" title="K Mean Clustering" href="k_means_clustering.html" />
     <link rel="prev" title="Gaussian Processes ML Model From Scratch" href="6_gaussian_processes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -88,6 +88,23 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../../intro.html">
    Intro
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../music_gen_rnn.html">
+   Music Generation RNN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../spectrum_access_deep_rl.html">
+   Deep Reinforcement Learning For Dynamic Spectrum Access
   </a>
  </li>
 </ul>
@@ -135,11 +152,6 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Baysian Classifier
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="boosting.html">
-     Implementing a boosting algorithm for a classifier
     </a>
    </li>
    <li class="toctree-l2">
@@ -224,6 +236,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../ELEN6885/6_deep_reinforcement_learning.html">
      Deep Reinforcement Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/7_policy_gradient.html">
+     Policy Gradients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/8_planning_and_learning.html">
+     Planning and Learning
     </a>
    </li>
    <li class="toctree-l2">
@@ -430,7 +452,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_path</span> <span class="o">=</span> <span class="s2">&quot;/Users/loreliegordon/Library/Mobile Documents/com~apple~CloudDocs/Documents/root/Columbia/Fall2021/ELEN4720/Assignments/assignment3/&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_path</span> <span class="o">=</span> <span class="s2">&quot;/Users/trevorgordon/Library/Mobile Documents/com~apple~CloudDocs/Documents/root/Columbia/Fall2021/ELEN4720/Assignments/assignment3/&quot;</span>
 <span class="n">X_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">base_path</span> <span class="o">+</span> <span class="s2">&quot;hw3-data/Prob3_Xtest.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
 <span class="n">y_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">base_path</span> <span class="o">+</span> <span class="s2">&quot;hw3-data/Prob3_ytest.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
 <span class="n">X_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">base_path</span> <span class="o">+</span> <span class="s2">&quot;hw3-data/Prob3_Xtrain.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
@@ -625,9 +647,6 @@ converged!
 converged!
 converged!
 converged!
-converged!
-converged!
-converged!
 </pre></div>
 </div>
 </div>
@@ -636,7 +655,7 @@ converged!
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">log_likelihood_trace_df_x0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;iter&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;log_likelihood&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Log likelihood for class X0 GMM mixture with 3 clusters&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">750</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">&quot;/Users/loreliegordon/Library/Mobile Documents/com~apple~CloudDocs/Documents/root/Columbia/Fall2021/ELEN4720/Assignments/assignment3/submission/log_like_x0.png&quot;</span><span class="p">)</span>
+<span class="c1"># fig.write_image(&quot;/Users/loreliegordon/Library/Mobile Documents/com~apple~CloudDocs/Documents/root/Columbia/Fall2021/ELEN4720/Assignments/assignment3/submission/log_like_x0.png&quot;)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -648,7 +667,7 @@ converged!
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">log_likelihood_trace_df_x1</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;iter&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;log_likelihood&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Log likelihood for class X1 GMM mixture with 3 clusters&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">750</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_image</span><span class="p">(</span><span class="s2">&quot;/Users/loreliegordon/Library/Mobile Documents/com~apple~CloudDocs/Documents/root/Columbia/Fall2021/ELEN4720/Assignments/assignment3/submission/log_like_x1.png&quot;</span><span class="p">)</span>
+<span class="c1"># fig.write_image(&quot;/Users/loreliegordon/Library/Mobile Documents/com~apple~CloudDocs/Documents/root/Columbia/Fall2021/ELEN4720/Assignments/assignment3/submission/log_like_x1.png&quot;)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -978,10 +997,10 @@ invalid value encountered in true_divide
             <p class="prev-next-title">Gaussian Processes ML Model From Scratch</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="boosting.html" title="next page">
+    <a class='right-next' id="next-link" href="k_means_clustering.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Implementing a boosting algorithm for a classifier</p>
+        <p class="prev-next-title">K Mean Clustering</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

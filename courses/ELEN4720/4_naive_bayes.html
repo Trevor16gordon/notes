@@ -93,6 +93,23 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../music_gen_rnn.html">
+   Music Generation RNN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../spectrum_access_deep_rl.html">
+   Deep Reinforcement Learning For Dynamic Spectrum Access
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Course Notes
  </span>
 </p>
@@ -135,11 +152,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="baysians_classifier.html">
      Baysian Classifier
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="boosting.html">
-     Implementing a boosting algorithm for a classifier
     </a>
    </li>
    <li class="toctree-l2">
@@ -224,6 +236,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../ELEN6885/6_deep_reinforcement_learning.html">
      Deep Reinforcement Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/7_policy_gradient.html">
+     Policy Gradients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/8_planning_and_learning.html">
+     Planning and Learning
     </a>
    </li>
    <li class="toctree-l2">
@@ -421,7 +443,7 @@
 <h1>Load Data<a class="headerlink" href="#load-data" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_path</span> <span class="o">=</span> <span class="s2">&quot;/Users/loreliegordon/Library/Mobile Documents/com~apple~CloudDocs/Documents/root/Columbia/Fall2021/ELEN4720/Assignments/assignment2/&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_path</span> <span class="o">=</span> <span class="s2">&quot;/Users/trevorgordon/Library/Mobile Documents/com~apple~CloudDocs/Documents/root/Columbia/Fall2021/ELEN4720/Assignments/assignment2/&quot;</span>
 
 <span class="n">X_all</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">base_path</span> <span class="o">+</span> <span class="s2">&quot;hw2-data/Bayes_classifier/X.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">y_all</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">base_path</span> <span class="o">+</span> <span class="s2">&quot;hw2-data/Bayes_classifier/y.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -568,7 +590,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2297, 490], [109, 1704]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy is 0.8689130434782608
 </pre></div>
 </div>
 </div>

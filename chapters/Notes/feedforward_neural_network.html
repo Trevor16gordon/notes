@@ -103,6 +103,11 @@
    Music Generation RNN
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../spectrum_access_deep_rl.html">
+   Deep Reinforcement Learning For Dynamic Spectrum Access
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -232,6 +237,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../courses/ELEN6885/6_deep_reinforcement_learning.html">
      Deep Reinforcement Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ELEN6885/7_policy_gradient.html">
+     Policy Gradients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../courses/ELEN6885/8_planning_and_learning.html">
+     Planning and Learning
     </a>
    </li>
    <li class="toctree-l2">
@@ -419,8 +434,8 @@ https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi</p>
 <p>We want to update W1, W2, c1, c2.
 To do this we need to update using dL/dW1, dL/dW2, dL/dc1, dL/dc1
 These are calculated using the chain rule</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4bce769b-75fe-49fd-98a8-47081b0aae44">
-<span class="eqno">(33)<a class="headerlink" href="#equation-4bce769b-75fe-49fd-98a8-47081b0aae44" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-84a9801e-6095-4dce-84f9-85f826c06a4e">
+<span class="eqno">(32)<a class="headerlink" href="#equation-84a9801e-6095-4dce-84f9-85f826c06a4e" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \\{\frac{\partial L}{\partial yhat}} RSS 
     &amp;= 2*(y-yhat)
   \\{\frac{\partial yhat}{\partial h2}} sigmoid 

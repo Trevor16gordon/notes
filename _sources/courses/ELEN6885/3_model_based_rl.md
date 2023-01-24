@@ -24,9 +24,13 @@ see this notebook[this notebook](https://trevor16gordon.github.io/notes/courses/
 
 The bellman expecation equation for the value function shown below says that the value of a state is the expectation of the total discounted future rewards G given that state.
 
-\begin{align}
+$$
+  w_{t+1} = (1 + r_{t+1}) s(w_t) + y_{t+1}
+$$ (my_other_label)
+
+$$
 \begin{aligned}v_{\pi }\left( s\right) =E_{\pi }\left[ G_{t}|S_{t}=s\right]\end{aligned}
-\end{align}
+$$
 
 Similarily the bellman expecation equation for the state-value function shown below says that the value of a state action pair is the expectation of the total discounted future rewards G given that state and action.
 

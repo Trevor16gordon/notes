@@ -95,6 +95,23 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../music_gen_rnn.html">
+   Music Generation RNN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../spectrum_access_deep_rl.html">
+   Deep Reinforcement Learning For Dynamic Spectrum Access
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Course Notes
  </span>
 </p>
@@ -137,11 +154,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="baysians_classifier.html">
      Baysian Classifier
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="boosting.html">
-     Implementing a boosting algorithm for a classifier
     </a>
    </li>
    <li class="toctree-l2">
@@ -226,6 +238,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../ELEN6885/6_deep_reinforcement_learning.html">
      Deep Reinforcement Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/7_policy_gradient.html">
+     Policy Gradients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/8_planning_and_learning.html">
+     Planning and Learning
     </a>
    </li>
    <li class="toctree-l2">
@@ -409,42 +431,42 @@
 </div>
 <div class="section" id="example-guassian-multivariate">
 <h1>Example - Guassian Multivariate<a class="headerlink" href="#example-guassian-multivariate" title="Permalink to this headline">¶</a></h1>
-<div class="amsmath math notranslate nohighlight" id="equation-fe4711c6-95c7-4407-91fc-86d8a5f4827d">
-<span class="eqno">(1)<a class="headerlink" href="#equation-fe4711c6-95c7-4407-91fc-86d8a5f4827d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3fac5186-2de6-437a-b2c7-bcb34c475851">
+<span class="eqno">(1)<a class="headerlink" href="#equation-3fac5186-2de6-437a-b2c7-bcb34c475851" title="Permalink to this equation">¶</a></span>\[\begin{align}
 p\left( x|\mu ,\Sigma \right) :=\dfrac{1}{\left( 2\pi \right) ^{\dfrac{d}{2}}\sqrt{\det \left( \Sigma \right) }}\exp \left[ -\dfrac{1}{2}\left( x-\mu \right) ^{T}\Sigma ^{-1}\left( x-\mu \right) \right] 
 \end{align}\]</div>
 <p><strong>1.Data</strong>
 Data</p>
-<div class="amsmath math notranslate nohighlight" id="equation-94ba9462-e2e7-4fff-b484-4db4cebd7864">
-<span class="eqno">(2)<a class="headerlink" href="#equation-94ba9462-e2e7-4fff-b484-4db4cebd7864" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+<div class="amsmath math notranslate nohighlight" id="equation-c92be842-540d-490f-ae5f-e7912ff88740">
+<span class="eqno">(2)<a class="headerlink" href="#equation-c92be842-540d-490f-ae5f-e7912ff88740" title="Permalink to this equation">¶</a></span>\[\begin{align} 
 x_{1}\ldots x_{n}|x_{i}\in \mathbb{R} ^{d}
 \end{align}\]</div>
 <p><strong>2. Build Model</strong>
 In this case we choose a probabilistic model Gaussian. We know the distribution family but don’t know the parameters for the model</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5e171f6-6cbc-417e-8194-6dcd488c2afa">
-<span class="eqno">(3)<a class="headerlink" href="#equation-b5e171f6-6cbc-417e-8194-6dcd488c2afa" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4e093798-842c-47b4-95fb-78d5297c61f5">
+<span class="eqno">(3)<a class="headerlink" href="#equation-4e093798-842c-47b4-95fb-78d5297c61f5" title="Permalink to this equation">¶</a></span>\[\begin{align}
 p\left( x|\theta \right) ,\theta =\left\{ \mu ,\Sigma \right\} 
 \end{align}\]</div>
 <p>We make an assumption about the data that it is i.i.d. (independant and identically distributed)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-53669b17-2804-4f56-9579-86bcb8ffd5a7">
-<span class="eqno">(4)<a class="headerlink" href="#equation-53669b17-2804-4f56-9579-86bcb8ffd5a7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-20bbbc4f-a919-49a9-8726-798e467d8264">
+<span class="eqno">(4)<a class="headerlink" href="#equation-20bbbc4f-a919-49a9-8726-798e467d8264" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \chi _{i}n^{iid}p\left( x|\theta \right) ,i=1,\ldots n
 \end{align}\]</div>
 <p>With the assumption that the data is iid when know that the joint probability distribution is equal to the product of the marginal distributions:x</p>
-<div class="amsmath math notranslate nohighlight" id="equation-35e009ab-5d6d-4472-a94e-0b11e981b391">
-<span class="eqno">(5)<a class="headerlink" href="#equation-35e009ab-5d6d-4472-a94e-0b11e981b391" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-45e649cd-5437-4209-8b06-07be3957a359">
+<span class="eqno">(5)<a class="headerlink" href="#equation-45e649cd-5437-4209-8b06-07be3957a359" title="Permalink to this equation">¶</a></span>\[\begin{align}
 p\left( x_{1},\ldots x_{n}|\theta \right) =\prod ^{n}_{i=1}p\left( x_{i}|\theta \right)
 \end{align}\]</div>
 <p><strong>3.Infer Hidden Variables</strong>
 Looking for the <strong>maxiumum likelihood</strong> we seek to find the value of \theta that maximizes the likelihood function</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f743071f-732a-48ad-ac3e-d1438b725c4e">
-<span class="eqno">(6)<a class="headerlink" href="#equation-f743071f-732a-48ad-ac3e-d1438b725c4e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2a478567-9f18-4de7-8ee1-178d2278b7f0">
+<span class="eqno">(6)<a class="headerlink" href="#equation-2a478567-9f18-4de7-8ee1-178d2278b7f0" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \nabla _{\theta }\prod ^{n}_{i:=1}p\left( x_{i}|\theta \right) =0
 \end{align}\]</div>
 <p><strong>Logarithmic Trick</strong>
 Applying a log function does not change the location of the maximums of a function, just the value. If we apply the logarithm before deriving the gradient, it is easier to determine.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-53362e6b-ac44-4cf2-9641-1b008baf1ae5">
-<span class="eqno">(7)<a class="headerlink" href="#equation-53362e6b-ac44-4cf2-9641-1b008baf1ae5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0bb59b68-b0dc-4a94-a48a-b4c47427aadf">
+<span class="eqno">(7)<a class="headerlink" href="#equation-0bb59b68-b0dc-4a94-a48a-b4c47427aadf" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \ln \left( \prod _{i}f_{i}\right) =\sum _{i}\ln \left( f_{1}\right) 
 \end{align}\]</div>
 </div>

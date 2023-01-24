@@ -95,6 +95,23 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../music_gen_rnn.html">
+   Music Generation RNN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../spectrum_access_deep_rl.html">
+   Deep Reinforcement Learning For Dynamic Spectrum Access
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Course Notes
  </span>
 </p>
@@ -137,11 +154,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../ELEN4720/baysians_classifier.html">
      Baysian Classifier
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ELEN4720/boosting.html">
-     Implementing a boosting algorithm for a classifier
     </a>
    </li>
    <li class="toctree-l2">
@@ -226,6 +238,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="6_deep_reinforcement_learning.html">
      Deep Reinforcement Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7_policy_gradient.html">
+     Policy Gradients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8_planning_and_learning.html">
+     Planning and Learning
     </a>
    </li>
    <li class="toctree-l2">
@@ -426,8 +448,8 @@
 <li><p>After running through episodes you can update your policy based on your estimate of future rewards for all states.</p></li>
 <li><p>Maintaining sufficient exploration is an issue with Monte Carlo learning/control. If you follow a greedy policy you are not gaurunteed to explore all states.</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-19ea4b56-881d-4973-a373-851d556fe063">
-<span class="eqno">(24)<a class="headerlink" href="#equation-19ea4b56-881d-4973-a373-851d556fe063" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-76a8603d-0742-408d-801c-4fc1c5d602d6">
+<span class="eqno">(23)<a class="headerlink" href="#equation-76a8603d-0742-408d-801c-4fc1c5d602d6" title="Permalink to this equation">¶</a></span>\[\begin{align}
 V\left( s_{t}\right) \leftarrow V\left( s_{t}\right) +\dfrac{1}{N\left( s_{t}\right) }\left( G_{t}-V\left( s_{t}\right) \right) 
 \end{align}\]</div>
 </div>
@@ -451,15 +473,15 @@ V\left( s_{t}\right) \leftarrow V\left( s_{t}\right) +\dfrac{1}{N\left( s_{t}\ri
 </div>
 <div class="section" id="sarsa">
 <h2>Sarsa<a class="headerlink" href="#sarsa" title="Permalink to this headline">¶</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-cfb22131-7fec-4865-9c1f-847b56a4077b">
-<span class="eqno">(25)<a class="headerlink" href="#equation-cfb22131-7fec-4865-9c1f-847b56a4077b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-079c46b8-86aa-4db4-86f6-d534d30092ed">
+<span class="eqno">(24)<a class="headerlink" href="#equation-079c46b8-86aa-4db4-86f6-d534d30092ed" title="Permalink to this equation">¶</a></span>\[\begin{align}
 Q\left( S,A\right) \leftarrow Q\left( S,A\right) +\alpha \left( R+\Upsilon Q\left( S',A'\right) -Q\left( S,A\right) \right) 
 \end{align}\]</div>
 </div>
 <div class="section" id="q-learning">
 <h2>Q Learning<a class="headerlink" href="#q-learning" title="Permalink to this headline">¶</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-d8b2f859-04d2-4a6c-9c88-85393304d4a0">
-<span class="eqno">(26)<a class="headerlink" href="#equation-d8b2f859-04d2-4a6c-9c88-85393304d4a0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-69c51c49-2684-4f19-8d66-2623593756b2">
+<span class="eqno">(25)<a class="headerlink" href="#equation-69c51c49-2684-4f19-8d66-2623593756b2" title="Permalink to this equation">¶</a></span>\[\begin{align}
  Q\left( S,A\right) \leftarrow Q\left( S,A\right) +\alpha \left( R+\Upsilon \max _{a\cdot }Q\left( S',A'\right) -Q\left( S,A\right) \right) 
  \end{align}\]</div>
 </div>

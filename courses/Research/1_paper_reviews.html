@@ -1,0 +1,634 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reinforcement Learning Research &#8212; Columbia MS EE Notes</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Columbia MS EE Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Intro
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../music_gen_rnn.html">
+   Music Generation RNN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../spectrum_access_deep_rl.html">
+   Deep Reinforcement Learning For Dynamic Spectrum Access
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Notes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ELEN4720_overview.html">
+   Machine Learning for signals, information, data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/1_intro.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/2_regression.html">
+     Ridge / Polynomial Regression From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/4_naive_bayes.html">
+     Naive Bayes Classifier From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/5_logistic_regression.html">
+     Logistic Regression Classifier From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/6_gaussian_processes.html">
+     Gaussian Processes ML Model From Scratch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/baysians_classifier.html">
+     Baysian Classifier
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN4720/k_means_clustering.html">
+     K Mean Clustering
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ECBM4040_overview.html">
+   Neural Networks and Deep Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ECBM4040/1_feed_forward_networks.html">
+     Feed Forward Networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ECBM4040/2_optimizers.html">
+     Optimizers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ECBM4040/3_cnn.html">
+     Convolutional Neural Networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ECBM4040/3_dropout.html">
+     Methods For Improving Neural Networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ECBM4040/7_recurren_neural_netowkrs.html">
+     Recurrent Neural Networks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ELEN6885_overview.html">
+   Reinforcement Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/1_1_overview.html">
+     Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/1_2_bandit_problems.html">
+     Bandit Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/2_mdp.html">
+     Markov Decision Processes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/3_model_based_rl.html">
+     Model Based RL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/4_model_free_rl.html">
+     Model Free RL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/6_deep_reinforcement_learning.html">
+     Deep Reinforcement Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/7_policy_gradient.html">
+     Policy Gradients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/8_planning_and_learning.html">
+     Planning and Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/99_assignment1.html">
+     ELEN 6885 Assignment 1 - Trevor Gordon
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ELEN6885/rl_balancing_exploration_notebook.html">
+     Simple Reinforcement Algorithms From Scratch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../EECS4750_overview.html">
+   Heterogeneous Computing for Signal and Data Processing
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../EECS4750/1_intro.html">
+     Intro
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../EECS4750/2_overview.html">
+     Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../EECS4750/3_block_grid_size.html">
+     Block And Grid Size
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other Notes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../chapters/Notes/feedforward_neural_network.html">
+   Neural Networks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/courses/Research/1_paper_reviews.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://trevor16gordon.github.io/notes/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://trevor16gordon.github.io/notes//issues/new?title=Issue%20on%20page%20%2Fcourses/Research/1_paper_reviews.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Reinforcement Learning Research
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ieee-1900-5-2-standard-method-for-modeling-spectrum-consumption-introduction-and-use-cases">
+     IEEE 1900.5.2: Standard Method for Modeling Spectrum Consumption: Introduction and Use Cases
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prasad-github">
+   Prasad Github
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deep-multi-user-reinforcement-learning-for-distributed-dynamic-spectrum-access-oshri-naparstek-and-kobi-cohen">
+   Deep Multi-User Reinforcement Learning for Distributed Dynamic Spectrum Access - Oshri Naparstek and Kobi Cohen
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#offline-training">
+     Offline Training
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="reinforcement-learning-research">
+<h1>Reinforcement Learning Research<a class="headerlink" href="#reinforcement-learning-research" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ieee-1900-5-2-standard-method-for-modeling-spectrum-consumption-introduction-and-use-cases">
+<h2>IEEE 1900.5.2: Standard Method for Modeling Spectrum Consumption: Introduction and Use Cases<a class="headerlink" href="#ieee-1900-5-2-standard-method-for-modeling-spectrum-consumption-introduction-and-use-cases" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>3 dimensions for spectral use: Temporal (changing in time), spatials (Changing over different land areas), and spectral (Across frequency bands)</p></li>
+<li><p>Transmitters and recievers consume spectrum because a reciever can be interferred from other bands. It has requirements that may prevent other devices from transmitting.</p></li>
+<li><p>SCMS can be transmitter models, reciever models, system models,</p></li>
+<li><p>Minimum required constructs for a transmitter are reference power, spetrum mask, power map, propagation map, and a location.</p></li>
+<li><p>Receiver models minimum required constructs are reference power, underlay mask, power map, propogation map, location</p></li>
+</ul>
+<p>Potential Use Cases for SCMs:</p>
+<ul class="simple">
+<li><p>Spectrum Access System</p></li>
+<li><p>Beacon Based Spectrum Sharing</p></li>
+</ul>
+<p>Q:</p>
+<ul class="simple">
+<li><p>What are the Base parameters for SCMs? (Engineering details)</p>
+<ul>
+<li><p>Emission/Selectivity curves?</p></li>
+<li><p>Antenna patterns?</p></li>
+<li><p>Tx power, Rx noise figure</p></li>
+<li><p>IPC</p></li>
+</ul>
+</li>
+<li><p>What are the “Key Spectrum Consumption Modeling Parameters” (Operational Details)</p>
+<ul>
+<li><p>Operational Parameters?</p></li>
+<li><p>Channel Parameters?</p></li>
+<li><p>Environmental Effects?</p></li>
+<li><p>Obfuscate sensitive info</p></li>
+</ul>
+</li>
+<li><p>What are the Interference / coexistance algorithms? (Environmental Effects)</p></li>
+</ul>
+<p>Q:</p>
+<ul class="simple">
+<li><p>What does “per solid angle” mean. Both power map and prop map reference it.</p></li>
+<li><p>Schedule in the 11 constructs. How far into the future is communication planned?</p></li>
+<li><p>You mentioned measurements needed to be taken. How does that play into the 11 constructs?</p></li>
+<li><p>“The IEEE 1900.5.2 standard specifies a method to compute the compatibility of spectrum use between different SDSs that have expressed the boundaries of their spectrum use via an SCM” - Is the compatability a ‘solved’ problem? Or is this just a way to get a rough estimate?</p></li>
+<li><p>What if reciever is moving around? Does compatability get updated frequently?</p></li>
+<li><p>Cellphone as a transmitter / reciever. Power map changing all the time?</p></li>
+</ul>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="prasad-github">
+<h1>Prasad Github<a class="headerlink" href="#prasad-github" title="Permalink to this headline">¶</a></h1>
+<p>noincumbent.py</p>
+<ul class="simple">
+<li><p>Rewards are the change in reward from one slot to the next slot where reward at each slot is log of the number of successful transmissions up to that point</p></li>
+</ul>
+<p>incumbent.py</p>
+<ul class="simple">
+<li><p>Incumbent is the main user of the communication channel and the other radios need to learn when to use the channel?</p></li>
+<li><p>State transition matrix P what is the meaning of this? [[0.2, 0.8], [0.6, 0.4]</p>
+<ul>
+<li><p>If we weren’t just transmiting we will probably transmit in the next case.</p></li>
+</ul>
+</li>
+<li><p>Step function is just checking for collisions and increasing the rewards based on that.</p></li>
+<li><p>creatEpsilonGreedy does what it says</p></li>
+<li><p>Q table represented by a dictionary lookup table with a default that will give np.zeros with size of the action space.</p></li>
+<li><p>State is defined only by the time slot</p></li>
+</ul>
+<p>noincumbentv2.py</p>
+<ul class="simple">
+<li><p>Main difference is the history of rewards is part of the state space.</p></li>
+<li><p>10 slots for transmitting. Shorter amount of time</p></li>
+<li><p>11*11 states for each link by 2</p>
+<ul>
+<li><p>All permutations of possible rewards</p></li>
+</ul>
+</li>
+</ul>
+<p>Explanation of formulation of Markov Decision Processes</p>
+<p>State:</p>
+<ul class="simple">
+<li><p>t: Time slot</p></li>
+<li><p>T: total time slots</p></li>
+<li><p>I(t): number of idle transmission slots up until time t</p></li>
+<li><p>C(t): number of collisions slots up until time t</p></li>
+<li><p>D1(t): Number of successful transmissions for agent 1 at t</p></li>
+<li><p>D2(t): Number of successful transmissions for agent 2 at t</p></li>
+</ul>
+<p>Q:</p>
+<ul class="simple">
+<li><p>Am a correct to say these agents are learning information specific to time slot numbers?</p></li>
+<li><p>Any specific takeaways from this that you were suprised about or that encouraged you about moving to more complex scenarios?</p></li>
+<li><p>In the future make this time invariant?</p></li>
+<li><p>In the future</p>
+<ul>
+<li><p>agent’s don’t have info about other rewards</p></li>
+<li><p>state space include delay / time on / time off</p></li>
+</ul>
+</li>
+<li><p>Friis equation?</p></li>
+<li></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="deep-multi-user-reinforcement-learning-for-distributed-dynamic-spectrum-access-oshri-naparstek-and-kobi-cohen">
+<h1>Deep Multi-User Reinforcement Learning for Distributed Dynamic Spectrum Access - Oshri Naparstek and Kobi Cohen<a class="headerlink" href="#deep-multi-user-reinforcement-learning-for-distributed-dynamic-spectrum-access-oshri-naparstek-and-kobi-cohen" title="Permalink to this headline">¶</a></h1>
+<p>Understanding</p>
+<ul class="simple">
+<li><p>N users</p></li>
+<li><p>K channels</p></li>
+<li><p>History for user n defined as all actions and oberservations for user N up to time t</p></li>
+<li><p>Strategy is just a probability distribution over the N channels</p></li>
+<li><p>Reward is based on the achievable data rate for the channel</p>
+<ul>
+<li><p>B * Log2(1 + SNR)</p></li>
+<li><p>B: Channel bandwitdth</p></li>
+<li><p>SNR: Signal to noise ratio of user n on channel k</p></li>
+</ul>
+</li>
+<li><p>Rn is the discounted sum of all future rewards until the end of the time horizon</p></li>
+<li><p>When time is bounded, let gamma equal to 1</p></li>
+</ul>
+<p>Background on Q learning and Deep RL</p>
+<ul class="simple">
+<li><p>Minimize the TD (Time difference) error between current Q value and the target (reward plus the max value of the next state.)</p></li>
+</ul>
+<p>Their Model</p>
+<ul class="simple">
+<li><p>Input layer: (2K + 2)</p>
+<ul>
+<li><p>First K + 1 is a one hot encoding showing where the agent transmitted in the last step (+1 refers to not transmitting)</p></li>
+<li><p>Next K entries are the capacity for each channel. Transmission rate if channel is free</p></li>
+<li><p>Last entry is the 1 if the last ACK signal was received. 0 if not.</p></li>
+</ul>
+</li>
+<li><p>LSTM Layer - learns how to aggregate experiences over time.</p></li>
+<li><p>Advantage layer</p></li>
+<li><p>Value layer</p></li>
+<li><p>Q Layer</p></li>
+<li><p>Output layer [K + 1]</p></li>
+<li><p>Double K Learning:</p>
+<ul>
+<li><p>Problem is: ____</p></li>
+<li><p>DQN1 used to select actions</p></li>
+<li><p>DQN2 used to evaluate how good a selection was</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="offline-training">
+<h2>Offline Training<a class="headerlink" href="#offline-training" title="Permalink to this headline">¶</a></h2>
+<p>Online Training</p>
+<ul class="simple">
+<li><p>Don’t use experience replay</p></li>
+<li><p>Q:  we develop a mechanism that restricts the strategy space for all users when training the DQN</p></li>
+<li><p>Q: Do they have don’t translate as a strategy?</p></li>
+<li><p>Q: When a problem is partially observable we set the state to the observed history. (Or a sliding window)</p></li>
+<li><p>Q: Dynamics are non Markovian and determined by multi user interactions. Classical DQNs do not perform well in this setting.</p></li>
+<li><p>Q: There are states that are good or bad regardless of the taken action. There fore they estimate the Value function separate from the advantage function</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./courses/Research"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Trevor Gordon<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

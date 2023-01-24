@@ -95,6 +95,23 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../music_gen_rnn.html">
+   Music Generation RNN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../spectrum_access_deep_rl.html">
+   Deep Reinforcement Learning For Dynamic Spectrum Access
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Course Notes
  </span>
 </p>
@@ -137,11 +154,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../ELEN4720/baysians_classifier.html">
      Baysian Classifier
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ELEN4720/boosting.html">
-     Implementing a boosting algorithm for a classifier
     </a>
    </li>
    <li class="toctree-l2">
@@ -226,6 +238,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="6_deep_reinforcement_learning.html">
      Deep Reinforcement Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7_policy_gradient.html">
+     Policy Gradients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8_planning_and_learning.html">
+     Planning and Learning
     </a>
    </li>
    <li class="toctree-l2">
@@ -404,27 +426,27 @@
 <div class="section" id="elements-of-rl">
 <h3>Elements of RL<a class="headerlink" href="#elements-of-rl" title="Permalink to this headline">¶</a></h3>
 <p><strong>Policy</strong> is a mapping from percieved states of the environment to the probability action space $S$.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b6474b25-184a-4c25-aeef-98d852213fdb">
-<span class="eqno">(9)<a class="headerlink" href="#equation-b6474b25-184a-4c25-aeef-98d852213fdb" title="Permalink to this equation">¶</a></span>\[\begin{align} s\in S\rightarrow \pi \left( a|s\right)\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c57cf8d4-e7bc-4856-ba64-e52c75ebc423">
+<span class="eqno">(9)<a class="headerlink" href="#equation-c57cf8d4-e7bc-4856-ba64-e52c75ebc423" title="Permalink to this equation">¶</a></span>\[\begin{align} s\in S\rightarrow \pi \left( a|s\right)\end{align}\]</div>
 <p><strong>Reward</strong> is a mapping from each percieved state of the environment to a single number indicating the intrinsic desirability of the space.</p>
 <p><strong>Return</strong> is a cumulative sequence of recieved rewards after a given timestep.</p>
 <p><strong>Finite state return</strong>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-18431476-c7a9-4129-971d-e0b9b55affa3">
-<span class="eqno">(10)<a class="headerlink" href="#equation-18431476-c7a9-4129-971d-e0b9b55affa3" title="Permalink to this equation">¶</a></span>\[\begin{align}(G_{t}=R_{t+1}+R_{t+2}+R_{t+3}+\ldots +R_{T})\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-edeb60db-d33f-4678-9ef8-447383d295dc">
+<span class="eqno">(10)<a class="headerlink" href="#equation-edeb60db-d33f-4678-9ef8-447383d295dc" title="Permalink to this equation">¶</a></span>\[\begin{align}(G_{t}=R_{t+1}+R_{t+2}+R_{t+3}+\ldots +R_{T})\end{align}\]</div>
 <p><strong>Discounted Return</strong>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f76b4c32-f3c0-4d8c-aaa5-092b68596e5c">
-<span class="eqno">(11)<a class="headerlink" href="#equation-f76b4c32-f3c0-4d8c-aaa5-092b68596e5c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e1bb0dbc-b32d-43f2-ad82-ab2ce3543539">
+<span class="eqno">(11)<a class="headerlink" href="#equation-e1bb0dbc-b32d-43f2-ad82-ab2ce3543539" title="Permalink to this equation">¶</a></span>\[\begin{align}
 0\leq \Upsilon \leq 1
 G_{T}=\sum ^{\infty }_{k=0}\gamma ^{k}R_{t+k+1}\end{align}\]</div>
 <p><strong>Value Function</strong> is an estimate of how good it is to be in a specific state. For a Markov Decision Process (MDP) the value of a state is defined formally as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7ac439ba-ca6a-4e76-8d20-baa548a92b0a">
-<span class="eqno">(12)<a class="headerlink" href="#equation-7ac439ba-ca6a-4e76-8d20-baa548a92b0a" title="Permalink to this equation">¶</a></span>\[\begin{align}v_{\pi }\left( s\right) =E_{\pi }\left[ G_{t}|S_{T}=S\right] =E_{\pi }\left[ \sum ^{\infty }_{k:0}\Upsilon ^{k}R_{t+k+1}|S_{t}=S\right]\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b5d82c30-ce6b-4240-8d45-c32de12dfe66">
+<span class="eqno">(12)<a class="headerlink" href="#equation-b5d82c30-ce6b-4240-8d45-c32de12dfe66" title="Permalink to this equation">¶</a></span>\[\begin{align}v_{\pi }\left( s\right) =E_{\pi }\left[ G_{t}|S_{T}=S\right] =E_{\pi }\left[ \sum ^{\infty }_{k:0}\Upsilon ^{k}R_{t+k+1}|S_{t}=S\right]\end{align}\]</div>
 <p>For an MDP the value of an action state pair is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-88b2cc44-5b60-4e31-b032-63c86ee2ab1b">
-<span class="eqno">(13)<a class="headerlink" href="#equation-88b2cc44-5b60-4e31-b032-63c86ee2ab1b" title="Permalink to this equation">¶</a></span>\[\begin{align}q_{\pi }\left( s, a\right) =E_{\pi }\left[ G_{t}|S_{T}=S, A_{T}=a\right] =E_{\pi }\left[ \sum ^{\infty }_{k:0}\Upsilon ^{k}R_{t+k+1}|S_{t}=S, A_{T}=a\right]\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c4fcbbef-3778-4e4d-962a-838b0e6a966b">
+<span class="eqno">(13)<a class="headerlink" href="#equation-c4fcbbef-3778-4e4d-962a-838b0e6a966b" title="Permalink to this equation">¶</a></span>\[\begin{align}q_{\pi }\left( s, a\right) =E_{\pi }\left[ G_{t}|S_{T}=S, A_{T}=a\right] =E_{\pi }\left[ \sum ^{\infty }_{k:0}\Upsilon ^{k}R_{t+k+1}|S_{t}=S, A_{T}=a\right]\end{align}\]</div>
 <p>The <strong>Model</strong> is used to mimic the environment and is a translation from the current state and desired action to resulting state.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b351736e-6c5c-4e5e-98ca-ee69f84bd45b">
-<span class="eqno">(14)<a class="headerlink" href="#equation-b351736e-6c5c-4e5e-98ca-ee69f84bd45b" title="Permalink to this equation">¶</a></span>\[\begin{align}P_{ss'}^{a}=P\left[ S_{t+'}=S^{'}|S_{t}=s,A_{t}=a\right]\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-26ea143a-d3ea-4ee7-9fcf-23fd8bfadee1">
+<span class="eqno">(14)<a class="headerlink" href="#equation-26ea143a-d3ea-4ee7-9fcf-23fd8bfadee1" title="Permalink to this equation">¶</a></span>\[\begin{align}P_{ss'}^{a}=P\left[ S_{t+'}=S^{'}|S_{t}=s,A_{t}=a\right]\end{align}\]</div>
 </div>
 </div>
 </div>

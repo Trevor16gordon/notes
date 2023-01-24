@@ -97,11 +97,13 @@ least squares vs MLE vs MAP
 # Starting to study knowing that it's only going to be multiple choice:
 
 lecture_9-15-21 (1).pdf
-lecture_9-15-21 (2).pdf
-lecture_9-22-21 (1).pdf
-lecture_9-22-21 (2).pdf
-lecture_9-29-21 (1).pdf
-lecture_9-29-21 (2).pdf
+**lecture_9-15-21 (2).pdf - Lecture 2 - Linear Regression**
+**lecture_9-22-21 (1).pdf - Lecture 3 - Ridge Regression**
+**lecture_9-22-21 (2).pdf - Lecture 4 - MAP Solution**
+**lecture_9-29-21 (1).pdf - Lecture 5 - Baysian Linear Regression**
+lecture_9-29-21 (2).pdf - Lectyre 6 - Underdeterminee Matrices
+  - Lagrangian Matrices
+  - Sparsity in features
 
 **lecture_10-6-21.pdf - Lecture 7 - Classification Intro**
 **lecture_10-13-21 (1).pdf - Lecture 8 - Linear Clssification**
@@ -115,8 +117,10 @@ lecture_9-29-21 (2).pdf
 **lecture_11-3-21 (1).pdf- Lecture 14 - Unsupervised Learning**
 **lecture_11-3-21 (2).pdf  - lecture 15 - Maximum Likelihood** Could look more at EM algorithm
 **lecture_11-10-21 (1).pdf - Lecture 16 - Soft clustering. GMM**
-**lecture_11-10-21 (2).pdf  - Lecture 17 - Collaborative Filtering**
+**lecture_11-10-21 (2).pdf  - Lecture 17 - Collaborative Filtering** Probabilistic Matrix Factorization
 **lecture_11-17-21 (1).pdf - Lecture 18 Topic Modeling** geometric representation of Maximum likelihood update for NMF
 **lecture_11-17-21 (2).pdf - Lecture 19 - Principle Component Analysis** Probablistic PCA, Kernel PCA
-lecture_12-1-21 (1).pdf
-lecture_12-1-21 (2).pdf
+**lecture_12-1-21 (1).pdf - Lecture 20 - Sequential Data** 
+**lecture_12-1-21 (2).pdf - Lecture 21 - Markov models** EM for markov
+**lecture_12-8-21 (1).pdf - Lecture 22 - Hidden Markov models / Kalman filter**
+lecture_12-8-21 (2).pdf - Lecture 23

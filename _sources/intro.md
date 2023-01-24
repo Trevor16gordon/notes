@@ -7,12 +7,68 @@ Please see my LinkedIn for information on my experience: https://www.linkedin.co
 I will be using this jupyter book to keep notes on my courses while at Columbia. This includes theory, formulas, code snippets and links to useful resources. These notes are a work in progress as the semester progresses.
 
 
-# Fall 2021 Courses
 
 **Projects**
 - Neural Networks & Deep Learning: Piano music generation using LSTM neural network and TensorFlow. Checkout an explanation and results [here](https://trevor16gordon.github.io/notes/music_gen_rnn.html)
 - An Exploration of Socially Driven Multi-Agent Reinforcement Learning Models: Literature review and study on open source multi agent reinforcement learning research. Checkout the [final report](https://github.com/Trevor16gordon/multi_agent_rl_proj/blob/main/RL_Final_Report.pdf)
 - GPU Programming Project: Developed random forests from scratch using CUDA and NVIDIA GPU. Checkout the [final report](https://github.com/Trevor16gordon/random-forests-cuda/blob/main/report.pdf) and [code](https://github.com/Trevor16gordon/random-forests-cuda)
+
+
+# Spring 2022 Courses
+
+**Research**
+- Reinforcement Learning for wireless communication systems
+
+**Advanced Deep Learning**
+- Object Detection classical approaches
+  - Gradient Vector, HOG, and SS
+  - CNN, DPM and Overfeat
+  - R-CNN Family
+  - Fast Detection Models
+    - YOLO: You Only Look Once
+    - SSD: Single Shot MultiBox Detector
+    - YOLOv2 / YOLO9000
+    - YOLOv3
+- GANs
+
+**Sparse Models For High Dimensional Data**
+- Course Introduction, Motivating Examples, Linear Algebra Review
+- Sparse Solutions, l0, l0 uniqueness, NP-hardness
+- l1 relaxation, l1 recovery under incoherence
+- Recovery under RIP, random matrices
+- Rank minimization: Motivating examples, Nuclear norm relaxation
+- Rank RIP (briefly), Matrix completion
+- Robust PCA, General low-complexity models
+- Optimization I: Review of first order methods, proximal methods, acceleration
+- Optimization II: Constraints, Augmented Lagrangian, ADMM
+- Nonconvex Optimization: dictionaries, deconvolution, neural networks
+- Nonconvex Optimization: geometric theory and intuitions
+- Low-Dimensional Models and Neural Networks I: optimization phenomena
+- Low-Dimensional Models and Neural Networks II: dedicated constructions, invariance
+- Low-Dimensional Models and Neural Networks III: generative models
+- Student course project presentations (final exam slot)
+
+**Robot Learning**
+- Unsupervised learning: clustering and dimensionality reduction
+- Supervised learning I: linear regression
+- Supervised learning II: classification, decision trees
+- Guest lecture: supervised learning for a robotic hand orthosis
+- Learning for Computer Vision: "traditional" methods
+- 3D Computer Vision
+- Deep Learning: fundamentals, Part I
+- Deep Learning: fundamentals, Part II
+- Deep Learning architectures: CNNs
+- Deep Learning architectures: AEs, RNNs
+- Learning dynamics (forward) models
+- Reinforcement Learning I: fundamentals, Q-Learning
+- Reinforcement Learning II: non-determinism, policy iteration
+- Reinforcement Learning III: Deep Q-Networks
+- Reinforcement Learning IV: Policy Gradient and Actor Critic
+- Open-source tools and libraries for robot learning
+- Domain Randomization and Policies with Memory
+
+
+# Fall 2021 Courses
 
 **Reinforcement Learning**
 - [Introduction](https://trevor16gordon.github.io/notes/courses/ELEN6885/1_overview.html)

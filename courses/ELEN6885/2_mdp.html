@@ -95,6 +95,23 @@
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../music_gen_rnn.html">
+   Music Generation RNN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../spectrum_access_deep_rl.html">
+   Deep Reinforcement Learning For Dynamic Spectrum Access
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Course Notes
  </span>
 </p>
@@ -137,11 +154,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../ELEN4720/baysians_classifier.html">
      Baysian Classifier
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../ELEN4720/boosting.html">
-     Implementing a boosting algorithm for a classifier
     </a>
    </li>
    <li class="toctree-l2">
@@ -226,6 +238,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="6_deep_reinforcement_learning.html">
      Deep Reinforcement Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7_policy_gradient.html">
+     Policy Gradients
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8_planning_and_learning.html">
+     Planning and Learning
     </a>
    </li>
    <li class="toctree-l2">
@@ -434,8 +456,8 @@
 <strong>Rewards</strong>: Rs is the expecation of awards for a given state
 <strong>State Transition Prob Matrix</strong>: Probability of moving to the other states given a current state
 <strong>Discount Factor</strong>: How much to weigh current rewards vs future ones. In range [0,1].</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e180b382-f1ab-4786-81e8-b86841f00089">
-<span class="eqno">(15)<a class="headerlink" href="#equation-e180b382-f1ab-4786-81e8-b86841f00089" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5337a8ed-94d9-435c-920c-85c8f9db2d5f">
+<span class="eqno">(15)<a class="headerlink" href="#equation-5337a8ed-94d9-435c-920c-85c8f9db2d5f" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \begin{aligned}v\left( s\right) =E\left[ G_{t}|S_{t}=s\right] \\
 v\left( s\right) =E\left[ R_{t+1}+\Upsilon \cdot v\left( s_{t+1}\right) \ldots |S_{t}=s\right] \\
 v\left( s\right) =R_{s}+\Upsilon \cdot \sum _{sES}P_{ss},v\left( s\cdot \right) \end{aligned}
@@ -454,8 +476,8 @@ v\left( s\right) =R_{s}+\Upsilon \cdot \sum _{sES}P_{ss},v\left( s\cdot \right) 
 <div class="tex2jax_ignore mathjax_ignore section" id="policy">
 <h1>Policy<a class="headerlink" href="#policy" title="Permalink to this headline">¶</a></h1>
 <p>A policy’s value function assigns a value to each state or to each state, action pair. There is one optimal value function but many possible optimal policies</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ba5f2a1c-2b3c-478c-a6cb-9cfe98bd0b19">
-<span class="eqno">(16)<a class="headerlink" href="#equation-ba5f2a1c-2b3c-478c-a6cb-9cfe98bd0b19" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a7b56b8a-dc20-49b2-bbad-3326a014ee8b">
+<span class="eqno">(16)<a class="headerlink" href="#equation-a7b56b8a-dc20-49b2-bbad-3326a014ee8b" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \pi \left( a|s\right) =P\left[ A_{t}=a|S_{t}=s\right] 
 \end{align}\]</div>
 <div class="section" id="greedy-policy">
@@ -469,22 +491,22 @@ v\left( s\right) =R_{s}+\Upsilon \cdot \sum _{sES}P_{ss},v\left( s\cdot \right) 
 <div class="section" id="softmax-policy">
 <h2>Softmax Policy<a class="headerlink" href="#softmax-policy" title="Permalink to this headline">¶</a></h2>
 <p>The softmax policy allows you to tweak the temperature over time to explore less and exploit more as time goes to infinity.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0e41f050-2800-4e4b-9457-fd7e0c50ce18">
-<span class="eqno">(17)<a class="headerlink" href="#equation-0e41f050-2800-4e4b-9457-fd7e0c50ce18" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bc9f72bf-bae1-4d91-9150-10678b817c6f">
+<span class="eqno">(17)<a class="headerlink" href="#equation-bc9f72bf-bae1-4d91-9150-10678b817c6f" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \sigma \left( Q(a)\right) =\dfrac{e^{\dfrac{Q(a)}{\tau}}}{\sum ^{k}_{j=1}e^{\dfrac{Q(a)}{\tau};}}
 \end{align}\]</div>
 <p>In the limit as the temperature τ → 0, softmax action selection becomes the same as greedy action selection.
 Proof:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2097de76-2fee-444d-8532-e3fcfd0838e7">
-<span class="eqno">(18)<a class="headerlink" href="#equation-2097de76-2fee-444d-8532-e3fcfd0838e7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4af1d5de-6ca4-4beb-bc8e-340248bdadd4">
+<span class="eqno">(18)<a class="headerlink" href="#equation-4af1d5de-6ca4-4beb-bc8e-340248bdadd4" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \begin{aligned}\lim _{\tau \rightarrow \infty }P\left( a\right) =\dfrac{\exp \left( Q_{t}\left( a\right) /\tau \right) }{\Sigma _{i=1}^{n}\exp \left( Q_{t}\left( i\right) /\tau \right) }\\
 \lim _{\tau \rightarrow \infty }P\left( a\right) =\dfrac{\exp \left( Q_{t}\left( a\right) /\infty \right) }{\sum ^{n}_{i=1}\exp \left( Q_{t}\left( i\right) /\infty \right) }\\
 \lim _{t\rightarrow \infty }P\left( a\right) =\dfrac{1}{n}\end{aligned}
 \end{align}\]</div>
 <p>In the limit as τ → ∞, softmax action selection yields equiprobable selection among all actions.
 Proof:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fcab8815-fea0-431e-ad78-da4c6cd0b572">
-<span class="eqno">(19)<a class="headerlink" href="#equation-fcab8815-fea0-431e-ad78-da4c6cd0b572" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-19fdef9a-ebaa-4417-8d60-262f17e0e651">
+<span class="eqno">(19)<a class="headerlink" href="#equation-19fdef9a-ebaa-4417-8d60-262f17e0e651" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \begin{aligned}p\left( a=1\right) =\dfrac{e^{Q_{t}\left( 1\right) /\tau }}{e^{Q_{t}\left( 1\right) /\tau }+e^{Q_{t}\left( 2\right) /\tau }}\\
 \dfrac{1}{Q_{t}\left( 2\right) /\tau }\\
 P\left( a=1\right) =1+\dfrac{e}{e^{Qt}}\dfrac{}{\left( 1\right) /\tau }\\
