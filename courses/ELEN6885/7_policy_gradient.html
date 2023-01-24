@@ -394,35 +394,35 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="policy-gradients">
 <h1>Policy Gradients<a class="headerlink" href="#policy-gradients" title="Permalink to this headline">¶</a></h1>
 <p>\begin{aligned}v_{\pi }\left( s\right) =E_{\pi }\left[ G_{t}|S_{t}=s\right]\end{aligned}</p>
-<p>Policy gradient algorithms in reinforcement learning directly parameterize the policy function $\pi_{\theta}(s|a)$ and optimize the parameters $\theta$ either directly using gradient ascent or while optimizing some other objective $J(\theta)$</p>
+<p>Policy gradient algorithms in reinforcement learning directly parameterize the policy function <span class="math notranslate nohighlight">\(\pi_{\theta}(s|a)\)</span> and optimize the parameters <span class="math notranslate nohighlight">\(\theta\)</span> either directly using gradient ascent or while optimizing some other objective <span class="math notranslate nohighlight">\(J(\theta)\)</span></p>
 <ul class="simple">
 <li><p>The key idea is to increase the probability of actions which lead to the highest returns and to push down the actions that lead to lower returns</p></li>
 </ul>
-<p>What should be set $J(\theta)$ to be?</p>
+<p>What should be set <span class="math notranslate nohighlight">\(J(\theta)\)</span> to be?</p>
 <ul class="simple">
 <li><p>We might consider the expected value of the first state in an episodic environment:
-$\begin{aligned}J_1(\theta)=\mathbf{E}[V^{\pi_{\theta}}(s_1)]\end{aligned}$</p></li>
+<span class="math notranslate nohighlight">\(\begin{aligned}J_1(\theta)=\mathbf{E}[V^{\pi_{\theta}}(s_1)]\end{aligned}\)</span></p></li>
 <li><p>In continuing environment we can use the average value per time step
-$J_2(\theta)=\sum_{s}d^{\pi_{\theta}} (s) \sum_a \pi_{\theta}(s|a) R$ where $d^{\pi_{\theta}}$ is a distribution on states</p></li>
+<span class="math notranslate nohighlight">\(J_2(\theta)=\sum_{s}d^{\pi_{\theta}} (s) \sum_a \pi_{\theta}(s|a) R\)</span> where <span class="math notranslate nohighlight">\(d^{\pi_{\theta}}\)</span> is a distribution on states</p></li>
 <li><p>Now taking the gradient and rearranging
-$\begin{matrix*}[l]
-\nabla_{\theta} J_2(\theta)=\nabla_{\theta} \left( \sum_{s}d^{\pi_{\theta}} (s) \sum_a \pi_{\theta}(s|a) R \right)\
-\nabla_{\theta} J_2(\theta)= \sum_{s}d^{\pi_{\theta}} (s)  \sum_a \nabla_{\theta} \left( \pi_{\theta}(s|a)\right) R \
-\nabla_{\theta} J_2(\theta)= \sum_{s}d^{\pi_{\theta}} (s)  \sum_a \frac{\pi_{\theta}(s|a)}{\pi_{\theta}(s|a)} \nabla_{\theta} \left( \pi_{\theta}(s|a)\right) R \
-\nabla_{\theta} J_2(\theta)= \sum_{s}d^{\pi_{\theta}} (s)  \sum_a \pi_{\theta}(s|a) \nabla_{\theta} \left( \ln \pi_{\theta}(s|a)\right) R \
-\nabla_{\theta} J_2(\theta)= \mathbf{E} [\nabla_{\theta} \ln \pi_{\theta}(s|a) R ]\
-\end{matrix*}
-$</p></li>
-<li><p>Leads us to to the score function is $\nabla_{\theta} \ln \pi_{\theta}(s|a)$</p></li>
-<li><p>The policy gradient theorm says for the objectives (start state reward, average reward, average value reward), we can replace r with $Q^{\pi_{\theta}}(s,a)$</p></li>
-<li><p>Now Monte carlo policy gradient (REINFORCE) algorithm is simply using the return $v_t$ as an unbiased estimate of $Q^{\pi_{\theta}}(s,a)$</p></li>
-<li><p>We can have a neural network paramaterized with weights $\theta$ but we need to make sure the sum over probabilities sum to 1.</p></li>
+<span class="math notranslate nohighlight">\(\begin{matrix}[l]
+\nabla_{\theta} J_2(\theta)=\nabla_{\theta} \left( \sum_{s}d^{\pi_{\theta}} (s) \sum_a \pi_{\theta}(s|a) R \right)\\
+\nabla_{\theta} J_2(\theta)= \sum_{s}d^{\pi_{\theta}} (s)  \sum_a \nabla_{\theta} \left( \pi_{\theta}(s|a)\right) R \\
+\nabla_{\theta} J_2(\theta)= \sum_{s}d^{\pi_{\theta}} (s)  \sum_a \frac{\pi_{\theta}(s|a)}{\pi_{\theta}(s|a)} \nabla_{\theta} \left( \pi_{\theta}(s|a)\right) R \\
+\nabla_{\theta} J_2(\theta)= \sum_{s}d^{\pi_{\theta}} (s)  \sum_a \pi_{\theta}(s|a) \nabla_{\theta} \left( \ln \pi_{\theta}(s|a)\right) R \\
+\nabla_{\theta} J_2(\theta)= \mathbf{E} [\nabla_{\theta} \ln \pi_{\theta}(s|a) R ]\\
+\end{matrix}
+\)</span></p></li>
+<li><p>Leads us to to the score function is <span class="math notranslate nohighlight">\(\nabla_{\theta} \ln \pi_{\theta}(s|a)\)</span></p></li>
+<li><p>The policy gradient theorm says for the objectives (start state reward, average reward, average value reward), we can replace r with <span class="math notranslate nohighlight">\(Q^{\pi_{\theta}}(s,a)\)</span></p></li>
+<li><p>Now Monte carlo policy gradient (REINFORCE) algorithm is simply using the return <span class="math notranslate nohighlight">\(v_t\)</span> as an unbiased estimate of <span class="math notranslate nohighlight">\(Q^{\pi_{\theta}}(s,a)\)</span></p></li>
+<li><p>We can have a neural network paramaterized with weights <span class="math notranslate nohighlight">\(\theta\)</span> but we need to make sure the sum over probabilities sum to 1.</p></li>
 <li><p>One possibility is the softmax policy:
-$\begin{matrix*}[l]
-\nabla_{\theta} \ln \pi_{\theta}(s|a) = \nabla_{\theta} \ln \frac{e^{\phi(s,a)^T \theta}}{\sum_a e^{\phi(s,a)^T \theta}}\
-\nabla_{\theta} \ln \pi_{\theta}(s|a) = \phi(s,a) - \textbf{E}[\phi (s,\cdot)]\
-\end{matrix*}
-$</p></li>
+<span class="math notranslate nohighlight">\(\begin{matrix}[l]
+\nabla_{\theta} \ln \pi_{\theta}(s|a) = \nabla_{\theta} \ln \frac{e^{\phi(s,a)^T \theta}}{\sum_a e^{\phi(s,a)^T \theta}}\\
+\nabla_{\theta} \ln \pi_{\theta}(s|a) = \phi(s,a) - \textbf{E}[\phi (s,\cdot)]\\
+\end{matrix}
+\)</span></p></li>
 <li><p>Many other improvements to policy gradient algorithms are intended to reduct the variance.</p></li>
 </ul>
 <p>Reinforce</p>
@@ -433,9 +433,9 @@ $</p></li>
 </ul>
 <p>Actor Critic</p>
 <ul class="simple">
-<li><p>Use another neural network to approximate the value function $Q_{W}(s,a) \approx Q^{\pi_{\theta}}(s,a)$</p></li>
+<li><p>Use another neural network to approximate the value function <span class="math notranslate nohighlight">\(Q_{W}(s,a) \approx Q^{\pi_{\theta}}(s,a)\)</span></p></li>
 <li><p>This approximates the policy gradient</p></li>
-<li><p>Update $Q_{W}(s,a)$ based on the TD error</p></li>
+<li><p>Update <span class="math notranslate nohighlight">\(Q_{W}(s,a)\)</span> based on the TD error</p></li>
 <li><p>Actor is policy network</p>
 <ul>
 <li><p>Actor is trained by taking gradient steps in the directin of positive suprise</p></li>
@@ -447,14 +447,13 @@ $</p></li>
 </ul>
 <p>Reducing Variance Using a Baseline</p>
 <ul class="simple">
-<li><p>Problem is that $Q^{\pi_{\theta}}(s,a)$ may have very high variance</p></li>
+<li><p>Problem is that <span class="math notranslate nohighlight">\(Q^{\pi_{\theta}}(s,a)\)</span> may have very high variance</p></li>
 <li><p>We can try to reduce the variance by subracting a baseline that doesn’t change the expectation, but reducing variance.</p></li>
-<li><p>Baseline $(B(s))$ that is action independent</p></li>
+<li><p>Baseline <span class="math notranslate nohighlight">\((B(s))\)</span> that is action independent</p></li>
 <li></li>
 </ul>
-<p>$</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{matrix*}[l]
+<p><span class="math notranslate nohighlight">\(
+\begin{matrix}[l]
 \nabla_{\theta} J = \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot (Q^{\pi_{\theta}}(s,a) - B(s))]\\
 \nabla_{\theta} J = \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot Q^{\pi_{\theta}}(s,a)] - \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot B(s)]\\
 \\
@@ -466,18 +465,17 @@ $</p></li>
 = 0\\
 \therefore 
 \nabla_{\theta} J = \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot (Q^{\pi_{\theta}}(s,a) - B(s))] =  \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot Q^{\pi_{\theta}}(s,a)]\\\\
-\end{matrix*}\]</div>
-<p>$</p>
+\end{matrix}
+\)</span></p>
 <p>Here are some more examples of approximate policy gradient algorithms:</p>
-<p>$</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{matrix*}[l]
+<p><span class="math notranslate nohighlight">\(
+\begin{matrix}[l]
 \nabla_{\theta} J &amp;&amp; = \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot \color{red} v_t \color{black}] &amp;&amp; \textrm{Reinforce}\\
 \nabla_{\theta} J &amp;&amp; = \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot \color{red} Q^W(s,a) \color{black}] &amp;&amp; \textrm{Q actor critic}\\
 \nabla_{\theta} J &amp;&amp; = \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot \color{red} A^W(s,a) \color{black}] &amp;&amp; \textrm{Advantage Actor Critic}\\
 \nabla_{\theta} J &amp;&amp; = \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot \color{red} \delta \color{black}] &amp;&amp; \textrm{TD Actor Critic}\\
-\end{matrix*}\]</div>
-<p>$</p>
+\end{matrix}
+\)</span></p>
 <p>Problems with policty gradients</p>
 <ul class="simple">
 <li><p>The critic might have very bad estimates of states it hasn’t visited and think those states are more valuable

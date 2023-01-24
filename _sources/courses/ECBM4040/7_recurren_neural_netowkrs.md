@@ -20,6 +20,6 @@
 After getting the precious h_{t-1} and the input x_t. Decide how much to forget
 
 
-\begin{align}
+$$
 
-\end{align}
+$$

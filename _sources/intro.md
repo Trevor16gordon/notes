@@ -1,6 +1,7 @@
 # Intro
 
-Welcome! My name is Trevor Gordon and I am currently in my first semester of my MS in Electrical Engineering at Columbia University with a focus in machine learning and reinforcement learning.
+
+Welcome! My name is Trevor Gordon and I have just completed my MS in Electrical Engineering at Columbia University with a focus in machine learning and reinforcement learning (Dec 2022).
 
 Please see my LinkedIn for information on my experience: https://www.linkedin.com/in/tgordon-ubc/
 
@@ -14,7 +15,7 @@ I will be using this jupyter book to keep notes on my courses while at Columbia.
 - GPU Programming Project: Developed random forests from scratch using CUDA and NVIDIA GPU. Checkout the [final report](https://github.com/Trevor16gordon/random-forests-cuda/blob/main/report.pdf) and [code](https://github.com/Trevor16gordon/random-forests-cuda)
 
 
-# Spring 2022 Courses
+# Courses
 
 **Research**
 - Reinforcement Learning for wireless communication systems
@@ -66,9 +67,6 @@ I will be using this jupyter book to keep notes on my courses while at Columbia.
 - Reinforcement Learning IV: Policy Gradient and Actor Critic
 - Open-source tools and libraries for robot learning
 - Domain Randomization and Policies with Memory
-
-
-# Fall 2021 Courses
 
 **Reinforcement Learning**
 - [Introduction](https://trevor16gordon.github.io/notes/courses/ELEN6885/1_overview.html)

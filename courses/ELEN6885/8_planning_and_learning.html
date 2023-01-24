@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -435,19 +437,19 @@
 <h2>Monte Carlo Tree Search<a class="headerlink" href="#monte-carlo-tree-search" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Monte carlo tree search is made up 4 steps: 1) Selection, 2) Expansion 3) Simulation 4) Back Propogation</p></li>
-<li><p>Requires a model of the environment: That is, from a current state $s$ and action $a$, the model (or an appoximation of the model paramaterized by $\psi$) for predicting the reward is known $r_{t+1} = \mathbf{R_{\psi}}(r_{t+1} | a_i, s_i)$, and a model for the distribution on next states $s_{t+1} \sim \mathbf{p_{\psi}}(s_{t+1} | a_i, s_i)$,</p></li>
+<li><p>Requires a model of the environment: That is, from a current state <span class="math notranslate nohighlight">\(s\)</span> and action <span class="math notranslate nohighlight">\(a\)</span>, the model (or an appoximation of the model paramaterized by <span class="math notranslate nohighlight">\(\psi\)</span>) for predicting the reward is known <span class="math notranslate nohighlight">\(r_{t+1} = \mathbf{R_{\psi}}(r_{t+1} | a_i, s_i)\)</span>, and a model for the distribution on next states <span class="math notranslate nohighlight">\(s_{t+1} \sim \mathbf{p_{\psi}}(s_{t+1} | a_i, s_i)\)</span>,</p></li>
 <li><p>With a modle of the environment, we want to select actions to balance exploration and exploitation</p></li>
 </ul>
 <div class="section" id="action-selection">
 <h3>1 Action Selection<a class="headerlink" href="#action-selection" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Use Upper Confidence Bound (UCB) to select actions to minimize regret</p></li>
-<li><p>For a given state $s$, choose the action to minimize regret. Regret is the number of times that the non optimal action has been selected. Keep bounds on the value of each action.</p></li>
+<li><p>For a given state <span class="math notranslate nohighlight">\(s\)</span>, choose the action to minimize regret. Regret is the number of times that the non optimal action has been selected. Keep bounds on the value of each action.</p></li>
 </ul>
-<p>$
+<p><span class="math notranslate nohighlight">\(
 UCB_1 = \bar{X_j} + C \cdot \sqrt{\frac{\ln n}{n_j}}
-$</p>
-<p>where $\bar{X_j}$ is the current estimate of the value for the action, C is a constant (ex: $\sqrt 2$), $n$ is the number of times an action has been chosen for this state. $n_j$ is the number of times the jth action has been chosen.</p>
+\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(\bar{X_j}\)</span> is the current estimate of the value for the action, C is a constant (ex: <span class="math notranslate nohighlight">\(\sqrt 2\)</span>), <span class="math notranslate nohighlight">\(n\)</span> is the number of times an action has been chosen for this state. <span class="math notranslate nohighlight">\(n_j\)</span> is the number of times the jth action has been chosen.</p>
 <ul class="simple">
 <li><p>Note that the confidence bound decreases as the action has been tried more.</p></li>
 </ul>

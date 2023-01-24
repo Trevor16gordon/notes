@@ -456,12 +456,12 @@
 <strong>Rewards</strong>: Rs is the expecation of awards for a given state
 <strong>State Transition Prob Matrix</strong>: Probability of moving to the other states given a current state
 <strong>Discount Factor</strong>: How much to weigh current rewards vs future ones. In range [0,1].</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5337a8ed-94d9-435c-920c-85c8f9db2d5f">
-<span class="eqno">(15)<a class="headerlink" href="#equation-5337a8ed-94d9-435c-920c-85c8f9db2d5f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{aligned}v\left( s\right) =E\left[ G_{t}|S_{t}=s\right] \\
 v\left( s\right) =E\left[ R_{t+1}+\Upsilon \cdot v\left( s_{t+1}\right) \ldots |S_{t}=s\right] \\
 v\left( s\right) =R_{s}+\Upsilon \cdot \sum _{sES}P_{ss},v\left( s\cdot \right) \end{aligned}
-\end{align}\]</div>
+\end{split}\]</div>
 </div>
 <div class="section" id="id1">
 <h2>Markov Decision Processes<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
@@ -476,10 +476,10 @@ v\left( s\right) =R_{s}+\Upsilon \cdot \sum _{sES}P_{ss},v\left( s\cdot \right) 
 <div class="tex2jax_ignore mathjax_ignore section" id="policy">
 <h1>Policy<a class="headerlink" href="#policy" title="Permalink to this headline">¶</a></h1>
 <p>A policy’s value function assigns a value to each state or to each state, action pair. There is one optimal value function but many possible optimal policies</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a7b56b8a-dc20-49b2-bbad-3326a014ee8b">
-<span class="eqno">(16)<a class="headerlink" href="#equation-a7b56b8a-dc20-49b2-bbad-3326a014ee8b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight">
+\[
 \pi \left( a|s\right) =P\left[ A_{t}=a|S_{t}=s\right] 
-\end{align}\]</div>
+\]</div>
 <div class="section" id="greedy-policy">
 <h2>Greedy Policy<a class="headerlink" href="#greedy-policy" title="Permalink to this headline">¶</a></h2>
 <p>For the greedy policy, always choose the action with the highest expected reward. The drawback to this policy is that an agents estimate of the value of actions is likely not the true value. In this case, it is usefull to explore other states. The following policies provide a way for exploring</p>
@@ -491,27 +491,27 @@ v\left( s\right) =R_{s}+\Upsilon \cdot \sum _{sES}P_{ss},v\left( s\cdot \right) 
 <div class="section" id="softmax-policy">
 <h2>Softmax Policy<a class="headerlink" href="#softmax-policy" title="Permalink to this headline">¶</a></h2>
 <p>The softmax policy allows you to tweak the temperature over time to explore less and exploit more as time goes to infinity.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bc9f72bf-bae1-4d91-9150-10678b817c6f">
-<span class="eqno">(17)<a class="headerlink" href="#equation-bc9f72bf-bae1-4d91-9150-10678b817c6f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight">
+\[
 \sigma \left( Q(a)\right) =\dfrac{e^{\dfrac{Q(a)}{\tau}}}{\sum ^{k}_{j=1}e^{\dfrac{Q(a)}{\tau};}}
-\end{align}\]</div>
+\]</div>
 <p>In the limit as the temperature τ → 0, softmax action selection becomes the same as greedy action selection.
 Proof:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4af1d5de-6ca4-4beb-bc8e-340248bdadd4">
-<span class="eqno">(18)<a class="headerlink" href="#equation-4af1d5de-6ca4-4beb-bc8e-340248bdadd4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{aligned}\lim _{\tau \rightarrow \infty }P\left( a\right) =\dfrac{\exp \left( Q_{t}\left( a\right) /\tau \right) }{\Sigma _{i=1}^{n}\exp \left( Q_{t}\left( i\right) /\tau \right) }\\
 \lim _{\tau \rightarrow \infty }P\left( a\right) =\dfrac{\exp \left( Q_{t}\left( a\right) /\infty \right) }{\sum ^{n}_{i=1}\exp \left( Q_{t}\left( i\right) /\infty \right) }\\
 \lim _{t\rightarrow \infty }P\left( a\right) =\dfrac{1}{n}\end{aligned}
-\end{align}\]</div>
+\end{split}\]</div>
 <p>In the limit as τ → ∞, softmax action selection yields equiprobable selection among all actions.
 Proof:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-19fdef9a-ebaa-4417-8d60-262f17e0e651">
-<span class="eqno">(19)<a class="headerlink" href="#equation-19fdef9a-ebaa-4417-8d60-262f17e0e651" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{aligned}p\left( a=1\right) =\dfrac{e^{Q_{t}\left( 1\right) /\tau }}{e^{Q_{t}\left( 1\right) /\tau }+e^{Q_{t}\left( 2\right) /\tau }}\\
 \dfrac{1}{Q_{t}\left( 2\right) /\tau }\\
 P\left( a=1\right) =1+\dfrac{e}{e^{Qt}}\dfrac{}{\left( 1\right) /\tau }\\
 P\left( a=1\right) =\dfrac{1}{1+e^{\dfrac{1}{T}\left( Q+121-Q+\left( 1\right) \right) }}\end{aligned}
-\end{align}\]</div>
+\end{split}\]</div>
 </div>
 </div>
 

@@ -448,10 +448,9 @@
 <li><p>After running through episodes you can update your policy based on your estimate of future rewards for all states.</p></li>
 <li><p>Maintaining sufficient exploration is an issue with Monte Carlo learning/control. If you follow a greedy policy you are not gaurunteed to explore all states.</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-76a8603d-0742-408d-801c-4fc1c5d602d6">
-<span class="eqno">(23)<a class="headerlink" href="#equation-76a8603d-0742-408d-801c-4fc1c5d602d6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<p><span class="math notranslate nohighlight">\(
 V\left( s_{t}\right) \leftarrow V\left( s_{t}\right) +\dfrac{1}{N\left( s_{t}\right) }\left( G_{t}-V\left( s_{t}\right) \right) 
-\end{align}\]</div>
+\)</span></p>
 </div>
 <div class="section" id="on-and-off-policy-control">
 <h2>On and Off Policy Control<a class="headerlink" href="#on-and-off-policy-control" title="Permalink to this headline">¶</a></h2>
@@ -473,17 +472,17 @@ V\left( s_{t}\right) \leftarrow V\left( s_{t}\right) +\dfrac{1}{N\left( s_{t}\ri
 </div>
 <div class="section" id="sarsa">
 <h2>Sarsa<a class="headerlink" href="#sarsa" title="Permalink to this headline">¶</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-079c46b8-86aa-4db4-86f6-d534d30092ed">
-<span class="eqno">(24)<a class="headerlink" href="#equation-079c46b8-86aa-4db4-86f6-d534d30092ed" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight">
+\[
 Q\left( S,A\right) \leftarrow Q\left( S,A\right) +\alpha \left( R+\Upsilon Q\left( S',A'\right) -Q\left( S,A\right) \right) 
-\end{align}\]</div>
+\]</div>
 </div>
 <div class="section" id="q-learning">
 <h2>Q Learning<a class="headerlink" href="#q-learning" title="Permalink to this headline">¶</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-69c51c49-2684-4f19-8d66-2623593756b2">
-<span class="eqno">(25)<a class="headerlink" href="#equation-69c51c49-2684-4f19-8d66-2623593756b2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight">
+\[
  Q\left( S,A\right) \leftarrow Q\left( S,A\right) +\alpha \left( R+\Upsilon \max _{a\cdot }Q\left( S',A'\right) -Q\left( S,A\right) \right) 
- \end{align}\]</div>
+ \]</div>
 </div>
 </div>
 

@@ -12,9 +12,9 @@ In most real world use cases we do not know the dynamics of the environment so w
 - After running through episodes you can update your policy based on your estimate of future rewards for all states.
 - Maintaining sufficient exploration is an issue with Monte Carlo learning/control. If you follow a greedy policy you are not gaurunteed to explore all states.
 
-\begin{align}
+$
 V\left( s_{t}\right) \leftarrow V\left( s_{t}\right) +\dfrac{1}{N\left( s_{t}\right) }\left( G_{t}-V\left( s_{t}\right) \right) 
-\end{align}
+$
 
 ## On and Off Policy Control
 - Normally you are learning based on episodic experience from your own policy, and then iterating on that policy. 
@@ -28,14 +28,14 @@ V\left( s_{t}\right) \leftarrow V\left( s_{t}\right) +\dfrac{1}{N\left( s_{t}\ri
 
 ## Sarsa
 
-\begin{align}
+$$
 Q\left( S,A\right) \leftarrow Q\left( S,A\right) +\alpha \left( R+\Upsilon Q\left( S',A'\right) -Q\left( S,A\right) \right) 
-\end{align}
+$$
 
 
 ## Q Learning
 
-\begin{align}
+$$
  Q\left( S,A\right) \leftarrow Q\left( S,A\right) +\alpha \left( R+\Upsilon \max _{a\cdot }Q\left( S',A'\right) -Q\left( S,A\right) \right) 
- \end{align}
+ $$
 

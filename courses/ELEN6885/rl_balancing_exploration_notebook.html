@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -393,7 +395,11 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#epsilon-greedy-for-exploration">
-   2. $\epsilon$-Greedy for Exploration
+   2.
+   <span class="math notranslate nohighlight">
+    \(\epsilon\)
+   </span>
+   -Greedy for Exploration
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -561,8 +567,8 @@ if (outputEl) {{
 </div>
 </div>
 <div class="section" id="epsilon-greedy-for-exploration">
-<h2>2. $\epsilon$-Greedy for Exploration<a class="headerlink" href="#epsilon-greedy-for-exploration" title="Permalink to this headline">¶</a></h2>
-<p>In Reinforcement Learning, we are always faced with the dilemma of exploration and exploitation. $\epsilon$-Greedy is a trade-off between them. You are gonna implement Greedy and $\epsilon$-Greedy. We combine these two policies in one function by treating Greedy as $\epsilon$-Greedy where $\epsilon = 0$. Edit the function epsilon_greedy in ./RLalgs/utils.py.<br /></p>
+<h2>2. <span class="math notranslate nohighlight">\(\epsilon\)</span>-Greedy for Exploration<a class="headerlink" href="#epsilon-greedy-for-exploration" title="Permalink to this headline">¶</a></h2>
+<p>In Reinforcement Learning, we are always faced with the dilemma of exploration and exploitation. <span class="math notranslate nohighlight">\(\epsilon\)</span>-Greedy is a trade-off between them. You are gonna implement Greedy and <span class="math notranslate nohighlight">\(\epsilon\)</span>-Greedy. We combine these two policies in one function by treating Greedy as <span class="math notranslate nohighlight">\(\epsilon\)</span>-Greedy where <span class="math notranslate nohighlight">\(\epsilon = 0\)</span>. Edit the function epsilon_greedy in ./RLalgs/utils.py.<br /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">epsilon_greedy</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -640,7 +646,7 @@ Greedy Choice = 0<br /></p>
 <div class="section" id="derive-q-value-from-v-value">
 <h3>3.1 Derive Q value from V value<a class="headerlink" href="#derive-q-value-from-v-value" title="Permalink to this headline">¶</a></h3>
 <p>Edit function action_evaluation in ./RLalgs/utils.py.<br />
-TIPS: $q(s, a)=\sum_{s’,r}p(s’,r|s,a)(r+\gamma v(s’))$<br /></p>
+TIPS: <span class="math notranslate nohighlight">\(q(s, a)=\sum_{s',r}p(s',r|s,a)(r+\gamma v(s'))\)</span><br /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">action_evaluation</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>

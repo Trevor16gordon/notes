@@ -8,7 +8,7 @@ Consider the following 2-armed bandit problem: the first arm has a fixed reward 
 
 To solve this problem we need to start by calculating the estimated value of action for both arms at time 6. We can average the rewards seen by each arm to calculate the expected rewards.
 
-\begin{align}Q_{6}\left( 1\right) =\dfrac{0.3}{1}=0.3\\Q_{6}\left( 2\right) =\dfrac{0+1+0+0}{4}=0.25\end{align}
+$$Q_{6}\left( 1\right) =\dfrac{0.3}{1}=0.3\\Q_{6}\left( 2\right) =\dfrac{0+1+0+0}{4}=0.25$$
 
 So, for t=6 we will choose arm 1. Because our reward from arm 1 is constant at 0.3, and we won't have any new data from arm 2, our expected rewards for t=7 will be the same and we will choose arm1 for t=7.
 
@@ -39,7 +39,7 @@ Let the best greedy action be Ag. To take this limit we should multiply the nume
 
 But, when our action is the greedy action we get a cancellation and get the exp of zero which becomes 1. Following this, we get a probability of 1 of choosing this action.
 
-\begin{align}
+$$
 \begin{aligned}P\left( a\right) =\dfrac{\left( \exp \left( Q_{t}\left( a\right) /\tau \right) \ast \exp \left( -Q_{t}\left( a_{9}\right) /\tau \right) \right) }{\left( \Sigma _{i=1}^{n}\exp \left( Q_{t}\left( i\right) /\tau \right) \ast \exp \left( -Q_{t}\left( a_{g}\right) /\tau \right) \right) }\\
 P\left( a\right) =\dfrac{exp\left( \left( Q_{t}\left( a\right) -Q_{t}\left( a_{g}\right) \right) /\tau \right) }{\sum ^{n}_{i=1}\exp \left( \left( Q_{t}\left( i\right) -Q_{t}\left( ag\right) \right) /\tau \right) }\end{aligned}\\
 \\
@@ -49,29 +49,29 @@ Q_{t}\left( i\right) -Q_{t}\left( a_{9}\right)  <0\\
 \\
 \begin{aligned}i=a_(g)\\
 \lim _{\tau \rightarrow 0}\exp \left( \left( Q_{t}\left( a_{9}\right) -Q_{t}\left( a_{g}\right) \right) /\tau \right) =1\end{aligned}\\
-\end{align}
+$$
 
 
 **2. [5 pts] In the limit as τ → ∞, softmax action selection yields equiprobable selection among all actions.**
 As τ → ∞ the numerator approaches 1. Furthermore, each of the summed terms in the denominator approaches 1 and each action has a proability of 1/n.
 
-\begin{align}
+$$
 \begin{aligned}\lim _{\tau \rightarrow \infty }P\left( a\right) =\dfrac{\exp \left( Q_{t}\left( a\right) /\tau \right) }{\Sigma _{i=1}^{n}\exp \left( Q_{t}\left( i\right) /\tau \right) }\\
 \lim _{\tau \rightarrow \infty }P\left( a\right) =\dfrac{\exp \left( Q_{t}\left( a\right) /\infty \right) }{\sum ^{n}_{i=1}\exp \left( Q_{t}\left( i\right) /\infty \right) }\\
 \lim _{t\rightarrow \infty }P\left( a\right) =\dfrac{1}{n}\end{aligned}
-\end{align}
+$$
 
 **3. [5 pts] In the case of two actions, the softmax operation using the Gibbs distribution becomes the logistic (or sigmoid) function commonly used in artificial neural networks.**
 TODO: The second formula isn't formatting correctly
 
 In the case f two actions, the softmax operation becomes the sigmoid function where the input is a decaying difference between the rewards of the two actions.
 
-\begin{align}
+$$
 \begin{aligned}p\left( a=1\right) =\dfrac{e^{Q_{t}\left( 1\right) /\tau }}{e^{Q_{t}\left( 1\right) /\tau }+e^{Q_{t}\left( 2\right) /\tau }}\\
 \dfrac{1}{Q_{t}\left( 2\right) /\tau }\\
 P\left( a=1\right) =1+\dfrac{e}{e^{Qt}}\dfrac{}{\left( 1\right) /\tau }\\
 P\left( a=1\right) =\dfrac{1}{1+e^{\dfrac{1}{T}\left( Q+121-Q+\left( 1\right) \right) }}\end{aligned}
-\end{align}
+$$
 
 
 ### Problem 3
@@ -92,19 +92,19 @@ Solution:
 
 Given:
 
-\begin{align}
+$$
 \begin{aligned}V_{n}=\dfrac{\sum ^{n-1}_{k=1}W_{k}G_{k}}{\sum ^{n-1}_{k=1}W_{k}}\\
 C_{n+1}=C_{n}+W_{n+1}\end{aligned}
-\end{align}
+$$
 
 We can determine:
 
-\begin{align}
+$$
 \begin{aligned}V_{n+1}=\dfrac{\sum ^{n}_{k=1}W_{k}G_{k}}{\sum ^{n}_{k=1}W_{k}}\\
 V_{n+1}=\dfrac{V_{1}C_{n-1}+W_{n}G_{n}}{C_{n}}\\
 V_{n+1}=\dfrac{V\left( C_{n}-W_{n}\right) +W_{n}G_{n}}{C_{n}}\\
 V_{1+1}=V_{n}+\dfrac{W_{n}}{Cn}\left( G_{n}-V_{n}\right) \end{aligned}
-\end{align}
+$$
 
 
 ### Problem 4

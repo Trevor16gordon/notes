@@ -42,8 +42,6 @@
     <script src="../../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -433,26 +431,25 @@ https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi</p>
 <h2>Derive dL/dW2 and dL/dc2<a class="headerlink" href="#derive-dl-dw2-and-dl-dc2" title="Permalink to this headline">¶</a></h2>
 <p>We want to update W1, W2, c1, c2.
 To do this we need to update using dL/dW1, dL/dW2, dL/dc1, dL/dc1
-These are calculated using the chain rule</p>
-<div class="amsmath math notranslate nohighlight" id="equation-84a9801e-6095-4dce-84f9-85f826c06a4e">
-<span class="eqno">(32)<a class="headerlink" href="#equation-84a9801e-6095-4dce-84f9-85f826c06a4e" title="Permalink to this equation">¶</a></span>\[\begin{align}
-  \\{\frac{\partial L}{\partial yhat}} RSS 
-    &amp;= 2*(y-yhat)
-  \\{\frac{\partial yhat}{\partial h2}} sigmoid 
-    &amp;= \sigma (yhat) (1 - \sigma (yhat))
-  \\{\frac{\partial h2}{\partial W2}} 
-    &amp;= z1
-  \\{\frac{\partial h2}{\partial C2}} 
-    &amp;= 1
-  \\{\frac{\partial h2}{\partial z1}} 
-    &amp;= W2
-  \\{\frac{\partial z1}{\partial h1}} 
-    &amp;= f1' =f1'sigmoid = \sigma (z1) (1 - \sigma (z1))
-  \\{\frac{\partial h1}{\partial W1}} 
-    &amp;= x1
-  \\{\frac{\partial h1}{\partial C1}} 
-    &amp;= 1
-\end{align}\]</div>
+These are calculated using the chain rule
+\begin{align}
+\{\frac{\partial L}{\partial yhat}} RSS
+&amp;= 2*(y-yhat)
+\{\frac{\partial yhat}{\partial h2}} sigmoid
+&amp;= \sigma (yhat) (1 - \sigma (yhat))
+\{\frac{\partial h2}{\partial W2}}
+&amp;= z1
+\{\frac{\partial h2}{\partial C2}}
+&amp;= 1
+\{\frac{\partial h2}{\partial z1}}
+&amp;= W2
+\{\frac{\partial z1}{\partial h1}}
+&amp;= f1’ =f1’sigmoid = \sigma (z1) (1 - \sigma (z1))
+\{\frac{\partial h1}{\partial W1}}
+&amp;= x1
+\{\frac{\partial h1}{\partial C1}}
+&amp;= 1
+\end{align}</p>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="example-neural-network-from-scratch">

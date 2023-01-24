@@ -15,23 +15,23 @@ $\begin{aligned}J_1(\theta)=\mathbf{E}[V^{\pi_{\theta}}(s_1)]\end{aligned}$
 - In continuing environment we can use the average value per time step
 $J_2(\theta)=\sum_{s}d^{\pi_{\theta}} (s) \sum_a \pi_{\theta}(s|a) R$ where $d^{\pi_{\theta}}$ is a distribution on states
 - Now taking the gradient and rearranging
-$\begin{matrix*}[l]
+$\begin{matrix}[l]
 \nabla_{\theta} J_2(\theta)=\nabla_{\theta} \left( \sum_{s}d^{\pi_{\theta}} (s) \sum_a \pi_{\theta}(s|a) R \right)\\
 \nabla_{\theta} J_2(\theta)= \sum_{s}d^{\pi_{\theta}} (s)  \sum_a \nabla_{\theta} \left( \pi_{\theta}(s|a)\right) R \\
 \nabla_{\theta} J_2(\theta)= \sum_{s}d^{\pi_{\theta}} (s)  \sum_a \frac{\pi_{\theta}(s|a)}{\pi_{\theta}(s|a)} \nabla_{\theta} \left( \pi_{\theta}(s|a)\right) R \\
 \nabla_{\theta} J_2(\theta)= \sum_{s}d^{\pi_{\theta}} (s)  \sum_a \pi_{\theta}(s|a) \nabla_{\theta} \left( \ln \pi_{\theta}(s|a)\right) R \\
 \nabla_{\theta} J_2(\theta)= \mathbf{E} [\nabla_{\theta} \ln \pi_{\theta}(s|a) R ]\\
-\end{matrix*}
+\end{matrix}
 $
 - Leads us to to the score function is $\nabla_{\theta} \ln \pi_{\theta}(s|a)$
 - The policy gradient theorm says for the objectives (start state reward, average reward, average value reward), we can replace r with $Q^{\pi_{\theta}}(s,a)$
 - Now Monte carlo policy gradient (REINFORCE) algorithm is simply using the return $v_t$ as an unbiased estimate of $Q^{\pi_{\theta}}(s,a)$
 - We can have a neural network paramaterized with weights $\theta$ but we need to make sure the sum over probabilities sum to 1.
 - One possibility is the softmax policy: 
-$\begin{matrix*}[l]
+$\begin{matrix}[l]
 \nabla_{\theta} \ln \pi_{\theta}(s|a) = \nabla_{\theta} \ln \frac{e^{\phi(s,a)^T \theta}}{\sum_a e^{\phi(s,a)^T \theta}}\\
 \nabla_{\theta} \ln \pi_{\theta}(s|a) = \phi(s,a) - \textbf{E}[\phi (s,\cdot)]\\
-\end{matrix*}
+\end{matrix}
 $
 
 - Many other improvements to policy gradient algorithms are intended to reduct the variance.
@@ -60,7 +60,7 @@ Reducing Variance Using a Baseline
 - Baseline $(B(s))$ that is action independent
 - 
 $
-\begin{matrix*}[l]
+\begin{matrix}[l]
 \nabla_{\theta} J = \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot (Q^{\pi_{\theta}}(s,a) - B(s))]\\
 \nabla_{\theta} J = \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot Q^{\pi_{\theta}}(s,a)] - \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot B(s)]\\
 \\
@@ -72,18 +72,18 @@ $
 = 0\\
 \therefore 
 \nabla_{\theta} J = \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot (Q^{\pi_{\theta}}(s,a) - B(s))] =  \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot Q^{\pi_{\theta}}(s,a)]\\\\
-\end{matrix*}
+\end{matrix}
 $
 
 Here are some more examples of approximate policy gradient algorithms:
 
 $
-\begin{matrix*}[l]
+\begin{matrix}[l]
 \nabla_{\theta} J && = \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot \color{red} v_t \color{black}] && \textrm{Reinforce}\\
 \nabla_{\theta} J && = \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot \color{red} Q^W(s,a) \color{black}] && \textrm{Q actor critic}\\
 \nabla_{\theta} J && = \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot \color{red} A^W(s,a) \color{black}] && \textrm{Advantage Actor Critic}\\
 \nabla_{\theta} J && = \textbf{E}_{\pi_{\theta}}[\nabla_{\theta}\log \pi_{\theta}(s,a) \cdot \color{red} \delta \color{black}] && \textrm{TD Actor Critic}\\
-\end{matrix*}
+\end{matrix}
 $
 
 
