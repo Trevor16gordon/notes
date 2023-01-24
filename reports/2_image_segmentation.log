@@ -23,7 +23,7 @@ data = cv2.imread(image_filepath)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/var/folders/sw/31vsr7sd3dggcqkkgn59gsl80000gn/T/ipykernel_54129/2651630138.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/sw/31vsr7sd3dggcqkkgn59gsl80000gn/T/ipykernel_54573/2651630138.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0;32mimport[0m [0mcv2[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      2[0m [0mdata[0m [0;34m=[0m [0mcv2[0m[0;34m.[0m[0mimread[0m[0;34m([0m[0mimage_filepath[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 

@@ -1,15 +1,14 @@
 # Intro
 
-
 Welcome! My name is Trevor Gordon and I have just completed my MS in Electrical Engineering at Columbia University with a focus in machine learning and reinforcement learning (Dec 2022).
 
-Please see my LinkedIn for information on my experience: https://www.linkedin.com/in/tgordon-ubc/
+Please see my [LinkedIn](https://www.linkedin.com/in/tgordon-ubc/) and resume [here](https://drive.google.com/file/d/1X2uE24fgWM4c-80KV_31NqAXSYee7q-Y/view?usp=sharing) for information on my experience:
 
-I will be using this jupyter book to keep notes on my courses while at Columbia. This includes theory, formulas, code snippets and links to useful resources. These notes are a work in progress as the semester progresses.
-
+This jupyter notebook was a place for notes on my courses while at Columbia. This includes theory, formulas, code snippets and links to useful resources. These notes are a work in progress as the semester progresses.
 
 
 **Projects**
+- Thesis: Towards real world dynamic spectrum access with deep reinforcement learning. Short blog [here]()
 - Neural Networks & Deep Learning: Piano music generation using LSTM neural network and TensorFlow. Checkout an explanation and results [here](https://trevor16gordon.github.io/notes/music_gen_rnn.html)
 - An Exploration of Socially Driven Multi-Agent Reinforcement Learning Models: Literature review and study on open source multi agent reinforcement learning research. Checkout the [final report](https://github.com/Trevor16gordon/multi_agent_rl_proj/blob/main/RL_Final_Report.pdf)
 - GPU Programming Project: Developed random forests from scratch using CUDA and NVIDIA GPU. Checkout the [final report](https://github.com/Trevor16gordon/random-forests-cuda/blob/main/report.pdf) and [code](https://github.com/Trevor16gordon/random-forests-cuda)
